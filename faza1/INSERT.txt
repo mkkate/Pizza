@@ -1,0 +1,312 @@
+--insert into vozilo
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'Hecbek', 'Opel', 'AUTOMOBIL', NULL, 'NI255LV', 252525);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'Kupe', 'Seat', 'AUTOMOBIL', NULL, 'NI147KM', 474747);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'Moped', 'Hysqvarna', 'SKUTER', NULL, 'LE335LV', 353535);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'MTB', 'Alpina', 'BICIKL', 44, NULL, NULL);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'Elektricni', 'Alpina', 'BICIKL', 50, NULL, NULL);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'Karavan', 'Fiat', 'AUTOMOBIL', NULL, 'NI017VD', 171717);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'Road', 'Capriolo', 'BICIKL', 50, NULL, NULL);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'Hecbek', 'Opel', 'AUTOMOBIL', NULL, 'BG122JV', 121212);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'MTB', 'Scott', 'BICIKL', 44, NULL, NULL);
+			
+INSERT INTO VOZILO(Id_vozilo, Naziv_tipa, Proizvodjac, Tip_vozila, Velicina_rama, Registarski_broj, Br_saobracajne_dozvole) 
+			VALUES (seq_id_vozilo.nextval, 'Scooter', 'Yamaha', 'SKUTER', NULL, 'LE233MN', 232323);	
+            
+
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Milan','Savic','Dunavska',15,'Nis','Srbija','F',NULL,NULL,'F','F','T','2019-07-25','T',10,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Dusan','Stankovic','Moravska',33,'Vranje','Srbija','T','1307990746593','1990-07-13','F','T','F',NULL,'F',NULL,5);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Goran','Bojkovic','Durmitorska',68,'Leskovac','Srbija','T','2402991679428','1991-02-24','T','F','F',NULL,'F',NULL,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Milena','Nikolic','Episkopska',30,'Nis','Srbija', 'T', '1009989619782','1989-09-10','F','T','T','2019-02-07','F',NULL,10);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Nina','Pavlovic','Bubanjska',39,'Nis','Srbija','F',NULL,NULL,'F','F','T','2019-01-24','F',NULL,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Jovana','Mirkovic','Zetska',58,'Pirot','Srbija','F',NULL,NULL,'F','F','T','2019-06-13','T',7,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Milos','Jovanovic','Nikole Kopernika',45,'Dimitrovgrad','Srbija','T','0205988359785','1988-05-02','F','T','F',NULL,'F',NULL,8);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Neda','Antonijevic','Milana Toplice',76,'Krusevac','Srbija','F',NULL,NULL,'F','F','T','2018-12-12','T',19,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Nemanja','Stamenkovic','Alekse Nenadovica',17,'Nis','Srbija','F',NULL,NULL,'F','F','T','2018-12-21','T',18,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Marina','Blagojevic','Maksima Gorkog',94,'Leskovac','Srbija','T','2611995319765','1995-11-26','T','F','F',NULL,'F',NULL,NULL);
+
+
+
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Engleski');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Spanski');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Francuski');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Madjarski');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Italijanski');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Grcki');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Turski');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Ruski');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Makedonski');
+INSERT INTO STRANI_JEZIK (Id_strani_jezik,Naziv_jezika) VALUES(seq_id_strani_jezik.nextval,'Bugarski');
+
+
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Margarita',250);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Rimljanka',350);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Capricciosa',400);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Mexicana',420);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Napolitana',370);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Vegetariana',510);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Primavera',460);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Massimo',370);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Hawaii',330);
+INSERT INTO PIZZA(Id_pizza,Naziv,Cena) VALUES(seq_id_pizza.nextval,'Queen',290);
+
+
+
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 500,'kartica','isporucena','13:51:49','2020-04-15', '2020-03-15','13:00:54',1,2);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 790,'gotovina','vracena','11:37:12','2020-04-16', '2020-03-16','10:50:54',1,3);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 2340,'kartica','isporucena','14:19:29','2020-04-17', '2020-03-17','13:25:54',5,7);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 1500,'kartica','isporucena','12:51:45','2020-04-18', '2020-03-18','11:30:04',6,9);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 910,'gotovina','isporucena','17:51:32','2020-04-18 ', '2020-03-18','17:00:10',8,5);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 1340,'kartica','isporucena','13:12:01','2020-04-19', '2020-03-19','12:29:33',8,8);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 620,'kartica','isporucena','16:41:38','2020-04-20', '2020-03-20','15:59:21',9,1);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 820,'gotovina','isporucena','18:55:09','2020-04-21', '2020-03-21','18:01:26',9,4);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 1160,'gotovina','isporucena','16:37:46','2020-04-22', '2020-03-22','15:50:27',5,10);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Vreme_isporuke,Datum_isporuke,Datum_kreiranja,Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 1030,'gotovina','u pripremi',NULL,NULL,'2020-04-25','17:00:54',4,6);
+
+
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza', '2020-04-02', 50, '2020-03-27',1);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'popust', '2020-04-07', 25, '2020-03-13',1);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza', '2020-04-21', 53, '2020-03-20',6);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'popust', '2020-04-07', 27, '2020-02-25',8);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'popust', '2020-03-24', 23, '2020-02-15',9);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza', '2020-04-12', 54, '2020-03-01',6);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza', '2020-04-17', 59, '2020-02-03',6);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'popust',NULL, 22, '2020-04-25',8);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza',NULL,63, '2020-04-20',9);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza',NULL,66, '2020-03-19',8);
+
+
+--insert into smena 	
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-13', '2019-05-19', '1');
+			
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-13', '2019-05-19', '2');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-13', '2019-05-19', '3');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-20', '2019-05-26', '1');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-20', '2019-05-26', '2');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-20', '2019-05-26', '3');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-27', '2019-06-02', '1');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-27', '2019-06-02', '2');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-05-27', '2019-06-02', '3');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, '2019-06-03', '2019-06-09', '1');		
+
+--insert into govori
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 5, 3, 'A1');
+			
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 3, 10, 'C2');
+
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 1, 10, 'A2');
+
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 4, 3, 'B1');
+
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 6, 3, 'A2');
+
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 1, 10, 'A1');
+
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 2, 10, 'C1');
+
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 7, 3, 'B2');
+
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 8, 10, 'B1');
+
+INSERT INTO GOVORI(Id_surogat_govori, Id_strani_jezik, Id_osoba, Nivo)	
+			VALUES(seq_id_surogat_govori.nextval, 9, 10, 'B2');	
+            
+            
+--insert into radi_u
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 1, 2);
+			
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 3, 4);
+
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 2, 3);
+
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 6, 7);
+
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 5, 7);
+
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 8, 10);
+
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 1, 4);
+
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 4, 10);
+
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 7, 2);
+
+INSERT INTO RADI_U(Id_surogat_radi_u, Id_smena, Id_osoba)
+			VALUES(seq_id_surogat_radi_u.nextval, 1, 3);			
+			
+--insert into sadrzi
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 1, 2, 'Paradajz pelat, kackavalj, bosiljak, masline', 250);
+			
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 2, 8, 'Paradajz pelat, kackavalj, salama, sampinjoni', 350);
+
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 3, 5, 'Paradajz pelat, kackavalj, sunka, sampinjoni', 400 );
+
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 4, 3, 'Paradajz pelat, kackavalj, ljuta kobasica, tabasko sos, feferone', 420 );
+
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 5, 9, 'Paradajz pelat, kackavalj, beli luk, masline', 370 );
+
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 6, 1, 'Paradajz pelat, sezonsko povrce, sampinjoni, masline', 510 );
+
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 7, 10, 'Paradajz pelat, mocarela, spargla, paprika', 460 );
+
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 8, 7, 'Paradajz sos, njegoska prsuta, pecenica, kackavalj, preliv (beli sir, pavlaka, jaje, maslinovo ulje)', 370);
+
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 9, 4, 'Kackavalj, sunka, ananas', 330 );
+
+INSERT INTO SADRZI(Id_surogat_sadrzi, Id_pizza, Id_porudzbina, Sastojci, Pojedinacna_cena)
+			VALUES(seq_id_surogat_sadrzi.nextval, 10, 4, 'Kecap, kackavalj, kulen, suvi vrat, kajmak, panceta, masline, origano', 290 );			
+			
+--insert into br_telefona
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0645131023', 2);
+			
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0641665220', 3);
+
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0645131023', 4);
+
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0635124860', 3);
+
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0612536481', 5);
+
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0678915302', 9);
+
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0692316480', 10);
+
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0623564512', 1);
+
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0656562325', 6);
+
+INSERT INTO BR_TELEFONA(Id_surogat_br_telefona, Broj_telefona, Id_osoba)
+			VALUES(seq_id_surogat_br_telefona.nextval, '0612356565', 7);	
+
+--insert into email
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'emilija@gmail.com', 1);
+			
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'katarina@gmail.com', 3);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'vera@gmail.com', 10);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'slavica@hotmail.com', 5);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'slavisa@hotmail.com', 6);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'ivana@yahoo.com', 9);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'kristina@yahoo.com', 4);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'boris@hotmail.com', 2);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'branko@gmail.com', 7);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'mia@gmail.com', 8);		
+
+--insert into kategorija
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, NULL, 2);
+			
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, NULL, 2);
+
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, 'B', 7);
+
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, 'A', 4);
+
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, 'B', 7);
+
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, NULL, 2);
+
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, NULL, 2);
+
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, 'A1', 4);
+
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, 'B', 7);
+
+INSERT INTO KATEGORIJA(Id_surogat_kategorija, Kategorija_vozacke_dozvole, Id_osoba)
+			VALUES(seq_id_surogat_kategorija.nextval, 'B', 7);			
+	
