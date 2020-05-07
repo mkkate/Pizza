@@ -37,7 +37,7 @@ namespace Pizza
             {
                 var cfg = OracleManagedDataClientConfiguration.Oracle10
                     .ConnectionString(c =>
-                        c.Is("Data Source=gislab-oracle.elfak.ni.ac.rs:1521/SBP_PDB;User Id=S16663;Password=picazakon"));
+                        c.Is("Data Source=gislab-oracle.elfak.ni.ac.rs:1521/SBP_PDB;PERSIST SECURITY INFO=True;User Id=S16765;Password=picazakon"));
 
                 return Fluently.Configure()
                     .Database(cfg.ShowSql())

@@ -10,13 +10,13 @@ namespace Pizza.Entiteti
     {
         public virtual int Id_smena { get; protected set; }
 
-        public virtual String Datum_od { get; set; }
+        public virtual DateTime Datum_od { get; set; }
 
-        public virtual String Datum_do { get; set; }
+        public virtual DateTime Datum_do { get; set; }
 
         public virtual char Tip_smene { get; set; }
 
-        public Smena() { }
+        protected Smena() { }
 
         public override string ToString()
         {

@@ -78,12 +78,48 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\BrisanjeSmeneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeSmeneForm.Designer.cs">
+      <DependentUpon>BrisanjeSmeneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\BrisanjeVozilaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeVozilaForm.Designer.cs">
+      <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\SmenaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\SmenaForm.Designer.cs">
+      <DependentUpon>SmenaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\VoziloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\VoziloForm.Designer.cs">
+      <DependentUpon>VoziloForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mapiranja\SmenaMapiranja.cs" />
     <Compile Include="Mapiranja\VoziloMapiranja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeSmeneForm.resx">
+      <DependentUpon>BrisanjeSmeneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeVozilaForm.resx">
+      <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\SmenaForm.resx">
+      <DependentUpon>SmenaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\VoziloForm.resx">
+      <DependentUpon>VoziloForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

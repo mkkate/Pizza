@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NHibernate;
 using Pizza.Entiteti;
+using Pizza.Forme;
 
 namespace Pizza
 {
@@ -46,21 +47,10 @@ namespace Pizza
         {
             try
             {
-                ISession s = DataLayer.GetSession();
+                VoziloForm voziloForma = new VoziloForm();
 
-                VoziloAutomobil v = new VoziloAutomobil();
-
-                v.Naziv_tipa = "Hecbek";
-                v.Proizvodjac = "VW";
-                v.Registarski_broj = "NI015VC";
-                v.Br_saobracajne_dozvole = 181818;
-
-                s.Save(v);  //u ovom trenutku se odradjuje naredba INSERT INTO
-                            //to je zato sto kljuc baza autamatski generise, kada bi mi rucno unosili
-                            //kljuc, u ovom trenutku se ne bi pozvala naredba INSERT INTO vec posle Flush()
-
-                s.Flush();  //u slucaju da rucno unosimi kljuc, nakon ove metode se izvrsaa INSERT INTO
-                s.Close();
+                voziloForma.ShowDialog();
+                voziloForma.Close();
             }
             catch (Exception ec)
             {
@@ -147,7 +137,7 @@ namespace Pizza
                 }
 
                 s.Close();
-
+                
             }
             catch (Exception ec)
             {
@@ -159,17 +149,9 @@ namespace Pizza
         {
             try
             {
-                ISession sesija = DataLayer.GetSession();
+                BrisanjeVozilaForm voziloForma = new BrisanjeVozilaForm();
 
-                Vozilo v = sesija.Load<Vozilo>(24);
-                
-                sesija.Delete(v);
-
-                sesija.Flush();
-
-                sesija.Close();
-
-                MessageBox.Show("Uspesno obrisano vozilo");
+                voziloForma.ShowDialog();
             }
             catch (Exception ec)
             {
@@ -181,16 +163,11 @@ namespace Pizza
         {
             try
             {
-                ISession sesija = DataLayer.GetSession();
+                SmenaForm novaSmena = new SmenaForm();
 
-                Smena2 s2 = new Smena2();
-
-                s2.Datum_od = "2019-06-03";
-                s2.Datum_do = "2019-06-09";
-
-                sesija.Save(s2);
-                sesija.Flush();
-                sesija.Close();
+                novaSmena.ShowDialog();
+                novaSmena.Close();
+                
             }
             catch (Exception ec)
             {
@@ -202,17 +179,9 @@ namespace Pizza
         {
             try
             {
-                ISession sesija = DataLayer.GetSession();
+                BrisanjeSmeneForm smenaForma = new BrisanjeSmeneForm();
 
-                Smena smena = sesija.Load<Smena>(21);
-
-                sesija.Delete(smena);                
-                
-                sesija.Flush();
-
-                sesija.Close();
-
-                MessageBox.Show("Uspesno obrisana smena");
+                smenaForma.ShowDialog();
             }
             catch (Exception ec)
             {

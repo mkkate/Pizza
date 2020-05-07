@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pizza.Mapiranja
 {
-    class VoziloMapiranja : ClassMap<Pizza.Entiteti.Vozilo>
+    public class VoziloMapiranja : ClassMap<Vozilo>
     {
         public VoziloMapiranja()
         {
@@ -30,25 +30,25 @@ namespace Pizza.Mapiranja
         }
     }
 
-    class VoziloBiciklMapiranja : SubclassMap<VoziloBicikl>
+    class BiciklMapiranja : SubclassMap<VoziloBicikl>
     {
-        public VoziloBiciklMapiranja()
+        public BiciklMapiranja()
         {
             DiscriminatorValue("BICIKL");
         } 
     }
 
-    class VoziloSkuterMapiranja : SubclassMap<VoziloSkuter>
+    class SkuterMapiranja : SubclassMap<VoziloSkuter>
     {
-        public VoziloSkuterMapiranja()
+        public SkuterMapiranja()
         {
             DiscriminatorValue("SKUTER");
         }
     }
 
-    class VoziloAutomobilMapiranja : SubclassMap<VoziloAutomobil>
+    class AutomobilMapiranja : SubclassMap<VoziloAutomobil>
     {
-        public VoziloAutomobilMapiranja()
+        public AutomobilMapiranja()
         {
             DiscriminatorValue("AUTOMOBIL");
         }
