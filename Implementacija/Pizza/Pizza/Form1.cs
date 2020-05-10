@@ -188,5 +188,68 @@ namespace Pizza
                 MessageBox.Show(ec.Message);
             }
         }
+
+        private void btnUcitajPicu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                //Ucitavaju se podaci o prodavnici za zadatim brojem
+                Pizza.Entiteti.Pica p = s.Load<Pizza.Entiteti.Pica>(5);
+
+                MessageBox.Show("Naziv: " + p.Naziv + '\n' + "Cena: " + p.Cena);
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void btnUcitajJezik_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                //Ucitavaju se podaci o prodavnici za zadatim brojem
+                Pizza.Entiteti.StraniJezik j = s.Load<Pizza.Entiteti.StraniJezik>(5);
+
+                MessageBox.Show("Naziv jezika: " + j.NazivJezika + '\n');
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+
+        }
+
+        private void btnDodajPicu_Click(object sender, EventArgs e)
+        {
+            PicaForm novaPica = new PicaForm();
+            novaPica.Show();
+        }
+
+        private void btnObrisiPicu_Click(object sender, EventArgs e)
+        {
+            BrisanjePiceForm brisiPicu = new BrisanjePiceForm();
+            brisiPicu.Show();
+        }
+
+        private void btnDodajJezik_Click(object sender, EventArgs e)
+        {
+            StraniJezikForm dodajJezik = new StraniJezikForm();
+            dodajJezik.Show();
+        }
+
+        private void btnObrisiJezik_Click(object sender, EventArgs e)
+        {
+            BrisanjeJezikaForm brisiJezik = new BrisanjeJezikaForm();
+            brisiJezik.Show();
+        }
     }
 }

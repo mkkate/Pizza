@@ -70,13 +70,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
+    <Compile Include="Entiteti\Pica.cs" />
     <Compile Include="Entiteti\Smena.cs" />
+    <Compile Include="Entiteti\StraniJezik.cs" />
     <Compile Include="Entiteti\Vozilo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\BrisanjeJezikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeJezikaForm.Designer.cs">
+      <DependentUpon>BrisanjeJezikaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\BrisanjePiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjePiceForm.Designer.cs">
+      <DependentUpon>BrisanjePiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\BrisanjeSmeneForm.cs">
       <SubType>Form</SubType>
@@ -90,11 +104,23 @@
     <Compile Include="Forme\BrisanjeVozilaForm.Designer.cs">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\PicaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PicaForm.Designer.cs">
+      <DependentUpon>PicaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\SmenaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\SmenaForm.Designer.cs">
       <DependentUpon>SmenaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\StraniJezikForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\StraniJezikForm.Designer.cs">
+      <DependentUpon>StraniJezikForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\VoziloForm.cs">
       <SubType>Form</SubType>
@@ -102,12 +128,20 @@
     <Compile Include="Forme\VoziloForm.Designer.cs">
       <DependentUpon>VoziloForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapiranja\PicaMapiranja.cs" />
     <Compile Include="Mapiranja\SmenaMapiranja.cs" />
+    <Compile Include="Mapiranja\StraniJezikMapiranja.cs" />
     <Compile Include="Mapiranja\VoziloMapiranja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeJezikaForm.resx">
+      <DependentUpon>BrisanjeJezikaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjePiceForm.resx">
+      <DependentUpon>BrisanjePiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeSmeneForm.resx">
       <DependentUpon>BrisanjeSmeneForm.cs</DependentUpon>
@@ -115,8 +149,14 @@
     <EmbeddedResource Include="Forme\BrisanjeVozilaForm.resx">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PicaForm.resx">
+      <DependentUpon>PicaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\SmenaForm.resx">
       <DependentUpon>SmenaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\StraniJezikForm.resx">
+      <DependentUpon>StraniJezikForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\VoziloForm.resx">
       <DependentUpon>VoziloForm.cs</DependentUpon>
