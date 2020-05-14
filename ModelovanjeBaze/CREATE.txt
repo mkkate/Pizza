@@ -79,11 +79,11 @@ CREATE TABLE OSOBA (
 	Drzava VARCHAR(30) NOT NULL,
 	FZaposleni CHAR(1) CHECK (FZaposleni IN ('T','F')),
 	JMBG VARCHAR(13),
-	Datum_rodjenja VARCHAR(15),
+	Datum_rodjenja Date,
 	FPrimalac_porudzbine CHAR(1) CHECK (FPrimalac_porudzbine IN ('T','F')),
 	FDostavljac CHAR(1) CHECK (FDostavljac IN ('T','F')),
 	FKupac CHAR(1) CHECK (FKupac IN ('T','F')),
-	Datum_prve_porudzbine VARCHAR(15),
+	Datum_prve_porudzbine Date,
 	FBonus_program CHAR(1) CHECK (FBonus_program IN ('T','F')),
 	Br_bodova INT,
 	Id_vozilo INT,
@@ -105,13 +105,11 @@ CREATE TABLE PIZZA (
 
 CREATE TABLE PORUDZBINA (
 	Id_porudzbina INT NOT NULL,
-	Cena INT,
+	Cena FLOAT,
 	Nacin_placanja VARCHAR(20) CHECK (Nacin_placanja IN ('gotovina','kartica')),
 	Status VARCHAR(20) CHECK (Status IN ('u pripremi', 'isporucena', 'vracena')),
-	Vreme_isporuke VARCHAR(15),
-	Datum_isporuke VARCHAR(15),
-	Datum_kreiranja VARCHAR(15) NOT NULL,
-	Vreme_kreiranja VARCHAR(15) NOT NULL,
+	Datum_vreme_isporuke TIMESTAMP,
+	Datum_vreme_kreiranja TIMESTAMP NOT NULL,
 	Id_osoba INT NOT NULL,
 	Id_vozilo INT NOT NULL,
 	CONSTRAINT fk_osoba_porudzbina FOREIGN KEY (Id_osoba) REFERENCES OSOBA(Id_osoba),
@@ -122,17 +120,17 @@ CREATE TABLE PORUDZBINA (
 CREATE TABLE DOBIJENI_POKLON (
 	Id_dodele INT PRIMARY KEY,
 	Tip_poklona VARCHAR(20) CHECK (Tip_poklona IN ('popust', 'poklon pizza')),
-	Datum_iskoriscenja VARCHAR(15),
+	Datum_iskoriscenja Date,
 	Kvalifikacioni_bodovi INT NOT NULL,
-	Datum_dodele VARCHAR(15) NOT NULL,
+	Datum_dodele Date NOT NULL,
 	Id_osoba INT NOT NULL,
 	CONSTRAINT fk_osoba FOREIGN KEY (Id_osoba) REFERENCES OSOBA(Id_osoba)
 );
 
 CREATE TABLE SMENA(
 	Id_smena INT PRIMARY KEY,
-	Datum_od VARCHAR(15),
-	Datum_do VARCHAR(15),
+	Datum_od Date,
+	Datum_do Date,
 	Tip_smene CHAR(1) CHECK (Tip_smene IN ('1','2','3'))
 );
 
@@ -183,3 +181,9 @@ CREATE TABLE KATEGORIJA(
 	Id_osoba INT NOT NULL,
 	CONSTRAINT FK_KATEGORIJA_OSOBE FOREIGN KEY (Id_osoba) REFERENCES OSOBA(Id_osoba)
 );
+
+ALTER TABLE EMAIL
+ADD CONSTRAINT UNIQUE_EMAIL UNIQUE (EMAIL);
+
+ALTER TABLE BR_TELEFONA
+ADD CONSTRAINT UNIQUE_BR_TELEFONA UNIQUE (BROJ_TELEFONA);
