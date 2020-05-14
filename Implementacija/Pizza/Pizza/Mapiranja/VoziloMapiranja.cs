@@ -27,6 +27,12 @@ namespace Pizza.Mapiranja
             Map(x => x.Velicina_rama, "VELICINA_RAMA");
             Map(x => x.Registarski_broj, "REGISTARSKI_BROJ");
             Map(x => x.Br_saobracajne_dozvole, "BR_SAOBRACAJNE_DOZVOLE");
+
+            //one-to-many Vozilo-Osoba
+            HasMany(x => x.Osobe).KeyColumn("ID_VOZILO").LazyLoad().Cascade.All().Inverse();
+
+            // one-to-many Vozilo-Porudzbina
+            HasMany(x => x.Porudzbine).KeyColumn("ID_VOZILO").LazyLoad().Cascade.All().Inverse();
         }
     }
 

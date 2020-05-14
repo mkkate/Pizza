@@ -22,7 +22,18 @@ namespace Pizza.Entiteti
 
         public virtual int Br_saobracajne_dozvole { get; set; }
 
-        public Vozilo() { }
+        //one-to-many Vozilo-Porudzbina
+        public virtual IList<Porudzbina> Porudzbine { get; set; }
+
+        //one-to-many Vozilo-Osoba
+        public virtual IList<Osoba> Osobe { get; set; }
+
+        public Vozilo()
+        {
+            Porudzbine = new List<Porudzbina>();
+
+            Osobe = new List<Osoba>();
+        }
 
         public override string ToString()
         {
