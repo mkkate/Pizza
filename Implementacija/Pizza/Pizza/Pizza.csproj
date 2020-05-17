@@ -70,6 +70,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
+    <Compile Include="Entiteti\DobijeniPoklon.cs" />
+    <Compile Include="Entiteti\Email.cs" />
+    <Compile Include="Entiteti\Kategorija.cs" />
+    <Compile Include="Entiteti\Osoba.cs" />
     <Compile Include="Entiteti\Pica.cs" />
     <Compile Include="Entiteti\Smena.cs" />
     <Compile Include="Entiteti\StraniJezik.cs" />
@@ -80,17 +84,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\BrisanjeEmailaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeEmailaForm.Designer.cs">
+      <DependentUpon>BrisanjeEmailaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\BrisanjeJezikaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\BrisanjeJezikaForm.Designer.cs">
       <DependentUpon>BrisanjeJezikaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\BrisanjeKategorijeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeKategorijeForm.Designer.cs">
+      <DependentUpon>BrisanjeKategorijeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\BrisanjePiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\BrisanjePiceForm.Designer.cs">
       <DependentUpon>BrisanjePiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\BrisanjePoklonaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjePoklonaForm.Designer.cs">
+      <DependentUpon>BrisanjePoklonaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\BrisanjeSmeneForm.cs">
       <SubType>Form</SubType>
@@ -103,6 +125,24 @@
     </Compile>
     <Compile Include="Forme\BrisanjeVozilaForm.Designer.cs">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DobijeniPoklonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DobijeniPoklonForm.Designer.cs">
+      <DependentUpon>DobijeniPoklonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\EmailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\EmailForm.Designer.cs">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\KategorijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\KategorijaForm.Designer.cs">
+      <DependentUpon>KategorijaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\PicaForm.cs">
       <SubType>Form</SubType>
@@ -128,6 +168,10 @@
     <Compile Include="Forme\VoziloForm.Designer.cs">
       <DependentUpon>VoziloForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapiranja\DobijeniPoklonMapiranja.cs" />
+    <Compile Include="Mapiranja\EmailMapiranja.cs" />
+    <Compile Include="Mapiranja\KategorijaMapiranja.cs" />
+    <Compile Include="Mapiranja\OsobaMapiranja.cs" />
     <Compile Include="Mapiranja\PicaMapiranja.cs" />
     <Compile Include="Mapiranja\SmenaMapiranja.cs" />
     <Compile Include="Mapiranja\StraniJezikMapiranja.cs" />
@@ -137,17 +181,35 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeEmailaForm.resx">
+      <DependentUpon>BrisanjeEmailaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeJezikaForm.resx">
       <DependentUpon>BrisanjeJezikaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeKategorijeForm.resx">
+      <DependentUpon>BrisanjeKategorijeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjePiceForm.resx">
       <DependentUpon>BrisanjePiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjePoklonaForm.resx">
+      <DependentUpon>BrisanjePoklonaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeSmeneForm.resx">
       <DependentUpon>BrisanjeSmeneForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeVozilaForm.resx">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DobijeniPoklonForm.resx">
+      <DependentUpon>DobijeniPoklonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\EmailForm.resx">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\KategorijaForm.resx">
+      <DependentUpon>KategorijaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\PicaForm.resx">
       <DependentUpon>PicaForm.cs</DependentUpon>

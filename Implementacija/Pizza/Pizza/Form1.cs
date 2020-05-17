@@ -195,7 +195,6 @@ namespace Pizza
             {
                 ISession s = DataLayer.GetSession();
 
-                //Ucitavaju se podaci o prodavnici za zadatim brojem
                 Pizza.Entiteti.Pica p = s.Load<Pizza.Entiteti.Pica>(5);
 
                 MessageBox.Show("Naziv: " + p.Naziv + '\n' + "Cena: " + p.Cena);
@@ -214,7 +213,6 @@ namespace Pizza
             {
                 ISession s = DataLayer.GetSession();
 
-                //Ucitavaju se podaci o prodavnici za zadatim brojem
                 Pizza.Entiteti.StraniJezik j = s.Load<Pizza.Entiteti.StraniJezik>(5);
 
                 MessageBox.Show("Naziv jezika: " + j.NazivJezika + '\n');
@@ -250,6 +248,106 @@ namespace Pizza
         {
             BrisanjeJezikaForm brisiJezik = new BrisanjeJezikaForm();
             brisiJezik.Show();
+        }
+
+        private void btnUcitajKategoriju_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Pizza.Entiteti.Kategorija k = s.Load<Pizza.Entiteti.Kategorija>(5);
+
+                MessageBox.Show("Naziv: " + k.Kategorija_vozacke_dozvole + '\n' + "Pripada: " + k.PripadaOsobi.Ime +" " +k.PripadaOsobi.Prezime);
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void btnUcitajPoklon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Pizza.Entiteti.DobijeniPoklon p = s.Load<Pizza.Entiteti.DobijeniPoklon>(8);
+
+                MessageBox.Show("Tip poklona: " + p.Tip_poklona 
+                                + '\n' 
+                                + "Datum dodele: " + p.Datum_dodele
+                                + '\n'
+                                + "Datum iskoriscenja: " + p.Datum_iskoriscenja
+                                + '\n'
+                                + "Broj bodova: " + p.Kvalifikacioni_bodovi
+                                + '\n'
+                                + "Pripada: " + p.PripadaOsobi.Ime + " " + p.PripadaOsobi.Prezime);
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void btnUcitajEmail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Pizza.Entiteti.Email m = s.Load<Pizza.Entiteti.Email>(5);
+
+                MessageBox.Show("Email adresa: " + m.Email_adresa 
+                              + '\n' 
+                              + "Pripada: " + m.PripadaOsobi.Ime + " " + m.PripadaOsobi.Prezime);
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void btnDodavanjeKategorije_Click(object sender, EventArgs e)
+        {
+            KategorijaForm kategorija = new KategorijaForm();
+            kategorija.Show();
+        }
+
+        private void btnDodajPoklon_Click(object sender, EventArgs e)
+        {
+            DobijeniPoklonForm poklon = new DobijeniPoklonForm();
+            poklon.Show();
+        }
+
+        private void btnDodajEmail_Click(object sender, EventArgs e)
+        {
+            EmailForm email = new EmailForm();
+            email.Show();
+        }
+
+        private void btnObrisiKategoriju_Click(object sender, EventArgs e)
+        {
+            BrisanjeKategorijeForm kategorija = new BrisanjeKategorijeForm();
+            kategorija.Show();
+        }
+
+        private void btnObrisiPoklon_Click(object sender, EventArgs e)
+        {
+            BrisanjePoklonaForm poklon = new BrisanjePoklonaForm();
+            poklon.Show();
+        }
+
+        private void btnObrisiEmail_Click(object sender, EventArgs e)
+        {
+            BrisanjeEmailaForm email = new BrisanjeEmailaForm();
+            email.Show();
         }
     }
 }
