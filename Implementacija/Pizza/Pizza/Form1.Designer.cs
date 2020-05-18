@@ -47,11 +47,15 @@
             this.btnObrisiJezik = new System.Windows.Forms.Button();
             this.btnDodajJezik = new System.Windows.Forms.Button();
             this.btnUcitajJezik = new System.Windows.Forms.Button();
+            this.groupBoxOsobe = new System.Windows.Forms.GroupBox();
+            this.btnDodavanjeOsobe = new System.Windows.Forms.Button();
+            this.btnUcitajOsobu = new System.Windows.Forms.Button();
             this.groupBoxVozila.SuspendLayout();
             this.groupBoxSmene.SuspendLayout();
             this.groupBoxNasledjivanja.SuspendLayout();
             this.gbPica.SuspendLayout();
             this.gbStraniJezik.SuspendLayout();
+            this.groupBoxOsobe.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUcitavanjeVozila
@@ -253,11 +257,43 @@
             this.btnUcitajJezik.UseVisualStyleBackColor = true;
             this.btnUcitajJezik.Click += new System.EventHandler(this.btnUcitajJezik_Click);
             // 
+            // groupBoxOsobe
+            // 
+            this.groupBoxOsobe.Controls.Add(this.btnDodavanjeOsobe);
+            this.groupBoxOsobe.Controls.Add(this.btnUcitajOsobu);
+            this.groupBoxOsobe.Location = new System.Drawing.Point(461, 231);
+            this.groupBoxOsobe.Name = "groupBoxOsobe";
+            this.groupBoxOsobe.Size = new System.Drawing.Size(200, 141);
+            this.groupBoxOsobe.TabIndex = 10;
+            this.groupBoxOsobe.TabStop = false;
+            this.groupBoxOsobe.Text = "Osobe";
+            // 
+            // btnDodavanjeOsobe
+            // 
+            this.btnDodavanjeOsobe.Location = new System.Drawing.Point(14, 80);
+            this.btnDodavanjeOsobe.Name = "btnDodavanjeOsobe";
+            this.btnDodavanjeOsobe.Size = new System.Drawing.Size(123, 23);
+            this.btnDodavanjeOsobe.TabIndex = 1;
+            this.btnDodavanjeOsobe.Text = "Dodavanje osobe";
+            this.btnDodavanjeOsobe.UseVisualStyleBackColor = true;
+            this.btnDodavanjeOsobe.Click += new System.EventHandler(this.btnDodavanjeOsobe_Click);
+            // 
+            // btnUcitajOsobu
+            // 
+            this.btnUcitajOsobu.Location = new System.Drawing.Point(14, 34);
+            this.btnUcitajOsobu.Name = "btnUcitajOsobu";
+            this.btnUcitajOsobu.Size = new System.Drawing.Size(123, 23);
+            this.btnUcitajOsobu.TabIndex = 0;
+            this.btnUcitajOsobu.Text = "Ucitaj osobu";
+            this.btnUcitajOsobu.UseVisualStyleBackColor = true;
+            this.btnUcitajOsobu.Click += new System.EventHandler(this.btnUcitajOsobu_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 410);
+            this.ClientSize = new System.Drawing.Size(770, 466);
+            this.Controls.Add(this.groupBoxOsobe);
             this.Controls.Add(this.gbStraniJezik);
             this.Controls.Add(this.gbPica);
             this.Controls.Add(this.groupBoxNasledjivanja);
@@ -270,6 +306,7 @@
             this.groupBoxNasledjivanja.ResumeLayout(false);
             this.gbPica.ResumeLayout(false);
             this.gbStraniJezik.ResumeLayout(false);
+            this.groupBoxOsobe.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -295,6 +332,9 @@
         private System.Windows.Forms.Button btnObrisiJezik;
         private System.Windows.Forms.Button btnDodajJezik;
         private System.Windows.Forms.Button btnUcitajJezik;
+        private System.Windows.Forms.GroupBox groupBoxOsobe;
+        private System.Windows.Forms.Button btnUcitajOsobu;
+        private System.Windows.Forms.Button btnDodavanjeOsobe;
     }
 }
 

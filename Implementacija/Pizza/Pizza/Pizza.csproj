@@ -107,6 +107,12 @@
     <Compile Include="Forme\BrisanjeVozilaForm.Designer.cs">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\OsobaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\OsobaForm.Designer.cs">
+      <DependentUpon>OsobaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\PicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeVozilaForm.resx">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\OsobaForm.resx">
+      <DependentUpon>OsobaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\PicaForm.resx">
       <DependentUpon>PicaForm.cs</DependentUpon>

@@ -22,23 +22,23 @@ namespace Pizza.Entiteti
 
         public virtual string Drzava { get; set; }
 
-        public virtual char FZaposleni { get; protected set; }
+        public virtual char FZaposleni { get;  set; }
 
         public virtual string Jmbg { get; set; }
 
-        public virtual DateTime Datum_rodjenja { get; set; }
+        public virtual DateTime? Datum_rodjenja { get; set; }
 
-        public virtual char FPrimalac_porudzbine { get; protected set; }
+        public virtual char FPrimalac_porudzbine { get;  set; }
 
-        public virtual char FDostavljac { get; protected set; }
+        public virtual char FDostavljac { get;  set; }
 
-        public virtual char FKupac { get; protected set; }
+        public virtual char FKupac { get;  set; }
 
-        public virtual DateTime Datum_prve_porudzbine { get; set; }
+        public virtual DateTime? Datum_prve_porudzbine { get; set; }
 
-        public virtual char FBonus_program { get; protected set; }
+        public virtual char FBonus_program { get;  set; }
 
-        public virtual int Br_bodova { get; set; }
+        public virtual int? Br_bodova { get; set; }
 
         //many-to-one Osoba-Vozilo
         public virtual Vozilo DuziVozilo { get; set; }
@@ -55,6 +55,6 @@ namespace Pizza.Entiteti
 
             BrojeviTelefona = new List<BrTelefona>();
         }
-
+        
     }
 }

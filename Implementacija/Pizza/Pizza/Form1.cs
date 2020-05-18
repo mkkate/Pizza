@@ -137,7 +137,7 @@ namespace Pizza
                 }
 
                 s.Close();
-                
+
             }
             catch (Exception ec)
             {
@@ -161,32 +161,17 @@ namespace Pizza
 
         private void btnDodavanjeSmene_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SmenaForm novaSmena = new SmenaForm();
+            SmenaForm novaSmena = new SmenaForm();
 
-                novaSmena.ShowDialog();
-                novaSmena.Close();
-                
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
+            novaSmena.ShowDialog();
+            novaSmena.Close();
         }
 
         private void btnObrisiSmenu_Click(object sender, EventArgs e)
         {
-            try
-            {
-                BrisanjeSmeneForm smenaForma = new BrisanjeSmeneForm();
+            BrisanjeSmeneForm smenaForma = new BrisanjeSmeneForm();
 
-                smenaForma.ShowDialog();
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
+            smenaForma.ShowDialog();
         }
 
         private void btnUcitajPicu_Click(object sender, EventArgs e)
@@ -250,6 +235,29 @@ namespace Pizza
         {
             BrisanjeJezikaForm brisiJezik = new BrisanjeJezikaForm();
             brisiJezik.Show();
+        }
+
+        private void btnUcitajOsobu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+
+                Osoba osoba = sesija.Load<Osoba>(7);
+                MessageBox.Show(osoba.Ime + " " + osoba.Prezime);
+
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void btnDodavanjeOsobe_Click(object sender, EventArgs e)
+        {
+            OsobaForm osoba = new OsobaForm();
+            osoba.Show();
         }
     }
 }

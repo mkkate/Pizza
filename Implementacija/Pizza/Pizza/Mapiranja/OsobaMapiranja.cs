@@ -15,14 +15,7 @@ namespace Pizza.Mapiranja
             Table("OSOBA");
 
             Id(x => x.Id_osoba, "ID_OSOBA").GeneratedBy.SequenceIdentity("SEQ_ID_OSOBA");
-
-            //po default-u je False
-            DiscriminateSubClassesOnColumn("FZAPOSLENI");//, 'F');
-            DiscriminateSubClassesOnColumn("FPRIMALAC_PORUDZBINE");
-            DiscriminateSubClassesOnColumn("FDOSTAVLJAC");
-            DiscriminateSubClassesOnColumn("FKUPAC");
-            DiscriminateSubClassesOnColumn("FBONUS_PROGRAM");
-
+            
             Map(x => x.Ime, "IME");
             Map(x => x.Prezime, "PREZIME");
             Map(x => x.Ulica, "ULICA");
@@ -33,6 +26,12 @@ namespace Pizza.Mapiranja
             Map(x => x.Datum_rodjenja, "DATUM_RODJENJA");
             Map(x => x.Datum_prve_porudzbine, "DATUM_PRVE_PORUDZBINE");
             Map(x => x.Br_bodova, "BR_BODOVA");
+
+            Map(x => x.FZaposleni, "FZAPOSLENI");
+            Map(x => x.FPrimalac_porudzbine, "FPRIMALAC_PORUDZBINE");
+            Map(x => x.FDostavljac, "FDOSTAVLJAC");
+            Map(x => x.FKupac, "FKUPAC");
+            Map(x => x.FBonus_program, "FBONUS_PROGRAM");
 
             //many-to-one Osoba-Vozilo
             References(x => x.DuziVozilo).Column("ID_VOZILO").LazyLoad();
