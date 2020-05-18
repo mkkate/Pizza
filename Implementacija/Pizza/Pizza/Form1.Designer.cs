@@ -48,14 +48,24 @@
             this.btnDodajJezik = new System.Windows.Forms.Button();
             this.btnUcitajJezik = new System.Windows.Forms.Button();
             this.groupBoxOsobe = new System.Windows.Forms.GroupBox();
+            this.btnObrisiOsobu = new System.Windows.Forms.Button();
             this.btnDodavanjeOsobe = new System.Windows.Forms.Button();
             this.btnUcitajOsobu = new System.Windows.Forms.Button();
+            this.btnObrisiPorudzbinu = new System.Windows.Forms.Button();
+            this.groupBoxPorudzbina = new System.Windows.Forms.GroupBox();
+            this.btnAzurirajPorudzbinu = new System.Windows.Forms.Button();
+            this.btnDodavanjePorudzbine = new System.Windows.Forms.Button();
+            this.groupBoxBrojTelefona = new System.Windows.Forms.GroupBox();
+            this.btnDodavanjeBrojaTelefona = new System.Windows.Forms.Button();
+            this.btnObrisiBrojTelefona = new System.Windows.Forms.Button();
             this.groupBoxVozila.SuspendLayout();
             this.groupBoxSmene.SuspendLayout();
             this.groupBoxNasledjivanja.SuspendLayout();
             this.gbPica.SuspendLayout();
             this.gbStraniJezik.SuspendLayout();
             this.groupBoxOsobe.SuspendLayout();
+            this.groupBoxPorudzbina.SuspendLayout();
+            this.groupBoxBrojTelefona.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUcitavanjeVozila
@@ -222,7 +232,7 @@
             this.gbStraniJezik.Controls.Add(this.btnUcitajJezik);
             this.gbStraniJezik.Location = new System.Drawing.Point(28, 231);
             this.gbStraniJezik.Name = "gbStraniJezik";
-            this.gbStraniJezik.Size = new System.Drawing.Size(191, 171);
+            this.gbStraniJezik.Size = new System.Drawing.Size(191, 159);
             this.gbStraniJezik.TabIndex = 9;
             this.gbStraniJezik.TabStop = false;
             this.gbStraniJezik.Text = "Strani jezik";
@@ -259,14 +269,25 @@
             // 
             // groupBoxOsobe
             // 
+            this.groupBoxOsobe.Controls.Add(this.btnObrisiOsobu);
             this.groupBoxOsobe.Controls.Add(this.btnDodavanjeOsobe);
             this.groupBoxOsobe.Controls.Add(this.btnUcitajOsobu);
             this.groupBoxOsobe.Location = new System.Drawing.Point(461, 231);
             this.groupBoxOsobe.Name = "groupBoxOsobe";
-            this.groupBoxOsobe.Size = new System.Drawing.Size(200, 141);
+            this.groupBoxOsobe.Size = new System.Drawing.Size(156, 159);
             this.groupBoxOsobe.TabIndex = 10;
             this.groupBoxOsobe.TabStop = false;
             this.groupBoxOsobe.Text = "Osobe";
+            // 
+            // btnObrisiOsobu
+            // 
+            this.btnObrisiOsobu.Location = new System.Drawing.Point(14, 121);
+            this.btnObrisiOsobu.Name = "btnObrisiOsobu";
+            this.btnObrisiOsobu.Size = new System.Drawing.Size(123, 23);
+            this.btnObrisiOsobu.TabIndex = 2;
+            this.btnObrisiOsobu.Text = "Obrisi osobu";
+            this.btnObrisiOsobu.UseVisualStyleBackColor = true;
+            this.btnObrisiOsobu.Click += new System.EventHandler(this.btnObrisiOsobu_Click);
             // 
             // btnDodavanjeOsobe
             // 
@@ -288,11 +309,86 @@
             this.btnUcitajOsobu.UseVisualStyleBackColor = true;
             this.btnUcitajOsobu.Click += new System.EventHandler(this.btnUcitajOsobu_Click);
             // 
+            // btnObrisiPorudzbinu
+            // 
+            this.btnObrisiPorudzbinu.Location = new System.Drawing.Point(15, 100);
+            this.btnObrisiPorudzbinu.Name = "btnObrisiPorudzbinu";
+            this.btnObrisiPorudzbinu.Size = new System.Drawing.Size(143, 23);
+            this.btnObrisiPorudzbinu.TabIndex = 2;
+            this.btnObrisiPorudzbinu.Text = "Obrisi porudzbinu";
+            this.btnObrisiPorudzbinu.UseVisualStyleBackColor = true;
+            this.btnObrisiPorudzbinu.Click += new System.EventHandler(this.btnObrisiPorudzbinu_Click);
+            // 
+            // groupBoxPorudzbina
+            // 
+            this.groupBoxPorudzbina.Controls.Add(this.btnObrisiPorudzbinu);
+            this.groupBoxPorudzbina.Controls.Add(this.btnAzurirajPorudzbinu);
+            this.groupBoxPorudzbina.Controls.Add(this.btnDodavanjePorudzbine);
+            this.groupBoxPorudzbina.Location = new System.Drawing.Point(236, 338);
+            this.groupBoxPorudzbina.Name = "groupBoxPorudzbina";
+            this.groupBoxPorudzbina.Size = new System.Drawing.Size(200, 136);
+            this.groupBoxPorudzbina.TabIndex = 11;
+            this.groupBoxPorudzbina.TabStop = false;
+            this.groupBoxPorudzbina.Text = "Porudzbina";
+            // 
+            // btnAzurirajPorudzbinu
+            // 
+            this.btnAzurirajPorudzbinu.Location = new System.Drawing.Point(15, 58);
+            this.btnAzurirajPorudzbinu.Name = "btnAzurirajPorudzbinu";
+            this.btnAzurirajPorudzbinu.Size = new System.Drawing.Size(143, 23);
+            this.btnAzurirajPorudzbinu.TabIndex = 1;
+            this.btnAzurirajPorudzbinu.Text = "Azuriraj porudzbinu";
+            this.btnAzurirajPorudzbinu.UseVisualStyleBackColor = true;
+            this.btnAzurirajPorudzbinu.Click += new System.EventHandler(this.btnAzurirajPorudzbinu_Click);
+            // 
+            // btnDodavanjePorudzbine
+            // 
+            this.btnDodavanjePorudzbine.Location = new System.Drawing.Point(15, 19);
+            this.btnDodavanjePorudzbine.Name = "btnDodavanjePorudzbine";
+            this.btnDodavanjePorudzbine.Size = new System.Drawing.Size(143, 23);
+            this.btnDodavanjePorudzbine.TabIndex = 0;
+            this.btnDodavanjePorudzbine.Text = "Dodavanje porudzbine";
+            this.btnDodavanjePorudzbine.UseVisualStyleBackColor = true;
+            this.btnDodavanjePorudzbine.Click += new System.EventHandler(this.btnDodavanjePorudzbine_Click);
+            // 
+            // groupBoxBrojTelefona
+            // 
+            this.groupBoxBrojTelefona.Controls.Add(this.btnObrisiBrojTelefona);
+            this.groupBoxBrojTelefona.Controls.Add(this.btnDodavanjeBrojaTelefona);
+            this.groupBoxBrojTelefona.Location = new System.Drawing.Point(28, 410);
+            this.groupBoxBrojTelefona.Name = "groupBoxBrojTelefona";
+            this.groupBoxBrojTelefona.Size = new System.Drawing.Size(191, 119);
+            this.groupBoxBrojTelefona.TabIndex = 12;
+            this.groupBoxBrojTelefona.TabStop = false;
+            this.groupBoxBrojTelefona.Text = "Broj telefona";
+            // 
+            // btnDodavanjeBrojaTelefona
+            // 
+            this.btnDodavanjeBrojaTelefona.Location = new System.Drawing.Point(23, 28);
+            this.btnDodavanjeBrojaTelefona.Name = "btnDodavanjeBrojaTelefona";
+            this.btnDodavanjeBrojaTelefona.Size = new System.Drawing.Size(143, 23);
+            this.btnDodavanjeBrojaTelefona.TabIndex = 0;
+            this.btnDodavanjeBrojaTelefona.Text = "Dodavanje broja telefona";
+            this.btnDodavanjeBrojaTelefona.UseVisualStyleBackColor = true;
+            this.btnDodavanjeBrojaTelefona.Click += new System.EventHandler(this.btnDodavanjeBrojaTelefona_Click);
+            // 
+            // btnObrisiBrojTelefona
+            // 
+            this.btnObrisiBrojTelefona.Location = new System.Drawing.Point(23, 72);
+            this.btnObrisiBrojTelefona.Name = "btnObrisiBrojTelefona";
+            this.btnObrisiBrojTelefona.Size = new System.Drawing.Size(143, 23);
+            this.btnObrisiBrojTelefona.TabIndex = 1;
+            this.btnObrisiBrojTelefona.Text = "Obrisi broj telefona";
+            this.btnObrisiBrojTelefona.UseVisualStyleBackColor = true;
+            this.btnObrisiBrojTelefona.Click += new System.EventHandler(this.btnObrisiBrojTelefona_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 466);
+            this.ClientSize = new System.Drawing.Size(770, 536);
+            this.Controls.Add(this.groupBoxBrojTelefona);
+            this.Controls.Add(this.groupBoxPorudzbina);
             this.Controls.Add(this.groupBoxOsobe);
             this.Controls.Add(this.gbStraniJezik);
             this.Controls.Add(this.gbPica);
@@ -307,6 +403,8 @@
             this.gbPica.ResumeLayout(false);
             this.gbStraniJezik.ResumeLayout(false);
             this.groupBoxOsobe.ResumeLayout(false);
+            this.groupBoxPorudzbina.ResumeLayout(false);
+            this.groupBoxBrojTelefona.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -335,6 +433,14 @@
         private System.Windows.Forms.GroupBox groupBoxOsobe;
         private System.Windows.Forms.Button btnUcitajOsobu;
         private System.Windows.Forms.Button btnDodavanjeOsobe;
+        private System.Windows.Forms.GroupBox groupBoxPorudzbina;
+        private System.Windows.Forms.Button btnAzurirajPorudzbinu;
+        private System.Windows.Forms.Button btnDodavanjePorudzbine;
+        private System.Windows.Forms.Button btnObrisiPorudzbinu;
+        private System.Windows.Forms.Button btnObrisiOsobu;
+        private System.Windows.Forms.GroupBox groupBoxBrojTelefona;
+        private System.Windows.Forms.Button btnObrisiBrojTelefona;
+        private System.Windows.Forms.Button btnDodavanjeBrojaTelefona;
     }
 }
 

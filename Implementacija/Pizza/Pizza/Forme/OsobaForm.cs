@@ -59,6 +59,11 @@ namespace Pizza.Forme
                     {
                         osoba.FPrimalac_porudzbine = 'F';
                         osoba.FDostavljac = 'T';
+                        Vozilo vozilo = sesija.Load<Vozilo>((int)this.nudIdVozila.Value);
+                        osoba.DuziVozilo = vozilo;
+                        vozilo.Osobe.Add(osoba);
+
+                        sesija.SaveOrUpdate(vozilo);
                     }
                 }
                 else
@@ -81,7 +86,7 @@ namespace Pizza.Forme
                     }
                     else
                     {
-                        osoba.FBonus_program = 'T';
+                        osoba.FBonus_program = 'F';
                         osoba.Br_bodova = null;
                     }
                 }
@@ -89,11 +94,11 @@ namespace Pizza.Forme
                 {
                     osoba.FKupac = 'F';
                     osoba.Datum_prve_porudzbine = null;
-                    osoba.FBonus_program = 'T';
+                    osoba.FBonus_program = 'F';
                     osoba.Br_bodova = null;
                 }
 
-                sesija.Save(osoba);
+                sesija.SaveOrUpdate(osoba);
                 sesija.Flush();
                 sesija.Close();
 

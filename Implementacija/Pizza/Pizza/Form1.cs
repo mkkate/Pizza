@@ -259,5 +259,41 @@ namespace Pizza
             OsobaForm osoba = new OsobaForm();
             osoba.Show();
         }
+
+        private void btnDodavanjePorudzbine_Click(object sender, EventArgs e)
+        {
+            PorudzbinaForm porudzbina = new PorudzbinaForm();
+            porudzbina.Show();
+        }
+
+        private void btnAzurirajPorudzbinu_Click(object sender, EventArgs e)
+        {
+            AzurirajPorudzbinuForm azurirajPorudzbinu = new AzurirajPorudzbinuForm();
+            azurirajPorudzbinu.Show();
+        }
+        
+        private void btnObrisiPorudzbinu_Click(object sender, EventArgs e)
+        {
+            BrisanjePorudzbineForm brisanjePorudzbine = new BrisanjePorudzbineForm();
+            brisanjePorudzbine.Show();
+        }
+
+        private void btnObrisiOsobu_Click(object sender, EventArgs e)
+        {
+            BrisanjeOsobeForm brisanjeOsobe = new BrisanjeOsobeForm();
+            brisanjeOsobe.Show();
+        }
+
+        private void btnDodavanjeBrojaTelefona_Click(object sender, EventArgs e)
+        {
+            BrojTelefonaForm brTel = new BrojTelefonaForm();
+            brTel.Show();
+        }
+
+        private void btnObrisiBrojTelefona_Click(object sender, EventArgs e)
+        {
+            BrisanjeTelefonaForm brisanjeTelefona = new BrisanjeTelefonaForm();
+            brisanjeTelefona.Show();
+        }
     }
 }

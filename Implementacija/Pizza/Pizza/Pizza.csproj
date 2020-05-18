@@ -83,11 +83,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\AzurirajPorudzbinuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\AzurirajPorudzbinuForm.Designer.cs">
+      <DependentUpon>AzurirajPorudzbinuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\BrisanjeJezikaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\BrisanjeJezikaForm.Designer.cs">
       <DependentUpon>BrisanjeJezikaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\BrisanjeOsobeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeOsobeForm.Designer.cs">
+      <DependentUpon>BrisanjeOsobeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\BrisanjePiceForm.cs">
       <SubType>Form</SubType>
@@ -95,17 +107,35 @@
     <Compile Include="Forme\BrisanjePiceForm.Designer.cs">
       <DependentUpon>BrisanjePiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\BrisanjePorudzbineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjePorudzbineForm.Designer.cs">
+      <DependentUpon>BrisanjePorudzbineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\BrisanjeSmeneForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\BrisanjeSmeneForm.Designer.cs">
       <DependentUpon>BrisanjeSmeneForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\BrisanjeTelefonaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeTelefonaForm.Designer.cs">
+      <DependentUpon>BrisanjeTelefonaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\BrisanjeVozilaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\BrisanjeVozilaForm.Designer.cs">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\BrojTelefonaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrojTelefonaForm.Designer.cs">
+      <DependentUpon>BrojTelefonaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\OsobaForm.cs">
       <SubType>Form</SubType>
@@ -118,6 +148,12 @@
     </Compile>
     <Compile Include="Forme\PicaForm.Designer.cs">
       <DependentUpon>PicaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PorudzbinaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PorudzbinaForm.Designer.cs">
+      <DependentUpon>PorudzbinaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\SmenaForm.cs">
       <SubType>Form</SubType>
@@ -149,23 +185,41 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\AzurirajPorudzbinuForm.resx">
+      <DependentUpon>AzurirajPorudzbinuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeJezikaForm.resx">
       <DependentUpon>BrisanjeJezikaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeOsobeForm.resx">
+      <DependentUpon>BrisanjeOsobeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjePiceForm.resx">
       <DependentUpon>BrisanjePiceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjePorudzbineForm.resx">
+      <DependentUpon>BrisanjePorudzbineForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeSmeneForm.resx">
       <DependentUpon>BrisanjeSmeneForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeTelefonaForm.resx">
+      <DependentUpon>BrisanjeTelefonaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeVozilaForm.resx">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrojTelefonaForm.resx">
+      <DependentUpon>BrojTelefonaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\OsobaForm.resx">
       <DependentUpon>OsobaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\PicaForm.resx">
       <DependentUpon>PicaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PorudzbinaForm.resx">
+      <DependentUpon>PorudzbinaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\SmenaForm.resx">
       <DependentUpon>SmenaForm.cs</DependentUpon>

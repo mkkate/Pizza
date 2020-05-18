@@ -51,8 +51,7 @@
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.groupBoxZaposleni = new System.Windows.Forms.GroupBox();
             this.groupBoxDostavljac = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblKategorija = new System.Windows.Forms.Label();
+            this.lblIdVozila = new System.Windows.Forms.Label();
             this.groupBoxPrimalacPorudzbine = new System.Windows.Forms.GroupBox();
             this.cmbNivo = new System.Windows.Forms.ComboBox();
             this.cmbStraniJezik = new System.Windows.Forms.ComboBox();
@@ -68,12 +67,14 @@
             this.dtpDatumPrvePorudzbine = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.nudIdVozila = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudBroj)).BeginInit();
             this.groupBoxZaposleni.SuspendLayout();
             this.groupBoxDostavljac.SuspendLayout();
             this.groupBoxPrimalacPorudzbine.SuspendLayout();
             this.groupBoxKupac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrojBodova)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIme
@@ -276,8 +277,8 @@
             // 
             // groupBoxDostavljac
             // 
-            this.groupBoxDostavljac.Controls.Add(this.label5);
-            this.groupBoxDostavljac.Controls.Add(this.lblKategorija);
+            this.groupBoxDostavljac.Controls.Add(this.nudIdVozila);
+            this.groupBoxDostavljac.Controls.Add(this.lblIdVozila);
             this.groupBoxDostavljac.Location = new System.Drawing.Point(6, 254);
             this.groupBoxDostavljac.Name = "groupBoxDostavljac";
             this.groupBoxDostavljac.Size = new System.Drawing.Size(234, 94);
@@ -285,23 +286,14 @@
             this.groupBoxDostavljac.TabStop = false;
             this.groupBoxDostavljac.Text = "Dostavljac";
             // 
-            // label5
+            // lblIdVozila
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Vozilo:";
-            // 
-            // lblKategorija
-            // 
-            this.lblKategorija.AutoSize = true;
-            this.lblKategorija.Location = new System.Drawing.Point(18, 31);
-            this.lblKategorija.Name = "lblKategorija";
-            this.lblKategorija.Size = new System.Drawing.Size(57, 13);
-            this.lblKategorija.TabIndex = 0;
-            this.lblKategorija.Text = "Kategorija:";
+            this.lblIdVozila.AutoSize = true;
+            this.lblIdVozila.Location = new System.Drawing.Point(12, 28);
+            this.lblIdVozila.Name = "lblIdVozila";
+            this.lblIdVozila.Size = new System.Drawing.Size(49, 13);
+            this.lblIdVozila.TabIndex = 1;
+            this.lblIdVozila.Text = "Id vozila:";
             // 
             // groupBoxPrimalacPorudzbine
             // 
@@ -320,7 +312,7 @@
             // cmbNivo
             // 
             this.cmbNivo.FormattingEnabled = true;
-            this.cmbNivo.Location = new System.Drawing.Point(103, 69);
+            this.cmbNivo.Location = new System.Drawing.Point(97, 69);
             this.cmbNivo.Name = "cmbNivo";
             this.cmbNivo.Size = new System.Drawing.Size(121, 21);
             this.cmbNivo.TabIndex = 4;
@@ -328,7 +320,7 @@
             // cmbStraniJezik
             // 
             this.cmbStraniJezik.FormattingEnabled = true;
-            this.cmbStraniJezik.Location = new System.Drawing.Point(103, 36);
+            this.cmbStraniJezik.Location = new System.Drawing.Point(97, 36);
             this.cmbStraniJezik.Name = "cmbStraniJezik";
             this.cmbStraniJezik.Size = new System.Drawing.Size(121, 21);
             this.cmbStraniJezik.TabIndex = 3;
@@ -336,7 +328,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 99);
+            this.label1.Location = new System.Drawing.Point(12, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 2;
@@ -345,7 +337,7 @@
             // lblNivo
             // 
             this.lblNivo.AutoSize = true;
-            this.lblNivo.Location = new System.Drawing.Point(18, 69);
+            this.lblNivo.Location = new System.Drawing.Point(12, 69);
             this.lblNivo.Name = "lblNivo";
             this.lblNivo.Size = new System.Drawing.Size(32, 13);
             this.lblNivo.TabIndex = 1;
@@ -354,7 +346,7 @@
             // lblStraniJezik
             // 
             this.lblStraniJezik.AutoSize = true;
-            this.lblStraniJezik.Location = new System.Drawing.Point(18, 36);
+            this.lblStraniJezik.Location = new System.Drawing.Point(12, 39);
             this.lblStraniJezik.Name = "lblStraniJezik";
             this.lblStraniJezik.Size = new System.Drawing.Size(61, 13);
             this.lblStraniJezik.TabIndex = 0;
@@ -450,6 +442,13 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
+            // nudIdVozila
+            // 
+            this.nudIdVozila.Location = new System.Drawing.Point(97, 28);
+            this.nudIdVozila.Name = "nudIdVozila";
+            this.nudIdVozila.Size = new System.Drawing.Size(120, 20);
+            this.nudIdVozila.TabIndex = 2;
+            // 
             // OsobaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,6 +486,7 @@
             this.groupBoxKupac.ResumeLayout(false);
             this.groupBoxKupac.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrojBodova)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,17 +522,17 @@
         private System.Windows.Forms.Label lblNivo;
         private System.Windows.Forms.Label lblStraniJezik;
         private System.Windows.Forms.GroupBox groupBoxDostavljac;
-        private System.Windows.Forms.Label lblKategorija;
         private System.Windows.Forms.ComboBox cmbNivo;
         private System.Windows.Forms.GroupBox groupBoxKupac;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpDatumPrvePorudzbine;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblIdVozila;
         private System.Windows.Forms.RadioButton rdbBonusProgramNe;
         private System.Windows.Forms.RadioButton rdbBonusProgramDa;
         private System.Windows.Forms.NumericUpDown nudBrojBodova;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.NumericUpDown nudIdVozila;
     }
 }

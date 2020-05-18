@@ -10,7 +10,7 @@ namespace Pizza.Entiteti
     {
         public virtual int Id_surogat_br_telefona { get; protected set; }
 
-        public virtual int Broj_telefona { get; set; }
+        public virtual string Broj_telefona { get; set; }
 
         //many-to-one BrTelefona-Osoba
         public virtual Osoba PripadaOsobi { get; set; }

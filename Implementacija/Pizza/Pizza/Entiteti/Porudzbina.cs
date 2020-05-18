@@ -10,13 +10,13 @@ namespace Pizza.Entiteti
     {
         public virtual int Id_porudzbina { get; protected set; }
 
-        public virtual float Cena { get; set; }
+        public virtual float? Cena { get; set; }
 
         public virtual string Nacin_placanja { get; set; }
 
         public virtual string Status { get; set; }
 
-        public virtual DateTime Datum_vreme_isporuke { get; set; }
+        public virtual DateTime? Datum_vreme_isporuke { get; set; }
 
         public virtual DateTime Datum_vreme_kreiranja { get; set; }
 
