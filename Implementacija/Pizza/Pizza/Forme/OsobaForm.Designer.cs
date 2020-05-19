@@ -51,11 +51,13 @@
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.groupBoxZaposleni = new System.Windows.Forms.GroupBox();
             this.groupBoxDostavljac = new System.Windows.Forms.GroupBox();
+            this.cmbKategorijaDozvole = new System.Windows.Forms.ComboBox();
+            this.lblKategorijaDozvole = new System.Windows.Forms.Label();
+            this.nudIdVozila = new System.Windows.Forms.NumericUpDown();
             this.lblIdVozila = new System.Windows.Forms.Label();
             this.groupBoxPrimalacPorudzbine = new System.Windows.Forms.GroupBox();
             this.cmbNivo = new System.Windows.Forms.ComboBox();
             this.cmbStraniJezik = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblNivo = new System.Windows.Forms.Label();
             this.lblStraniJezik = new System.Windows.Forms.Label();
             this.groupBoxKupac = new System.Windows.Forms.GroupBox();
@@ -67,14 +69,13 @@
             this.dtpDatumPrvePorudzbine = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
-            this.nudIdVozila = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudBroj)).BeginInit();
             this.groupBoxZaposleni.SuspendLayout();
             this.groupBoxDostavljac.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).BeginInit();
             this.groupBoxPrimalacPorudzbine.SuspendLayout();
             this.groupBoxKupac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrojBodova)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIme
@@ -238,9 +239,9 @@
             // 
             // txtJMBG
             // 
-            this.txtJMBG.Location = new System.Drawing.Point(103, 31);
+            this.txtJMBG.Location = new System.Drawing.Point(123, 31);
             this.txtJMBG.Name = "txtJMBG";
-            this.txtJMBG.Size = new System.Drawing.Size(104, 20);
+            this.txtJMBG.Size = new System.Drawing.Size(120, 20);
             this.txtJMBG.TabIndex = 18;
             // 
             // lblDatumRodjenja
@@ -255,9 +256,9 @@
             // dtpDatumRodjenja
             // 
             this.dtpDatumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDatumRodjenja.Location = new System.Drawing.Point(103, 63);
+            this.dtpDatumRodjenja.Location = new System.Drawing.Point(123, 63);
             this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
-            this.dtpDatumRodjenja.Size = new System.Drawing.Size(104, 20);
+            this.dtpDatumRodjenja.Size = new System.Drawing.Size(120, 20);
             this.dtpDatumRodjenja.TabIndex = 20;
             // 
             // groupBoxZaposleni
@@ -270,21 +271,47 @@
             this.groupBoxZaposleni.Controls.Add(this.txtJMBG);
             this.groupBoxZaposleni.Location = new System.Drawing.Point(339, 34);
             this.groupBoxZaposleni.Name = "groupBoxZaposleni";
-            this.groupBoxZaposleni.Size = new System.Drawing.Size(260, 373);
+            this.groupBoxZaposleni.Size = new System.Drawing.Size(283, 373);
             this.groupBoxZaposleni.TabIndex = 21;
             this.groupBoxZaposleni.TabStop = false;
             this.groupBoxZaposleni.Text = "Zaposleni";
             // 
             // groupBoxDostavljac
             // 
+            this.groupBoxDostavljac.Controls.Add(this.cmbKategorijaDozvole);
+            this.groupBoxDostavljac.Controls.Add(this.lblKategorijaDozvole);
             this.groupBoxDostavljac.Controls.Add(this.nudIdVozila);
             this.groupBoxDostavljac.Controls.Add(this.lblIdVozila);
             this.groupBoxDostavljac.Location = new System.Drawing.Point(6, 254);
             this.groupBoxDostavljac.Name = "groupBoxDostavljac";
-            this.groupBoxDostavljac.Size = new System.Drawing.Size(234, 94);
+            this.groupBoxDostavljac.Size = new System.Drawing.Size(257, 94);
             this.groupBoxDostavljac.TabIndex = 23;
             this.groupBoxDostavljac.TabStop = false;
             this.groupBoxDostavljac.Text = "Dostavljac";
+            // 
+            // cmbKategorijaDozvole
+            // 
+            this.cmbKategorijaDozvole.FormattingEnabled = true;
+            this.cmbKategorijaDozvole.Location = new System.Drawing.Point(117, 53);
+            this.cmbKategorijaDozvole.Name = "cmbKategorijaDozvole";
+            this.cmbKategorijaDozvole.Size = new System.Drawing.Size(120, 21);
+            this.cmbKategorijaDozvole.TabIndex = 4;
+            // 
+            // lblKategorijaDozvole
+            // 
+            this.lblKategorijaDozvole.AutoSize = true;
+            this.lblKategorijaDozvole.Location = new System.Drawing.Point(12, 61);
+            this.lblKategorijaDozvole.Name = "lblKategorijaDozvole";
+            this.lblKategorijaDozvole.Size = new System.Drawing.Size(97, 13);
+            this.lblKategorijaDozvole.TabIndex = 3;
+            this.lblKategorijaDozvole.Text = "Kategorija dozvole:";
+            // 
+            // nudIdVozila
+            // 
+            this.nudIdVozila.Location = new System.Drawing.Point(117, 28);
+            this.nudIdVozila.Name = "nudIdVozila";
+            this.nudIdVozila.Size = new System.Drawing.Size(120, 20);
+            this.nudIdVozila.TabIndex = 2;
             // 
             // lblIdVozila
             // 
@@ -299,12 +326,11 @@
             // 
             this.groupBoxPrimalacPorudzbine.Controls.Add(this.cmbNivo);
             this.groupBoxPrimalacPorudzbine.Controls.Add(this.cmbStraniJezik);
-            this.groupBoxPrimalacPorudzbine.Controls.Add(this.label1);
             this.groupBoxPrimalacPorudzbine.Controls.Add(this.lblNivo);
             this.groupBoxPrimalacPorudzbine.Controls.Add(this.lblStraniJezik);
             this.groupBoxPrimalacPorudzbine.Location = new System.Drawing.Point(6, 109);
             this.groupBoxPrimalacPorudzbine.Name = "groupBoxPrimalacPorudzbine";
-            this.groupBoxPrimalacPorudzbine.Size = new System.Drawing.Size(234, 134);
+            this.groupBoxPrimalacPorudzbine.Size = new System.Drawing.Size(257, 134);
             this.groupBoxPrimalacPorudzbine.TabIndex = 22;
             this.groupBoxPrimalacPorudzbine.TabStop = false;
             this.groupBoxPrimalacPorudzbine.Text = "Primalac porudzbine";
@@ -312,27 +338,18 @@
             // cmbNivo
             // 
             this.cmbNivo.FormattingEnabled = true;
-            this.cmbNivo.Location = new System.Drawing.Point(97, 69);
+            this.cmbNivo.Location = new System.Drawing.Point(117, 64);
             this.cmbNivo.Name = "cmbNivo";
-            this.cmbNivo.Size = new System.Drawing.Size(121, 21);
+            this.cmbNivo.Size = new System.Drawing.Size(120, 21);
             this.cmbNivo.TabIndex = 4;
             // 
             // cmbStraniJezik
             // 
             this.cmbStraniJezik.FormattingEnabled = true;
-            this.cmbStraniJezik.Location = new System.Drawing.Point(97, 36);
+            this.cmbStraniJezik.Location = new System.Drawing.Point(117, 31);
             this.cmbStraniJezik.Name = "cmbStraniJezik";
-            this.cmbStraniJezik.Size = new System.Drawing.Size(121, 21);
+            this.cmbStraniJezik.Size = new System.Drawing.Size(120, 21);
             this.cmbStraniJezik.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Porudzbina:";
             // 
             // lblNivo
             // 
@@ -442,13 +459,6 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // nudIdVozila
-            // 
-            this.nudIdVozila.Location = new System.Drawing.Point(97, 28);
-            this.nudIdVozila.Name = "nudIdVozila";
-            this.nudIdVozila.Size = new System.Drawing.Size(120, 20);
-            this.nudIdVozila.TabIndex = 2;
-            // 
             // OsobaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,12 +491,12 @@
             this.groupBoxZaposleni.PerformLayout();
             this.groupBoxDostavljac.ResumeLayout(false);
             this.groupBoxDostavljac.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).EndInit();
             this.groupBoxPrimalacPorudzbine.ResumeLayout(false);
             this.groupBoxPrimalacPorudzbine.PerformLayout();
             this.groupBoxKupac.ResumeLayout(false);
             this.groupBoxKupac.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrojBodova)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,7 +528,6 @@
         private System.Windows.Forms.GroupBox groupBoxZaposleni;
         private System.Windows.Forms.GroupBox groupBoxPrimalacPorudzbine;
         private System.Windows.Forms.ComboBox cmbStraniJezik;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNivo;
         private System.Windows.Forms.Label lblStraniJezik;
         private System.Windows.Forms.GroupBox groupBoxDostavljac;
@@ -534,5 +543,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.NumericUpDown nudIdVozila;
+        private System.Windows.Forms.Label lblKategorijaDozvole;
+        private System.Windows.Forms.ComboBox cmbKategorijaDozvole;
     }
 }

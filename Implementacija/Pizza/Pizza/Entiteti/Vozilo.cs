@@ -16,11 +16,11 @@ namespace Pizza.Entiteti
 
         public virtual string Tip_vozila { get; set; }
 
-        public virtual float Velicina_rama { get; set; }
+        public virtual float? Velicina_rama { get; set; }
 
         public virtual string Registarski_broj { get; set; }
 
-        public virtual int Br_saobracajne_dozvole { get; set; }
+        public virtual int? Br_saobracajne_dozvole { get; set; }
 
         //one-to-many Vozilo-Porudzbina
         public virtual IList<Porudzbina> Porudzbine { get; set; }

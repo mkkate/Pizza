@@ -25,8 +25,12 @@ namespace Pizza.Mapiranja
             // many-to-one; Porudzbina-Osoba
             // fk mapiranje
             References(x => x.PripadaOsobi).Column("ID_OSOBA").LazyLoad();
+
             // many-to-one Porudzbina-Vozilo
             References(x => x.DostavljanoVozilom).Column("ID_VOZILO").LazyLoad();
+
+            //one-to-many Porudzbina-Sadrzi (Pizza)
+            HasMany(x => x.SadrziPice).KeyColumn("ID_PORUDZBINA").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

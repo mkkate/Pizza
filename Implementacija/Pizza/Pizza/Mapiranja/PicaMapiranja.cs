@@ -19,6 +19,8 @@ namespace Pizza.Mapiranja
             Map(x => x.Naziv, "NAZIV");
             Map(x => x.Cena, "CENA");
 
+            //one-to-many Pizza-Sadrzi (Porudzbina)
+            HasMany(x => x.SadrziPorudzbine).KeyColumn("ID_PIZZA").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

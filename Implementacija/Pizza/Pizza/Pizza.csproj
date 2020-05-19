@@ -74,6 +74,7 @@
     <Compile Include="Entiteti\Osoba.cs" />
     <Compile Include="Entiteti\Pica.cs" />
     <Compile Include="Entiteti\Porudzbina.cs" />
+    <Compile Include="Entiteti\Sadrzi.cs" />
     <Compile Include="Entiteti\Smena.cs" />
     <Compile Include="Entiteti\StraniJezik.cs" />
     <Compile Include="Entiteti\Vozilo.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Mapiranja\OsobaMapiranja.cs" />
     <Compile Include="Mapiranja\PicaMapiranja.cs" />
     <Compile Include="Mapiranja\PorudzbinaMapiranja.cs" />
+    <Compile Include="Mapiranja\SadrziMapiranja.cs" />
     <Compile Include="Mapiranja\SmenaMapiranja.cs" />
     <Compile Include="Mapiranja\StraniJezikMapiranja.cs" />
     <Compile Include="Mapiranja\VoziloMapiranja.cs" />

@@ -26,6 +26,12 @@ namespace Pizza.Entiteti
         //many-to-one Porudzbina-Vozilo
         public virtual Vozilo DostavljanoVozilom { get; set; }
 
-        public Porudzbina() { }
+        //one-to-many Porudzbina-Sadrzi (Pizza)
+        public virtual IList<Sadrzi> SadrziPice { get; set; }
+
+        public Porudzbina()
+        {
+            SadrziPice = new List<Sadrzi>();
+        }
     }
 }

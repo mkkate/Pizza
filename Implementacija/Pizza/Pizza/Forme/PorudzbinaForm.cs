@@ -36,14 +36,19 @@ namespace Pizza.Forme
             {
                 ISession sesija = DataLayer.GetSession();
 
+                Pica pica = sesija.Load<Pica>((int)nudPicaId.Value);
+
                 Porudzbina porudzbina = new Porudzbina();
 
-                // porudzbina.Cena = ; treba mi veza SADRZI
+                porudzbina.Cena = pica.Cena * (int)nudKolicina.Value;
+                lblObracunataCena.Text = porudzbina.Cena.ToString();
+
                 porudzbina.Nacin_placanja = cmbNacinPlacanja.Text;
                 porudzbina.Status = cmbStatus.Text;
                 porudzbina.Datum_vreme_kreiranja = dtpDatumVremeKreiranja.Value;
 
                 Osoba osoba = sesija.Load<Osoba>((int)nudIdOsobe.Value);
+
                 porudzbina.PripadaOsobi = osoba;
                 osoba.Porudzbine.Add(porudzbina);
                 sesija.SaveOrUpdate(osoba);
@@ -54,8 +59,17 @@ namespace Pizza.Forme
                 vozilo.Porudzbine.Add(porudzbina);
                 sesija.SaveOrUpdate(vozilo);
 
-
                 sesija.SaveOrUpdate(porudzbina);
+
+                // kreiranje u tabeli Sadrzi
+                Sadrzi sadrzi = new Sadrzi();
+                sadrzi.Id_pizza = pica;
+                sadrzi.Id_porudzbina = porudzbina;
+                sadrzi.Sastojci = txtSastojci.Text;
+                sadrzi.Pojedinacna_cena = pica.Cena;
+                sesija.Save(sadrzi);
+
+
                 sesija.Flush();
                 sesija.Close();
             }

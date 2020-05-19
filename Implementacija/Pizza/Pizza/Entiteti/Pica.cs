@@ -12,6 +12,12 @@ namespace Pizza.Entiteti
         public virtual string Naziv { get; set; }
         public virtual float Cena { get; set; }
 
-        public Pica() { }
+        //one-to-many Pica-Sadrzi (Porudzbina)
+        public virtual IList<Sadrzi> SadrziPorudzbine { get; set; }
+
+        public Pica()
+        {
+            SadrziPorudzbine = new List<Sadrzi>();
+        }
     }
 }
