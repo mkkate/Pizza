@@ -72,9 +72,12 @@
     <Compile Include="DataLayer.cs" />
     <Compile Include="Entiteti\DobijeniPoklon.cs" />
     <Compile Include="Entiteti\Email.cs" />
+    <Compile Include="Entiteti\Govori.cs" />
     <Compile Include="Entiteti\Kategorija.cs" />
     <Compile Include="Entiteti\Osoba.cs" />
     <Compile Include="Entiteti\Pica.cs" />
+    <Compile Include="Entiteti\Porudzbina.cs" />
+    <Compile Include="Entiteti\RadiU.cs" />
     <Compile Include="Entiteti\Smena.cs" />
     <Compile Include="Entiteti\StraniJezik.cs" />
     <Compile Include="Entiteti\Vozilo.cs" />
@@ -170,9 +173,12 @@
     </Compile>
     <Compile Include="Mapiranja\DobijeniPoklonMapiranja.cs" />
     <Compile Include="Mapiranja\EmailMapiranja.cs" />
+    <Compile Include="Mapiranja\GovoriMapiranja.cs" />
     <Compile Include="Mapiranja\KategorijaMapiranja.cs" />
     <Compile Include="Mapiranja\OsobaMapiranja.cs" />
     <Compile Include="Mapiranja\PicaMapiranja.cs" />
+    <Compile Include="Mapiranja\PorudzbinaMapiranja.cs" />
+    <Compile Include="Mapiranja\RadiUMapiranja.cs" />
     <Compile Include="Mapiranja\SmenaMapiranja.cs" />
     <Compile Include="Mapiranja\StraniJezikMapiranja.cs" />
     <Compile Include="Mapiranja\VoziloMapiranja.cs" />

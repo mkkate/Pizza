@@ -349,5 +349,138 @@ namespace Pizza
             BrisanjeEmailaForm email = new BrisanjeEmailaForm();
             email.Show();
         }
+
+        private void UcitajSadrzi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Pizza.Entiteti.Govori r = s.Load<Pizza.Entiteti.Govori>(9);
+
+                MessageBox.Show("Nivo: " + r.Nivo
+                    + '\n' + "Jezik: " + r.Id_strani_jezik.NazivJezika
+                    + '\n' + "Naziv osobe: " + r.Id_osoba.Ime + " " + r.Id_osoba.Prezime);
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void UcitajRadiU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Pizza.Entiteti.RadiU r = s.Load<Pizza.Entiteti.RadiU>(9);
+
+                MessageBox.Show("Datum od: " + r.Id_smena.Datum_od
+                    + '\n' + "Datum do: " + r.Id_smena.Datum_do 
+                    + '\n' + "Naziv osobe: " + r.Id_osoba.Ime + " " + r.Id_osoba.Prezime);
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void btnDodajSadrzi_Click(object sender, EventArgs e)
+        {
+
+
+
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Entiteti.Govori g = new Entiteti.Govori();
+                //g.Nivo = "A1";
+                g.Id_osoba = s.Load<Pizza.Entiteti.Osoba>(10);
+                g.Id_strani_jezik = s.Load<Pizza.Entiteti.StraniJezik>(7);
+
+                g.Id_osoba.OGovori.Add(g);
+                g.Id_strani_jezik.GStraniJezik.Add(g);
+
+                s.SaveOrUpdate(g);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+        private void btnDodajRadiU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Entiteti.RadiU r = new Entiteti.RadiU();
+                r.Id_osoba = s.Load<Pizza.Entiteti.Osoba>(7);
+                r.Id_smena = s.Load<Pizza.Entiteti.Smena>(5);
+
+                r.Id_osoba.ORadiU.Add(r);
+                r.Id_smena.RadiUS.Add(r);
+
+                s.SaveOrUpdate(r);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void btnObrisiRadiU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+
+
+                Pizza.Entiteti.RadiU r = s.Load<Pizza.Entiteti.RadiU>(23);
+
+                s.Delete(r);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void btnObrisiGovori_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+
+
+                Pizza.Entiteti.Govori g = s.Load<Pizza.Entiteti.Govori>(22);
+
+                s.Delete(g);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
     }
 }

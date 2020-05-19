@@ -12,6 +12,9 @@ namespace Pizza.Entiteti
         public virtual string Naziv { get; set; }
         public virtual float Cena { get; set; }
 
-        public Pica() { }
+
+        public Pica() {
+
+        }
     }
 }

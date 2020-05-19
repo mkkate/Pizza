@@ -16,7 +16,11 @@ namespace Pizza.Entiteti
 
         public virtual char Tip_smene { get; set; }
 
-        protected Smena() { }
+        public virtual IList<RadiU> RadiUS{ get; set; }
+
+        protected Smena() {
+            RadiUS = new List<RadiU>();
+        }
 
         public override string ToString()
         {

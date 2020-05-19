@@ -16,13 +16,7 @@ namespace Pizza.Mapiranja
 
             Id(x => x.Id_osoba, "ID_OSOBA").GeneratedBy.SequenceIdentity("SEQ_ID_OSOBA");
 
-
-            DiscriminateSubClassesOnColumn("FZAPOSLENI");
-            DiscriminateSubClassesOnColumn("FPRIMALAC_PORUDZBINE");
-            DiscriminateSubClassesOnColumn("FDOSTAVLJAC");
-            DiscriminateSubClassesOnColumn("FKUPAC");
-            DiscriminateSubClassesOnColumn("FBONUS_PROGRAM");
-
+        
             Map(x => x.Ime, "IME");
             Map(x => x.Prezime, "PREZIME");
             Map(x => x.Ulica, "ULICA");
@@ -34,11 +28,20 @@ namespace Pizza.Mapiranja
             Map(x => x.Datum_prve_porudzbine, "DATUM_PRVE_PORUDZBINE");
             Map(x => x.Br_bodova, "BR_BODOVA");
 
+            Map(x => x.FZaposleni, "FZAPOSLENI");
+            Map(x => x.FPrimalac_porudzbine, "FPRIMALAC_PORUDZBINE");
+            Map(x => x.FDostavljac, "FDOSTAVLJAC");
+            Map(x => x.FKupac, "FKUPAC");
+            Map(x => x.FBonus_program, "FBONUS_PROGRAM");
+
 
 
             HasMany(x => x.DobijeniPokloni).KeyColumn("ID_OSOBA").Cascade.All().Inverse();
             HasMany(x => x.Kategorije).KeyColumn("ID_OSOBA").Cascade.All().Inverse();
             HasMany(x => x.Emailovi).KeyColumn("ID_OSOBA").Cascade.All().Inverse();
+            HasMany(x => x.ORadiU).KeyColumn("ID_OSOBA").LazyLoad().Cascade.All().Inverse();
+            HasMany(x => x.OGovori).KeyColumn("ID_OSOBA").LazyLoad().Cascade.All().Inverse();
+
         }
     }
 }

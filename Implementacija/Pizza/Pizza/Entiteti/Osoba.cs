@@ -45,12 +45,17 @@ namespace Pizza.Entiteti
         public virtual IList<DobijeniPoklon> DobijeniPokloni { get; set; }
         public virtual IList<Kategorija> Kategorije { get; set; }
         public virtual IList<Email> Emailovi { get; set; }
+        public virtual IList<RadiU> ORadiU { get; set; }
+        public virtual IList <Govori> OGovori { get; set; }
 
         public Osoba()
         {
             DobijeniPokloni = new List<DobijeniPoklon>();
             Kategorije = new List<Kategorija>();
             Emailovi = new List<Email>();
+            ORadiU = new List<RadiU>();
+            OGovori = new List<Govori>();
+
         }
     }
 }
