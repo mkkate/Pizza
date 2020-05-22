@@ -1,0 +1,138 @@
+---------izmene u tabelama---------
+ALTER TABLE SMENA MODIFY DATUM_OD DATE;
+ALTER TABLE SMENA MODIFY DATUM_DO DATE;
+ALTER TABLE SMENA MODIFY ( Tip_smene NOT NULL);
+
+ALTER TABLE OSOBA MODIFY DATUM_RODJENJA DATE;
+ALTER TABLE OSOBA MODIFY DATUM_PRVE_PORUDZBINE DATE;
+ALTER TABLE OSOBA MODIFY ( FZaposleni NOT NULL);
+ALTER TABLE OSOBA MODIFY ( FPrimalac_porudzbine NOT NULL);
+ALTER TABLE OSOBA MODIFY ( FDostavljac NOT NULL);
+ALTER TABLE OSOBA MODIFY ( FKupac NOT NULL);
+ALTER TABLE OSOBA MODIFY ( FBonus_program NOT NULL);
+
+
+ALTER TABLE VOZILO MODIFY ( Tip_vozila NOT NULL);
+
+
+ALTER TABLE BR_TELEFONA
+ADD CONSTRAINT UNIQUE_BR_TELEFONA UNIQUE (BROJ_TELEFONA);
+
+
+ALTER TABLE EMAIL
+ADD CONSTRAINT UNIQUE_EMAIL UNIQUE (EMAIL);
+
+
+ALTER TABLE DOBIJENI_POKLON MODIFY DATUM_ISKORISCENJA DATE;
+ALTER TABLE DOBIJENI_POKLON MODIFY DATUM_DODELE DATE NOT NULL;
+
+	
+alter table porudzbina modify cena float;
+alter table porudzbina rename column datum_isporuke to datum_vreme_isporuke;
+alter table porudzbina rename column datum_kreiranja to datum_vreme_kreiranja not null;
+ALTER TABLE porudzbina DROP COLUMN vreme_isporuke;
+ALTER TABLE porudzbina DROP COLUMN vreme_kreiranja;	 
+alter table porudzbina modify datum_vreme_isporuke timestamp;
+alter table porudzbina modify datum_vreme_kreiranja timestamp;
+ALTER TABLE PORUDZBINA MODIFY ( Nacin_placanja NOT NULL);
+ALTER TABLE PORUDZBINA MODIFY ( Status NOT NULL);
+
+
+---------izmene u insert into naredbama---------
+	
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+		VALUES (seq_id_smena.nextval, to_date('13.05.2019','DD.MM.YYYY'), to_date('19.05.2019','DD.MM.YYYY'), '1');
+			
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('13.05.2019','DD.MM.YYYY'), to_date('19.05.2019','DD.MM.YYYY'), '2');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('13.05.2019','DD.MM.YYYY'), to_date('19.05.2019','DD.MM.YYYY'), '3');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('20.05.2019','DD.MM.YYYY'), to_date('26.05.2019','DD.MM.YYYY'), '1');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('20.05.2019','DD.MM.YYYY'), to_date('26.05.2019','DD.MM.YYYY'), '2');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('20.05.2019','DD.MM.YYYY'), to_date('26.05.2019','DD.MM.YYYY'), '3');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('27.05.2019','DD.MM.YYYY'), to_date('02.06.2019','DD.MM.YYYY'), '1');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('27.05.2019','DD.MM.YYYY'), to_date('02.06.2019','DD.MM.YYYY'), '2');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('27.05.2019','DD.MM.YYYY'), to_date('02.06.2019','DD.MM.YYYY'), '3');
+
+INSERT INTO SMENA(Id_smena, Datum_od, Datum_do, Tip_smene)
+			VALUES (seq_id_smena.nextval, to_date('03.06.2019','DD.MM.YYYY'), to_date('09.06.2019','DD.MM.YYYY'), '1');	
+	
+
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Milan','Savic','Dunavska',15,'Nis','Srbija','F',NULL,NULL,'F','F','T',to_date('25.07.2019','DD.MM.YYYY'),'T',10,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Dusan','Stankovic','Moravska',33,'Vranje','Srbija','T','1307990746593',to_date('13.07.1990','DD.MM.YYYY'),'F','T','F',NULL,'F',NULL,5);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Goran','Bojkovic','Durmitorska',68,'Leskovac','Srbija','T','2402991679428',to_date('24.02.1991','DD.MM.YYYY'),'T','F','F',NULL,'F',NULL,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Milena','Nikolic','Episkopska',30,'Nis','Srbija', 'T', '1009989619782',to_date('10.09.1989','DD.MM.YYYY'),'F','T','T',to_date('07.02.2019','DD.MM.YYYY'),'F',NULL,10);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Nina','Pavlovic','Bubanjska',39,'Nis','Srbija','F',NULL,NULL,'F','F','T',to_date('24.01.2019','DD.MM.YYYY'),'F',NULL,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Jovana','Mirkovic','Zetska',58,'Pirot','Srbija','F',NULL,NULL,'F','F','T',to_date('13.06.2019','DD.MM.YYYY'),'T',7,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Milos','Jovanovic','Nikole Kopernika',45,'Dimitrovgrad','Srbija','T','0205988359785',to_date('02.05.1988','DD.MM.YYYY'),'F','T','F',NULL,'F',NULL,8);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Neda','Antonijevic','Milana Toplice',76,'Krusevac','Srbija','F',NULL,NULL,'F','F','T',to_date('12.12.2018','DD.MM.YYYY'),'T',19,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Nemanja','Stamenkovic','Alekse Nenadovica',17,'Nis','Srbija','F',NULL,NULL,'F','F','T',to_date('21.12.2018','DD.MM.YYYY'),'T',18,NULL);
+INSERT INTO OSOBA (Id_osoba,Ime,Prezime,Ulica,Broj,Grad,Drzava,FZaposleni,JMBG,Datum_rodjenja,FPrimalac_porudzbine,FDostavljac,FKupac,Datum_prve_porudzbine,FBonus_program,Br_bodova,Id_vozilo) VALUES (seq_id_osoba.nextval, 'Marina','Blagojevic','Maksima Gorkog',94,'Leskovac','Srbija','T','2611995319765',to_date('26.11.1995','DD.MM.YYYY'),'T','F','F',NULL,'F',NULL,NULL);
+
+
+--insert into email
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'milan@gmail.com', 1);
+			
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'dusan@gmail.com', 3);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'goran@gmail.com', 10);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'milena@hotmail.com', 5);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'nina@hotmail.com', 6);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'jovana@yahoo.com', 9);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'milos@yahoo.com', 4);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'neda@hotmail.com', 2);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'nemanja@gmail.com', 7);
+
+INSERT INTO EMAIL(Id_surogat_email, Email, Id_osoba)
+			VALUES(seq_id_surogat_email.nextval, 'marina@gmail.com', 8);		
+
+
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza', to_date('02.04.2020','DD.MM.YYYY'), 50, to_date('27.03.2020','DD.MM.YYYY'),1);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'popust', to_date('07.04.2020','DD.MM.YYYY'), 25, to_date('13.03.2020','DD.MM.YYYY'),1);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza', to_date('21.04.2020','DD.MM.YYYY'), 53, to_date('20.03.2020','DD.MM.YYYY'),6);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'popust', to_date('07.04.2020','DD.MM.YYYY'), 27, to_date('25.02.2020','DD.MM.YYYY'),8);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'popust', to_date('24.03.2020','DD.MM.YYYY'), 23, to_date('15.02.2020','DD.MM.YYYY'),9);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza', to_date('12.04.2020','DD.MM.YYYY'), 54, to_date('01.03.2020','DD.MM.YYYY'),6);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza', to_date('17.04.2020','DD.MM.YYYY'), 59, to_date('03.02.2020','DD.MM.YYYY'),6);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'popust',NULL, 22, to_date('25.04.2020','DD.MM.YYYY'),8);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza',NULL,63, to_date('20.04.2020','DD.MM.YYYY'),9);
+INSERT INTO DOBIJENI_POKLON (Id_dodele,Tip_poklona,Datum_iskoriscenja,Kvalifikacioni_bodovi,Datum_dodele,Id_osoba) VALUES(seq_id_poklon.nextval,'poklon pizza',NULL,66, to_date('19.03.2020','DD.MM.YYYY'),8);
+
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 500,'kartica','isporucena',to_date('15.04.2020 13:51:49', 'DD.MM.YYYY HH24:MI:SS'), to_date('15.03.2020 13:00:54', 'DD.MM.YYYY HH24:MI:SS'),1,2);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 790,'gotovina','vracena',to_date('16.04.2020 11:37:12', 'DD.MM.YYYY HH24:MI:SS'), to_date('16.03.2020 10:50:54', 'DD.MM.YYYY HH24:MI:SS'),1,3);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 2340,'kartica','isporucena',to_date('17.04.2020 14:19:29', 'DD.MM.YYYY HH24:MI:SS'), to_date('17.04.2020 13:25:54', 'DD.MM.YYYY HH24:MI:SS'),5,7);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 1500,'kartica','isporucena',to_date('18.04.2020 12:51:45', 'DD.MM.YYYY HH24:MI:SS'), to_date('18.04.2020 11:30:04', 'DD.MM.YYYY HH24:MI:SS'),6,9);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 910,'gotovina','isporucena',to_date('18.04.2020 17:51:32', 'DD.MM.YYYY HH24:MI:SS'), to_date('18.04.2020 17:00:10', 'DD.MM.YYYY HH24:MI:SS'),8,5);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 1340,'kartica','isporucena',to_date('19.04.2020 13:12:01', 'DD.MM.YYYY HH24:MI:SS'), to_date('19.04.2020 12:29:33', 'DD.MM.YYYY HH24:MI:SS'),8,8);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 620,'kartica','isporucena',to_date('20.04.2020 16:41:38', 'DD.MM.YYYY HH24:MI:SS'), to_date('20.04.2020 15:59:21', 'DD.MM.YYYY HH24:MI:SS'),9,1);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 820,'gotovina','isporucena',to_date('21.04.2020 18:55:09', 'DD.MM.YYYY HH24:MI:SS'), to_date('21.04.2020 18:01:26', 'DD.MM.YYYY HH24:MI:SS'),9,4);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 1160,'gotovina','isporucena',to_date('22.04.2020 16:37:46', 'DD.MM.YYYY HH24:MI:SS'), to_date('22.04.2020 15:50:27', 'DD.MM.YYYY HH24:MI:SS'),5,10);
+INSERT INTO PORUDZBINA (Id_porudzbina,Cena,Nacin_placanja,Status,Datum_Vreme_isporuke,Datum_Vreme_kreiranja,Id_osoba,Id_vozilo) VALUES (seq_id_porudzbina.nextval, 1030,'gotovina','u pripremi',NULL,to_date('25.04.2020 17:00:54', 'DD.MM.YYYY HH24:MI:SS'),4,6);
