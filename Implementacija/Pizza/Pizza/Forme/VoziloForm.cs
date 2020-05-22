@@ -81,6 +81,13 @@ namespace Pizza.Forme
 
                 sesija.Flush();
                 sesija.Close();
+
+                //reset polja
+                txtNazivTipa.Text = "";
+                txtProizvodjac.Text = "";
+                nudVelicinaRama = null;
+                txtRegistarskiBroj.Text = "";
+                nudBrSaobracajneDozvole = null;
             }
             catch (Exception exc)
             {

@@ -39,11 +39,11 @@ namespace Pizza.Entiteti
         {
             if (base.GetType() == typeof(VoziloBicikl))
                 return base.ToString() + ":\nId: " + this.Id_vozilo + "\nNaziv tipa: " + this.Naziv_tipa +
-                    "\nProizvodjac: " + this.Proizvodjac + "\nTip vozila: " + this.Tip_vozila + "\nVelicina rama: " + this.Velicina_rama;
+                    "\nProizvodjac: " + this.Proizvodjac + "\nVelicina rama: " + this.Velicina_rama;
             else
-                return base.ToString() + ":\nId: " + this.Id_vozilo + "\nNaziv tipa: " + this.Naziv_tipa +
-                    "\nProizvodjac: " + this.Proizvodjac + "\nTip vozila: " + this.Tip_vozila + 
-                    "\nRegistarski broj: " + this.Registarski_broj + "\nBroj saobracajne dozvole: " + this.Br_saobracajne_dozvole;
+                return base.ToString() + ":\nId: " + this.Id_vozilo + "\nNaziv tipa: " + this.Naziv_tipa + 
+                    "\nProizvodjac: " + this.Proizvodjac + "\nRegistarski broj: " + this.Registarski_broj + 
+                    "\nBroj saobracajne dozvole: " + this.Br_saobracajne_dozvole;
         }
     }
 

@@ -30,10 +30,7 @@ namespace Pizza
 
                 //ucitavanje podataka o vozilu sa zadatim id-jem
                 Vozilo v = s.Load<Vozilo>(6);
-                MessageBox.Show(v.Naziv_tipa + v.Tip_vozila);   //problem: vrednost Tip_vozila je null, ali zna da je rec o automobilu
-
-                VoziloBicikl vb = s.Load<VoziloBicikl>(5);
-                MessageBox.Show(vb.ToString());
+                MessageBox.Show(v.ToString());
 
                 s.Close();
             }
@@ -45,17 +42,8 @@ namespace Pizza
 
         private void btnDodavanjeNovogVozila_Click(object sender, EventArgs e)
         {
-            try
-            {
-                VoziloForm voziloForma = new VoziloForm();
-
-                voziloForma.ShowDialog();
-                voziloForma.Close();
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
+            VoziloForm voziloForma = new VoziloForm();
+            voziloForma.ShowDialog();
         }
 
         private void btnUcitavanjeSmene_Click(object sender, EventArgs e)
@@ -128,7 +116,6 @@ namespace Pizza
 
                 if (v != null)
                 {
-                    //problem: ne ispisuje vrednost tipa vozila, ali prepoznaje odgovarajuci tip i zna o kom tipu se radi
                     MessageBox.Show(v.ToString());
                 }
                 else
@@ -147,16 +134,8 @@ namespace Pizza
 
         private void btnObrisiVozilo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                BrisanjeVozilaForm voziloForma = new BrisanjeVozilaForm();
-
-                voziloForma.ShowDialog();
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
+            BrisanjeVozilaForm voziloForma = new BrisanjeVozilaForm();
+            voziloForma.ShowDialog();
         }
 
         private void btnDodavanjeSmene_Click(object sender, EventArgs e)
@@ -164,7 +143,6 @@ namespace Pizza
             SmenaForm novaSmena = new SmenaForm();
 
             novaSmena.ShowDialog();
-            novaSmena.Close();
         }
 
         private void btnObrisiSmenu_Click(object sender, EventArgs e)
@@ -271,7 +249,7 @@ namespace Pizza
             AzurirajPorudzbinuForm azurirajPorudzbinu = new AzurirajPorudzbinuForm();
             azurirajPorudzbinu.Show();
         }
-        
+
         private void btnObrisiPorudzbinu_Click(object sender, EventArgs e)
         {
             BrisanjePorudzbineForm brisanjePorudzbine = new BrisanjePorudzbineForm();

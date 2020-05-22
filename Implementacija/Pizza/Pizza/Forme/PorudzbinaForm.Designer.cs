@@ -47,6 +47,7 @@
             this.lblObracunataCena = new System.Windows.Forms.Label();
             this.lblSastojci = new System.Windows.Forms.Label();
             this.txtSastojci = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdOsobe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPicaId)).BeginInit();
@@ -213,11 +214,21 @@
             this.txtSastojci.Size = new System.Drawing.Size(100, 20);
             this.txtSastojci.TabIndex = 20;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(321, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Veza M:N izmedju entiteta Porudzbina i Pizza (tabela Sadrzi)";
+            // 
             // PorudzbinaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 387);
+            this.ClientSize = new System.Drawing.Size(646, 387);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSastojci);
             this.Controls.Add(this.lblSastojci);
             this.Controls.Add(this.lblObracunataCena);
@@ -269,5 +280,6 @@
         private System.Windows.Forms.Label lblObracunataCena;
         private System.Windows.Forms.Label lblSastojci;
         private System.Windows.Forms.TextBox txtSastojci;
+        private System.Windows.Forms.Label label1;
     }
 }

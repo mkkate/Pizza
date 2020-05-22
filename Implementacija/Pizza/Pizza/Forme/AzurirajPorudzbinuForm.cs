@@ -19,9 +19,9 @@ namespace Pizza.Forme
             InitializeComponent();
             
             List<String> listaStatusa = new List<string>();
+            listaStatusa.Add("u pripremi");
             listaStatusa.Add("isporucena");
             listaStatusa.Add("vracena");
-            listaStatusa.Add("u pripremi");
             this.cmbStatus.DataSource = listaStatusa;
 
             dtpDatumVremeIsporuke.Visible = false;
@@ -52,6 +52,11 @@ namespace Pizza.Forme
                 sesija.SaveOrUpdate(porudzbina);
                 sesija.Flush();
                 sesija.Close();
+
+                //resetovanje polja
+                nudIdPorudzbine.Value = 0;
+                cmbStatus.Text = "";
+                dtpDatumVremeIsporuke.Value = DateTime.Now;
             }
             catch(Exception exc)
             {

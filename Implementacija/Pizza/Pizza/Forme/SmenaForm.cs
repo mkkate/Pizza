@@ -52,6 +52,10 @@ namespace Pizza.Forme
                 }
                 sesija.Flush();
                 sesija.Close();
+
+                //reset polja
+                dtpDatumOd.Value = DateTime.Now;
+                nudTipSmene = null;
             }
             catch (Exception ec)
             {

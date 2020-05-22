@@ -61,6 +61,7 @@ namespace Pizza.Forme
 
                 sesija.SaveOrUpdate(porudzbina);
 
+                //veza m:n (Porudzbina-Pizza)
                 // kreiranje u tabeli Sadrzi
                 Sadrzi sadrzi = new Sadrzi();
                 sadrzi.Id_pizza = pica;
@@ -72,6 +73,16 @@ namespace Pizza.Forme
 
                 sesija.Flush();
                 sesija.Close();
+
+                //reset polja
+                cmbNacinPlacanja.Text = "";
+                cmbStatus.Text = "";
+                dtpDatumVremeKreiranja.Value = DateTime.Now;
+                nudIdOsobe = null;
+                nudIdVozila = null;
+                nudPicaId = null;
+                nudKolicina = null;
+                txtSastojci.Text = "";
             }
             catch (Exception exc)
             {

@@ -22,7 +22,7 @@ namespace Pizza.Forme
             listaRadnoMesto.Add("Primalac porudzbine");
             listaRadnoMesto.Add("Dostavljac");
             cmbRadnoMesto.DataSource = listaRadnoMesto;
-            
+
             this.cmbRadnoMesto.Enabled = false;
             this.cmbRadnoMesto.Visible = false;
             this.lblRadnoMesto.Visible = false;
@@ -44,12 +44,13 @@ namespace Pizza.Forme
                 osoba.Broj = (int)this.nudBroj.Value;
                 osoba.Grad = this.txtGrad.Text;
                 osoba.Drzava = this.txtDrzava.Text;
-                
+
                 if (this.chkZaposleni.Checked)
                 {
                     osoba.FZaposleni = 'T';
                     osoba.Jmbg = this.txtJMBG.Text;
                     osoba.Datum_rodjenja = this.dtpDatumRodjenja.Value;
+
                     if (cmbRadnoMesto.Text == "Primalac porudzbine")
                     {
                         osoba.FPrimalac_porudzbine = 'T';
@@ -79,6 +80,7 @@ namespace Pizza.Forme
                 {
                     osoba.FKupac = 'T';
                     osoba.Datum_prve_porudzbine = this.dtpDatumPrvePorudzbine.Value;
+
                     if (rdbBonusProgramDa.Checked)
                     {
                         osoba.FBonus_program = 'T';
@@ -104,16 +106,16 @@ namespace Pizza.Forme
 
                 MessageBox.Show("Uspesno dodata osoba");
                 //reset polja
-                osoba.Ime = String.Empty;
-                osoba.Prezime = String.Empty;
-                osoba.Ulica = String.Empty;
-                osoba.Broj = 0;
-                osoba.Grad = String.Empty;
-                osoba.Drzava = String.Empty;
-                osoba.Jmbg = null;
-                osoba.Datum_rodjenja = null;
-                osoba.Datum_prve_porudzbine = null;
-                osoba.Br_bodova = null;
+                txtIme.Text = "";
+                txtPrezime.Text = "";
+                txtUlica.Text = "";
+                nudBroj.Value = 0;
+                txtGrad.Text = "";
+                txtDrzava.Text = "";
+                txtJMBG.Text = null;
+                dtpDatumRodjenja = null;
+                dtpDatumPrvePorudzbine = null;
+                nudBrojBodova = null;
 
             }
             catch (Exception ec)
@@ -129,6 +131,13 @@ namespace Pizza.Forme
             {
                 this.groupBoxKupac.Enabled = true;
                 this.groupBoxKupac.Visible = true;
+                //onemogucuje se bonus program ako je i kupac i zaposleni
+                if (this.chkZaposleni.Checked)
+                {
+                    rdbBonusProgramDa.Enabled = false;
+                    rdbBonusProgramNe.Checked = true;
+                    nudBrojBodova.Enabled = false;
+                }
             }
             else
             {
@@ -146,6 +155,11 @@ namespace Pizza.Forme
                 this.cmbRadnoMesto.Enabled = true;
                 this.cmbRadnoMesto.Visible = true;
                 this.lblRadnoMesto.Visible = true;
+
+                //onemogucuje se bonus program ako je i kupac i zaposleni
+                rdbBonusProgramDa.Enabled = false;
+                rdbBonusProgramNe.Checked = true;
+                nudBrojBodova.Enabled = false;
             }
             else
             {
@@ -159,7 +173,7 @@ namespace Pizza.Forme
 
         private void cmbRadnoMesto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbRadnoMesto.Text=="Primalac porudzbine")
+            if (cmbRadnoMesto.Text == "Primalac porudzbine")
             {
                 groupBoxPrimalacPorudzbine.Enabled = true;
                 groupBoxPrimalacPorudzbine.Visible = true;
@@ -167,7 +181,7 @@ namespace Pizza.Forme
                 groupBoxDostavljac.Enabled = false;
                 groupBoxDostavljac.Visible = false;
             }
-            else if(cmbRadnoMesto.Text == "Dostavljac")
+            else if (cmbRadnoMesto.Text == "Dostavljac")
             {
                 groupBoxDostavljac.Enabled = true;
                 groupBoxDostavljac.Visible = true;
@@ -176,6 +190,6 @@ namespace Pizza.Forme
                 groupBoxPrimalacPorudzbine.Visible = false;
             }
         }
-        
+
     }
 }
