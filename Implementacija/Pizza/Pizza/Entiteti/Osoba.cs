@@ -49,11 +49,23 @@ namespace Pizza.Entiteti
         //one-to-many Osoba-BrTelefona
         public virtual IList<BrTelefona> BrojeviTelefona { get; set; }
 
+        public virtual IList<DobijeniPoklon> DobijeniPokloni { get; set; }
+        public virtual IList<Kategorija> Kategorije { get; set; }
+        public virtual IList<Email> Emailovi { get; set; }
+        public virtual IList<RadiU> ORadiU { get; set; }
+        public virtual IList<Govori> OGovori { get; set; }
+
+
         public Osoba()
         {
             Porudzbine = new List<Porudzbina>();
 
             BrojeviTelefona = new List<BrTelefona>();
+            DobijeniPokloni = new List<DobijeniPoklon>();
+            Kategorije = new List<Kategorija>();
+            Emailovi = new List<Email>();
+            ORadiU = new List<RadiU>();
+            OGovori = new List<Govori>();
         }
         
     }

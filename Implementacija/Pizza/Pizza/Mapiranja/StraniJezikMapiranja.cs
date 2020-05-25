@@ -17,6 +17,7 @@ namespace Pizza.Mapiranja
             Id(x => x.Id, "ID_STRANI_JEZIK").GeneratedBy.Sequence("SEQ_ID_STRANI_JEZIK");
 
             Map(x => x.NazivJezika, "NAZIV_JEZIKA");
+            HasMany(x => x.GStraniJezik).KeyColumn("ID_STRANI_JEZIK").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

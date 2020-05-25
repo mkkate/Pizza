@@ -41,6 +41,12 @@ namespace Pizza.Mapiranja
 
             //one-to-many Osoba-BrTelefona
             HasMany(x => x.BrojeviTelefona).KeyColumn("ID_OSOBA").Cascade.All().Inverse();
+
+            HasMany(x => x.DobijeniPokloni).KeyColumn("ID_OSOBA").Cascade.All().Inverse();
+            HasMany(x => x.Kategorije).KeyColumn("ID_OSOBA").Cascade.All().Inverse();
+            HasMany(x => x.Emailovi).KeyColumn("ID_OSOBA").Cascade.All().Inverse();
+            HasMany(x => x.ORadiU).KeyColumn("ID_OSOBA").LazyLoad().Cascade.All().Inverse();
+            HasMany(x => x.OGovori).KeyColumn("ID_OSOBA").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

@@ -72,7 +72,14 @@
     <Compile Include="DataLayer.cs" />
     <Compile Include="Entiteti\BrTelefona.cs" />
     <Compile Include="Entiteti\Osoba.cs" />
+    <Compile Include="Entiteti\DobijeniPoklon.cs" />
+    <Compile Include="Entiteti\Email.cs" />
+    <Compile Include="Entiteti\Govori.cs" />
+    <Compile Include="Entiteti\Kategorija.cs" />
+    <Compile Include="Entiteti\Osoba.cs" />
     <Compile Include="Entiteti\Pica.cs" />
+    <Compile Include="Entiteti\Porudzbina.cs" />
+    <Compile Include="Entiteti\RadiU.cs" />
     <Compile Include="Entiteti\Porudzbina.cs" />
     <Compile Include="Entiteti\Sadrzi.cs" />
     <Compile Include="Entiteti\Smena.cs" />
@@ -90,6 +97,12 @@
     <Compile Include="Forme\AzurirajPorudzbinuForm.Designer.cs">
       <DependentUpon>AzurirajPorudzbinuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\BrisanjeEmailaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeEmailaForm.Designer.cs">
+      <DependentUpon>BrisanjeEmailaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\BrisanjeJezikaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +115,23 @@
     <Compile Include="Forme\BrisanjeOsobeForm.Designer.cs">
       <DependentUpon>BrisanjeOsobeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\BrisanjeKategorijeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjeKategorijeForm.Designer.cs">
+      <DependentUpon>BrisanjeKategorijeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\BrisanjePiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\BrisanjePiceForm.Designer.cs">
       <DependentUpon>BrisanjePiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\BrisanjePoklonaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BrisanjePoklonaForm.Designer.cs">
+      <DependentUpon>BrisanjePoklonaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\BrisanjePorudzbineForm.cs">
       <SubType>Form</SubType>
@@ -131,6 +156,24 @@
     </Compile>
     <Compile Include="Forme\BrisanjeVozilaForm.Designer.cs">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DobijeniPoklonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DobijeniPoklonForm.Designer.cs">
+      <DependentUpon>DobijeniPoklonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\EmailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\EmailForm.Designer.cs">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\KategorijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\KategorijaForm.Designer.cs">
+      <DependentUpon>KategorijaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\BrojTelefonaForm.cs">
       <SubType>Form</SubType>
@@ -174,9 +217,16 @@
     <Compile Include="Forme\VoziloForm.Designer.cs">
       <DependentUpon>VoziloForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapiranja\DobijeniPoklonMapiranja.cs" />
+    <Compile Include="Mapiranja\EmailMapiranja.cs" />
+    <Compile Include="Mapiranja\GovoriMapiranja.cs" />
+    <Compile Include="Mapiranja\KategorijaMapiranja.cs" />
+    <Compile Include="Mapiranja\OsobaMapiranja.cs" />
     <Compile Include="Mapiranja\BrTelefonaMapiranja.cs" />
     <Compile Include="Mapiranja\OsobaMapiranja.cs" />
     <Compile Include="Mapiranja\PicaMapiranja.cs" />
+    <Compile Include="Mapiranja\PorudzbinaMapiranja.cs" />
+    <Compile Include="Mapiranja\RadiUMapiranja.cs" />
     <Compile Include="Mapiranja\PorudzbinaMapiranja.cs" />
     <Compile Include="Mapiranja\SadrziMapiranja.cs" />
     <Compile Include="Mapiranja\SmenaMapiranja.cs" />
@@ -190,14 +240,23 @@
     <EmbeddedResource Include="Forme\AzurirajPorudzbinuForm.resx">
       <DependentUpon>AzurirajPorudzbinuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeEmailaForm.resx">
+      <DependentUpon>BrisanjeEmailaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeJezikaForm.resx">
       <DependentUpon>BrisanjeJezikaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjeKategorijeForm.resx">
+      <DependentUpon>BrisanjeKategorijeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeOsobeForm.resx">
       <DependentUpon>BrisanjeOsobeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjePiceForm.resx">
       <DependentUpon>BrisanjePiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BrisanjePoklonaForm.resx">
+      <DependentUpon>BrisanjePoklonaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjePorudzbineForm.resx">
       <DependentUpon>BrisanjePorudzbineForm.cs</DependentUpon>
@@ -210,6 +269,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrisanjeVozilaForm.resx">
       <DependentUpon>BrisanjeVozilaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DobijeniPoklonForm.resx">
+      <DependentUpon>DobijeniPoklonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\EmailForm.resx">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\KategorijaForm.resx">
+      <DependentUpon>KategorijaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\BrojTelefonaForm.resx">
       <DependentUpon>BrojTelefonaForm.cs</DependentUpon>

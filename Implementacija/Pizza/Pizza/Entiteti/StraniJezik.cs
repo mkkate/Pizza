@@ -11,7 +11,11 @@ namespace Pizza.Entiteti
         public virtual int Id { get; protected set; }
         public virtual string NazivJezika { get; set; }
 
-        public StraniJezik() { }
+        public virtual IList<Govori> GStraniJezik { get; set; }
+
+        public StraniJezik() {
+            GStraniJezik = new List<Govori>();
+        }
 
     }
 }

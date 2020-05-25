@@ -24,6 +24,10 @@ namespace Pizza.Mapiranja
 
             //mapiranje podklasa
             DiscriminateSubClassesOnColumn("TIP_SMENE");
+
+            HasMany(x => x.RadiUS).KeyColumn("ID_SMENE").LazyLoad().Cascade.All().Inverse();
+
+
         }
     }
 

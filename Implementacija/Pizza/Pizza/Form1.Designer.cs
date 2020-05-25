@@ -47,6 +47,24 @@
             this.btnObrisiJezik = new System.Windows.Forms.Button();
             this.btnDodajJezik = new System.Windows.Forms.Button();
             this.btnUcitajJezik = new System.Windows.Forms.Button();
+            this.gbPoklon = new System.Windows.Forms.GroupBox();
+            this.btnObrisiPoklon = new System.Windows.Forms.Button();
+            this.btnDodajPoklon = new System.Windows.Forms.Button();
+            this.btnUcitajPoklon = new System.Windows.Forms.Button();
+            this.gbEmail = new System.Windows.Forms.GroupBox();
+            this.btnObrisiEmail = new System.Windows.Forms.Button();
+            this.btnDodajEmail = new System.Windows.Forms.Button();
+            this.btnUcitajEmail = new System.Windows.Forms.Button();
+            this.gbKategorija = new System.Windows.Forms.GroupBox();
+            this.btnObrisiKategoriju = new System.Windows.Forms.Button();
+            this.btnDodavanjeKategorije = new System.Windows.Forms.Button();
+            this.btnUcitajKategoriju = new System.Windows.Forms.Button();
+            this.btnUcitajGovori = new System.Windows.Forms.Button();
+            this.UcitajRadiU = new System.Windows.Forms.Button();
+            this.btnDodajGovori = new System.Windows.Forms.Button();
+            this.btnDodajRadiU = new System.Windows.Forms.Button();
+            this.btnObrisiGovori = new System.Windows.Forms.Button();
+            this.btnObrisiRadiU = new System.Windows.Forms.Button();
             this.groupBoxOsobe = new System.Windows.Forms.GroupBox();
             this.btnObrisiOsobu = new System.Windows.Forms.Button();
             this.btnDodavanjeOsobe = new System.Windows.Forms.Button();
@@ -63,6 +81,9 @@
             this.groupBoxNasledjivanja.SuspendLayout();
             this.gbPica.SuspendLayout();
             this.gbStraniJezik.SuspendLayout();
+            this.gbPoklon.SuspendLayout();
+            this.gbEmail.SuspendLayout();
+            this.gbKategorija.SuspendLayout();
             this.groupBoxOsobe.SuspendLayout();
             this.groupBoxPorudzbina.SuspendLayout();
             this.groupBoxBrojTelefona.SuspendLayout();
@@ -267,6 +288,192 @@
             this.btnUcitajJezik.UseVisualStyleBackColor = true;
             this.btnUcitajJezik.Click += new System.EventHandler(this.btnUcitajJezik_Click);
             // 
+            // gbPoklon
+            // 
+            this.gbPoklon.Controls.Add(this.btnObrisiPoklon);
+            this.gbPoklon.Controls.Add(this.btnDodajPoklon);
+            this.gbPoklon.Controls.Add(this.btnUcitajPoklon);
+            this.gbPoklon.Location = new System.Drawing.Point(251, 418);
+            this.gbPoklon.Name = "gbPoklon";
+            this.gbPoklon.Size = new System.Drawing.Size(185, 171);
+            this.gbPoklon.TabIndex = 10;
+            this.gbPoklon.TabStop = false;
+            this.gbPoklon.Text = "Dobijeni poklon";
+            // 
+            // btnObrisiPoklon
+            // 
+            this.btnObrisiPoklon.Location = new System.Drawing.Point(23, 130);
+            this.btnObrisiPoklon.Name = "btnObrisiPoklon";
+            this.btnObrisiPoklon.Size = new System.Drawing.Size(141, 23);
+            this.btnObrisiPoklon.TabIndex = 2;
+            this.btnObrisiPoklon.Text = "Obrisi poklon";
+            this.btnObrisiPoklon.UseVisualStyleBackColor = true;
+            this.btnObrisiPoklon.Click += new System.EventHandler(this.btnObrisiPoklon_Click);
+            // 
+            // btnDodajPoklon
+            // 
+            this.btnDodajPoklon.Location = new System.Drawing.Point(23, 81);
+            this.btnDodajPoklon.Name = "btnDodajPoklon";
+            this.btnDodajPoklon.Size = new System.Drawing.Size(141, 23);
+            this.btnDodajPoklon.TabIndex = 1;
+            this.btnDodajPoklon.Text = "Dodavanje poklona";
+            this.btnDodajPoklon.UseVisualStyleBackColor = true;
+            this.btnDodajPoklon.Click += new System.EventHandler(this.btnDodajPoklon_Click);
+            // 
+            // btnUcitajPoklon
+            // 
+            this.btnUcitajPoklon.Location = new System.Drawing.Point(23, 40);
+            this.btnUcitajPoklon.Name = "btnUcitajPoklon";
+            this.btnUcitajPoklon.Size = new System.Drawing.Size(141, 23);
+            this.btnUcitajPoklon.TabIndex = 0;
+            this.btnUcitajPoklon.Text = "Ucitaj poklon";
+            this.btnUcitajPoklon.UseVisualStyleBackColor = true;
+            this.btnUcitajPoklon.Click += new System.EventHandler(this.btnUcitajPoklon_Click);
+            // 
+            // gbEmail
+            // 
+            this.gbEmail.Controls.Add(this.btnObrisiEmail);
+            this.gbEmail.Controls.Add(this.btnDodajEmail);
+            this.gbEmail.Controls.Add(this.btnUcitajEmail);
+            this.gbEmail.Location = new System.Drawing.Point(461, 419);
+            this.gbEmail.Name = "gbEmail";
+            this.gbEmail.Size = new System.Drawing.Size(156, 170);
+            this.gbEmail.TabIndex = 11;
+            this.gbEmail.TabStop = false;
+            this.gbEmail.Text = "Email";
+            // 
+            // btnObrisiEmail
+            // 
+            this.btnObrisiEmail.Location = new System.Drawing.Point(14, 129);
+            this.btnObrisiEmail.Name = "btnObrisiEmail";
+            this.btnObrisiEmail.Size = new System.Drawing.Size(123, 23);
+            this.btnObrisiEmail.TabIndex = 2;
+            this.btnObrisiEmail.Text = "Obrisi email";
+            this.btnObrisiEmail.UseVisualStyleBackColor = true;
+            this.btnObrisiEmail.Click += new System.EventHandler(this.btnObrisiEmail_Click);
+            // 
+            // btnDodajEmail
+            // 
+            this.btnDodajEmail.Location = new System.Drawing.Point(14, 80);
+            this.btnDodajEmail.Name = "btnDodajEmail";
+            this.btnDodajEmail.Size = new System.Drawing.Size(123, 23);
+            this.btnDodajEmail.TabIndex = 1;
+            this.btnDodajEmail.Text = "Dodavanje emaila";
+            this.btnDodajEmail.UseVisualStyleBackColor = true;
+            this.btnDodajEmail.Click += new System.EventHandler(this.btnDodajEmail_Click);
+            // 
+            // btnUcitajEmail
+            // 
+            this.btnUcitajEmail.Location = new System.Drawing.Point(14, 39);
+            this.btnUcitajEmail.Name = "btnUcitajEmail";
+            this.btnUcitajEmail.Size = new System.Drawing.Size(123, 23);
+            this.btnUcitajEmail.TabIndex = 0;
+            this.btnUcitajEmail.Text = "Ucitaj email";
+            this.btnUcitajEmail.UseVisualStyleBackColor = true;
+            this.btnUcitajEmail.Click += new System.EventHandler(this.btnUcitajEmail_Click);
+            // 
+            // gbKategorija
+            // 
+            this.gbKategorija.Controls.Add(this.btnObrisiKategoriju);
+            this.gbKategorija.Controls.Add(this.btnDodavanjeKategorije);
+            this.gbKategorija.Controls.Add(this.btnUcitajKategoriju);
+            this.gbKategorija.Location = new System.Drawing.Point(30, 418);
+            this.gbKategorija.Name = "gbKategorija";
+            this.gbKategorija.Size = new System.Drawing.Size(190, 171);
+            this.gbKategorija.TabIndex = 12;
+            this.gbKategorija.TabStop = false;
+            this.gbKategorija.Text = "Kategorija";
+            // 
+            // btnObrisiKategoriju
+            // 
+            this.btnObrisiKategoriju.Location = new System.Drawing.Point(21, 130);
+            this.btnObrisiKategoriju.Name = "btnObrisiKategoriju";
+            this.btnObrisiKategoriju.Size = new System.Drawing.Size(143, 23);
+            this.btnObrisiKategoriju.TabIndex = 2;
+            this.btnObrisiKategoriju.Text = "Obrisi kategoriju";
+            this.btnObrisiKategoriju.UseVisualStyleBackColor = true;
+            this.btnObrisiKategoriju.Click += new System.EventHandler(this.btnObrisiKategoriju_Click);
+            // 
+            // btnDodavanjeKategorije
+            // 
+            this.btnDodavanjeKategorije.Location = new System.Drawing.Point(21, 81);
+            this.btnDodavanjeKategorije.Name = "btnDodavanjeKategorije";
+            this.btnDodavanjeKategorije.Size = new System.Drawing.Size(143, 23);
+            this.btnDodavanjeKategorije.TabIndex = 1;
+            this.btnDodavanjeKategorije.Text = "Dodavanje kategorije";
+            this.btnDodavanjeKategorije.UseVisualStyleBackColor = true;
+            this.btnDodavanjeKategorije.Click += new System.EventHandler(this.btnDodavanjeKategorije_Click);
+            // 
+            // btnUcitajKategoriju
+            // 
+            this.btnUcitajKategoriju.Location = new System.Drawing.Point(21, 40);
+            this.btnUcitajKategoriju.Name = "btnUcitajKategoriju";
+            this.btnUcitajKategoriju.Size = new System.Drawing.Size(143, 23);
+            this.btnUcitajKategoriju.TabIndex = 0;
+            this.btnUcitajKategoriju.Text = "Ucitaj kategoriju";
+            this.btnUcitajKategoriju.UseVisualStyleBackColor = true;
+            this.btnUcitajKategoriju.Click += new System.EventHandler(this.btnUcitajKategoriju_Click);
+            // 
+            // btnUcitajGovori
+            // 
+            this.btnUcitajGovori.Location = new System.Drawing.Point(475, 231);
+            this.btnUcitajGovori.Name = "btnUcitajGovori";
+            this.btnUcitajGovori.Size = new System.Drawing.Size(114, 23);
+            this.btnUcitajGovori.TabIndex = 13;
+            this.btnUcitajGovori.Text = "Ucitaj vezu govori";
+            this.btnUcitajGovori.UseVisualStyleBackColor = true;
+            this.btnUcitajGovori.Click += new System.EventHandler(this.UcitajSadrzi_Click);
+            // 
+            // UcitajRadiU
+            // 
+            this.UcitajRadiU.Location = new System.Drawing.Point(475, 280);
+            this.UcitajRadiU.Name = "UcitajRadiU";
+            this.UcitajRadiU.Size = new System.Drawing.Size(114, 21);
+            this.UcitajRadiU.TabIndex = 14;
+            this.UcitajRadiU.Text = "Ucitaj vezu radi u";
+            this.UcitajRadiU.UseVisualStyleBackColor = true;
+            this.UcitajRadiU.Click += new System.EventHandler(this.UcitajRadiU_Click);
+            // 
+            // btnDodajGovori
+            // 
+            this.btnDodajGovori.Location = new System.Drawing.Point(603, 231);
+            this.btnDodajGovori.Name = "btnDodajGovori";
+            this.btnDodajGovori.Size = new System.Drawing.Size(110, 23);
+            this.btnDodajGovori.TabIndex = 15;
+            this.btnDodajGovori.Text = "Dodaj vezu govori";
+            this.btnDodajGovori.UseVisualStyleBackColor = true;
+            this.btnDodajGovori.Click += new System.EventHandler(this.btnDodajSadrzi_Click);
+            // 
+            // btnDodajRadiU
+            // 
+            this.btnDodajRadiU.Location = new System.Drawing.Point(603, 280);
+            this.btnDodajRadiU.Name = "btnDodajRadiU";
+            this.btnDodajRadiU.Size = new System.Drawing.Size(110, 21);
+            this.btnDodajRadiU.TabIndex = 16;
+            this.btnDodajRadiU.Text = "Dodaj vezu radi u";
+            this.btnDodajRadiU.UseVisualStyleBackColor = true;
+            this.btnDodajRadiU.Click += new System.EventHandler(this.btnDodajRadiU_Click);
+            // 
+            // btnObrisiGovori
+            // 
+            this.btnObrisiGovori.Location = new System.Drawing.Point(732, 232);
+            this.btnObrisiGovori.Name = "btnObrisiGovori";
+            this.btnObrisiGovori.Size = new System.Drawing.Size(105, 22);
+            this.btnObrisiGovori.TabIndex = 17;
+            this.btnObrisiGovori.Text = "Obrisi vezu govori";
+            this.btnObrisiGovori.UseVisualStyleBackColor = true;
+            this.btnObrisiGovori.Click += new System.EventHandler(this.btnObrisiGovori_Click);
+            // 
+            // btnObrisiRadiU
+            // 
+            this.btnObrisiRadiU.Location = new System.Drawing.Point(733, 280);
+            this.btnObrisiRadiU.Name = "btnObrisiRadiU";
+            this.btnObrisiRadiU.Size = new System.Drawing.Size(104, 21);
+            this.btnObrisiRadiU.TabIndex = 18;
+            this.btnObrisiRadiU.Text = "Obrisi vezu radi u";
+            this.btnObrisiRadiU.UseVisualStyleBackColor = true;
+            this.btnObrisiRadiU.Click += new System.EventHandler(this.btnObrisiRadiU_Click);
+            // 
             // groupBoxOsobe
             // 
             this.groupBoxOsobe.Controls.Add(this.btnObrisiOsobu);
@@ -386,6 +593,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(870, 606);
+            this.Controls.Add(this.btnObrisiRadiU);
+            this.Controls.Add(this.btnObrisiGovori);
+            this.Controls.Add(this.btnDodajRadiU);
+            this.Controls.Add(this.btnDodajGovori);
+            this.Controls.Add(this.UcitajRadiU);
+            this.Controls.Add(this.btnUcitajGovori);
+            this.Controls.Add(this.gbKategorija);
+            this.Controls.Add(this.gbEmail);
+            this.Controls.Add(this.gbPoklon);
             this.ClientSize = new System.Drawing.Size(770, 536);
             this.Controls.Add(this.groupBoxBrojTelefona);
             this.Controls.Add(this.groupBoxPorudzbina);
@@ -405,6 +622,9 @@
             this.groupBoxOsobe.ResumeLayout(false);
             this.groupBoxPorudzbina.ResumeLayout(false);
             this.groupBoxBrojTelefona.ResumeLayout(false);
+            this.gbPoklon.ResumeLayout(false);
+            this.gbEmail.ResumeLayout(false);
+            this.gbKategorija.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -430,6 +650,24 @@
         private System.Windows.Forms.Button btnObrisiJezik;
         private System.Windows.Forms.Button btnDodajJezik;
         private System.Windows.Forms.Button btnUcitajJezik;
+        private System.Windows.Forms.GroupBox gbPoklon;
+        private System.Windows.Forms.Button btnObrisiPoklon;
+        private System.Windows.Forms.Button btnDodajPoklon;
+        private System.Windows.Forms.Button btnUcitajPoklon;
+        private System.Windows.Forms.GroupBox gbEmail;
+        private System.Windows.Forms.Button btnObrisiEmail;
+        private System.Windows.Forms.Button btnDodajEmail;
+        private System.Windows.Forms.Button btnUcitajEmail;
+        private System.Windows.Forms.GroupBox gbKategorija;
+        private System.Windows.Forms.Button btnObrisiKategoriju;
+        private System.Windows.Forms.Button btnDodavanjeKategorije;
+        private System.Windows.Forms.Button btnUcitajKategoriju;
+        private System.Windows.Forms.Button btnUcitajGovori;
+        private System.Windows.Forms.Button UcitajRadiU;
+        private System.Windows.Forms.Button btnDodajGovori;
+        private System.Windows.Forms.Button btnDodajRadiU;
+        private System.Windows.Forms.Button btnObrisiGovori;
+        private System.Windows.Forms.Button btnObrisiRadiU;
         private System.Windows.Forms.GroupBox groupBoxOsobe;
         private System.Windows.Forms.Button btnUcitajOsobu;
         private System.Windows.Forms.Button btnDodavanjeOsobe;
