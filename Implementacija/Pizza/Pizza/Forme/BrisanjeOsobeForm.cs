@@ -36,7 +36,7 @@ namespace Pizza.Forme
                 MessageBox.Show("Uspesno obrisana osoba ciji je id " + (int)nudIdOsobe.Value);
 
                 //reset polja
-                nudIdOsobe = null;
+                nudIdOsobe.Value = 0;
             }
             catch (Exception exc)
             {

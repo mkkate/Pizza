@@ -51,15 +51,8 @@
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.groupBoxZaposleni = new System.Windows.Forms.GroupBox();
             this.groupBoxDostavljac = new System.Windows.Forms.GroupBox();
-            this.cmbKategorijaDozvole = new System.Windows.Forms.ComboBox();
-            this.lblKategorijaDozvole = new System.Windows.Forms.Label();
             this.nudIdVozila = new System.Windows.Forms.NumericUpDown();
             this.lblIdVozila = new System.Windows.Forms.Label();
-            this.groupBoxPrimalacPorudzbine = new System.Windows.Forms.GroupBox();
-            this.cmbNivo = new System.Windows.Forms.ComboBox();
-            this.cmbStraniJezik = new System.Windows.Forms.ComboBox();
-            this.lblNivo = new System.Windows.Forms.Label();
-            this.lblStraniJezik = new System.Windows.Forms.Label();
             this.groupBoxKupac = new System.Windows.Forms.GroupBox();
             this.rdbBonusProgramNe = new System.Windows.Forms.RadioButton();
             this.rdbBonusProgramDa = new System.Windows.Forms.RadioButton();
@@ -73,7 +66,6 @@
             this.groupBoxZaposleni.SuspendLayout();
             this.groupBoxDostavljac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).BeginInit();
-            this.groupBoxPrimalacPorudzbine.SuspendLayout();
             this.groupBoxKupac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrojBodova)).BeginInit();
             this.SuspendLayout();
@@ -265,46 +257,26 @@
             // 
             this.groupBoxZaposleni.Controls.Add(this.groupBoxDostavljac);
             this.groupBoxZaposleni.Controls.Add(this.dtpDatumRodjenja);
-            this.groupBoxZaposleni.Controls.Add(this.groupBoxPrimalacPorudzbine);
             this.groupBoxZaposleni.Controls.Add(this.lblJMBG);
             this.groupBoxZaposleni.Controls.Add(this.lblDatumRodjenja);
             this.groupBoxZaposleni.Controls.Add(this.txtJMBG);
             this.groupBoxZaposleni.Location = new System.Drawing.Point(339, 34);
             this.groupBoxZaposleni.Name = "groupBoxZaposleni";
-            this.groupBoxZaposleni.Size = new System.Drawing.Size(283, 373);
+            this.groupBoxZaposleni.Size = new System.Drawing.Size(283, 238);
             this.groupBoxZaposleni.TabIndex = 21;
             this.groupBoxZaposleni.TabStop = false;
             this.groupBoxZaposleni.Text = "Zaposleni";
             // 
             // groupBoxDostavljac
             // 
-            this.groupBoxDostavljac.Controls.Add(this.cmbKategorijaDozvole);
-            this.groupBoxDostavljac.Controls.Add(this.lblKategorijaDozvole);
             this.groupBoxDostavljac.Controls.Add(this.nudIdVozila);
             this.groupBoxDostavljac.Controls.Add(this.lblIdVozila);
-            this.groupBoxDostavljac.Location = new System.Drawing.Point(6, 254);
+            this.groupBoxDostavljac.Location = new System.Drawing.Point(6, 129);
             this.groupBoxDostavljac.Name = "groupBoxDostavljac";
-            this.groupBoxDostavljac.Size = new System.Drawing.Size(257, 94);
+            this.groupBoxDostavljac.Size = new System.Drawing.Size(257, 77);
             this.groupBoxDostavljac.TabIndex = 23;
             this.groupBoxDostavljac.TabStop = false;
             this.groupBoxDostavljac.Text = "Dostavljac";
-            // 
-            // cmbKategorijaDozvole
-            // 
-            this.cmbKategorijaDozvole.FormattingEnabled = true;
-            this.cmbKategorijaDozvole.Location = new System.Drawing.Point(117, 53);
-            this.cmbKategorijaDozvole.Name = "cmbKategorijaDozvole";
-            this.cmbKategorijaDozvole.Size = new System.Drawing.Size(120, 21);
-            this.cmbKategorijaDozvole.TabIndex = 4;
-            // 
-            // lblKategorijaDozvole
-            // 
-            this.lblKategorijaDozvole.AutoSize = true;
-            this.lblKategorijaDozvole.Location = new System.Drawing.Point(12, 61);
-            this.lblKategorijaDozvole.Name = "lblKategorijaDozvole";
-            this.lblKategorijaDozvole.Size = new System.Drawing.Size(97, 13);
-            this.lblKategorijaDozvole.TabIndex = 3;
-            this.lblKategorijaDozvole.Text = "Kategorija dozvole:";
             // 
             // nudIdVozila
             // 
@@ -321,53 +293,6 @@
             this.lblIdVozila.Size = new System.Drawing.Size(49, 13);
             this.lblIdVozila.TabIndex = 1;
             this.lblIdVozila.Text = "Id vozila:";
-            // 
-            // groupBoxPrimalacPorudzbine
-            // 
-            this.groupBoxPrimalacPorudzbine.Controls.Add(this.cmbNivo);
-            this.groupBoxPrimalacPorudzbine.Controls.Add(this.cmbStraniJezik);
-            this.groupBoxPrimalacPorudzbine.Controls.Add(this.lblNivo);
-            this.groupBoxPrimalacPorudzbine.Controls.Add(this.lblStraniJezik);
-            this.groupBoxPrimalacPorudzbine.Location = new System.Drawing.Point(6, 109);
-            this.groupBoxPrimalacPorudzbine.Name = "groupBoxPrimalacPorudzbine";
-            this.groupBoxPrimalacPorudzbine.Size = new System.Drawing.Size(257, 134);
-            this.groupBoxPrimalacPorudzbine.TabIndex = 22;
-            this.groupBoxPrimalacPorudzbine.TabStop = false;
-            this.groupBoxPrimalacPorudzbine.Text = "Primalac porudzbine";
-            // 
-            // cmbNivo
-            // 
-            this.cmbNivo.FormattingEnabled = true;
-            this.cmbNivo.Location = new System.Drawing.Point(117, 64);
-            this.cmbNivo.Name = "cmbNivo";
-            this.cmbNivo.Size = new System.Drawing.Size(120, 21);
-            this.cmbNivo.TabIndex = 4;
-            // 
-            // cmbStraniJezik
-            // 
-            this.cmbStraniJezik.FormattingEnabled = true;
-            this.cmbStraniJezik.Location = new System.Drawing.Point(117, 31);
-            this.cmbStraniJezik.Name = "cmbStraniJezik";
-            this.cmbStraniJezik.Size = new System.Drawing.Size(120, 21);
-            this.cmbStraniJezik.TabIndex = 3;
-            // 
-            // lblNivo
-            // 
-            this.lblNivo.AutoSize = true;
-            this.lblNivo.Location = new System.Drawing.Point(12, 69);
-            this.lblNivo.Name = "lblNivo";
-            this.lblNivo.Size = new System.Drawing.Size(32, 13);
-            this.lblNivo.TabIndex = 1;
-            this.lblNivo.Text = "Nivo:";
-            // 
-            // lblStraniJezik
-            // 
-            this.lblStraniJezik.AutoSize = true;
-            this.lblStraniJezik.Location = new System.Drawing.Point(12, 39);
-            this.lblStraniJezik.Name = "lblStraniJezik";
-            this.lblStraniJezik.Size = new System.Drawing.Size(61, 13);
-            this.lblStraniJezik.TabIndex = 0;
-            this.lblStraniJezik.Text = "Strani jezik:";
             // 
             // groupBoxKupac
             // 
@@ -492,8 +417,6 @@
             this.groupBoxDostavljac.ResumeLayout(false);
             this.groupBoxDostavljac.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdVozila)).EndInit();
-            this.groupBoxPrimalacPorudzbine.ResumeLayout(false);
-            this.groupBoxPrimalacPorudzbine.PerformLayout();
             this.groupBoxKupac.ResumeLayout(false);
             this.groupBoxKupac.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrojBodova)).EndInit();
@@ -526,12 +449,7 @@
         private System.Windows.Forms.Label lblDatumRodjenja;
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.GroupBox groupBoxZaposleni;
-        private System.Windows.Forms.GroupBox groupBoxPrimalacPorudzbine;
-        private System.Windows.Forms.ComboBox cmbStraniJezik;
-        private System.Windows.Forms.Label lblNivo;
-        private System.Windows.Forms.Label lblStraniJezik;
         private System.Windows.Forms.GroupBox groupBoxDostavljac;
-        private System.Windows.Forms.ComboBox cmbNivo;
         private System.Windows.Forms.GroupBox groupBoxKupac;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpDatumPrvePorudzbine;
@@ -543,7 +461,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.NumericUpDown nudIdVozila;
-        private System.Windows.Forms.Label lblKategorijaDozvole;
-        private System.Windows.Forms.ComboBox cmbKategorijaDozvole;
     }
 }

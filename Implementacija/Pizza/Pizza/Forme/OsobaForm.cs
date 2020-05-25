@@ -115,8 +115,8 @@ namespace Pizza.Forme
                 txtJMBG.Text = null;
                 dtpDatumRodjenja = null;
                 dtpDatumPrvePorudzbine = null;
-                nudBrojBodova = null;
-
+                nudBrojBodova.Value = 0;
+                nudIdVozila.Value = 0;
             }
             catch (Exception ec)
             {
@@ -131,13 +131,6 @@ namespace Pizza.Forme
             {
                 this.groupBoxKupac.Enabled = true;
                 this.groupBoxKupac.Visible = true;
-                //onemogucuje se bonus program ako je i kupac i zaposleni
-                if (this.chkZaposleni.Checked)
-                {
-                    rdbBonusProgramDa.Enabled = false;
-                    rdbBonusProgramNe.Checked = true;
-                    nudBrojBodova.Enabled = false;
-                }
             }
             else
             {
@@ -157,9 +150,12 @@ namespace Pizza.Forme
                 this.lblRadnoMesto.Visible = true;
 
                 //onemogucuje se bonus program ako je i kupac i zaposleni
-                rdbBonusProgramDa.Enabled = false;
-                rdbBonusProgramNe.Checked = true;
-                nudBrojBodova.Enabled = false;
+                if (this.chkKupac.CheckState == CheckState.Checked)
+                {
+                    rdbBonusProgramDa.Enabled = false;
+                    rdbBonusProgramNe.Checked = true;
+                    nudBrojBodova.Enabled = false;
+                }
             }
             else
             {
@@ -168,6 +164,13 @@ namespace Pizza.Forme
                 this.cmbRadnoMesto.Enabled = false;
                 this.cmbRadnoMesto.Visible = false;
                 this.lblRadnoMesto.Visible = false;
+
+                if (this.chkKupac.CheckState == CheckState.Checked)
+                {
+                    rdbBonusProgramDa.Enabled = true;
+                    rdbBonusProgramNe.Checked = false;
+                    nudBrojBodova.Enabled = true;
+                }
             }
         }
 
@@ -175,9 +178,6 @@ namespace Pizza.Forme
         {
             if (cmbRadnoMesto.Text == "Primalac porudzbine")
             {
-                groupBoxPrimalacPorudzbine.Enabled = true;
-                groupBoxPrimalacPorudzbine.Visible = true;
-
                 groupBoxDostavljac.Enabled = false;
                 groupBoxDostavljac.Visible = false;
             }
@@ -185,9 +185,6 @@ namespace Pizza.Forme
             {
                 groupBoxDostavljac.Enabled = true;
                 groupBoxDostavljac.Visible = true;
-
-                groupBoxPrimalacPorudzbine.Enabled = false;
-                groupBoxPrimalacPorudzbine.Visible = false;
             }
         }
 

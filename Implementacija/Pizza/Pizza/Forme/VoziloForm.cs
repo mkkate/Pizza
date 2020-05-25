@@ -85,9 +85,9 @@ namespace Pizza.Forme
                 //reset polja
                 txtNazivTipa.Text = "";
                 txtProizvodjac.Text = "";
-                nudVelicinaRama = null;
+                nudVelicinaRama.Value = 0;
                 txtRegistarskiBroj.Text = "";
-                nudBrSaobracajneDozvole = null;
+                nudBrSaobracajneDozvole.Value = 0;
             }
             catch (Exception exc)
             {

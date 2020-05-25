@@ -78,10 +78,10 @@ namespace Pizza.Forme
                 cmbNacinPlacanja.Text = "";
                 cmbStatus.Text = "";
                 dtpDatumVremeKreiranja.Value = DateTime.Now;
-                nudIdOsobe = null;
-                nudIdVozila = null;
-                nudPicaId = null;
-                nudKolicina = null;
+                nudIdOsobe.Value = 0;
+                nudIdVozila.Value = 0;
+                nudPicaId.Value = 0;
+                nudKolicina.Value = 0;
                 txtSastojci.Text = "";
             }
             catch (Exception exc)

@@ -55,7 +55,7 @@ namespace Pizza.Forme
 
                 //reset polja
                 dtpDatumOd.Value = DateTime.Now;
-                nudTipSmene = null;
+                nudTipSmene.Value = 0;
             }
             catch (Exception ec)
             {
