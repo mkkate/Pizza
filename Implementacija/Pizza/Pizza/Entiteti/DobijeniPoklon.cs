@@ -12,7 +12,7 @@ namespace Pizza.Entiteti
         public virtual string Tip_poklona { get; set; }
         public virtual int Kvalifikacioni_bodovi { get; set; }
         public virtual DateTime Datum_dodele { get; set; }
-        public virtual DateTime Datum_iskoriscenja { get; set; }
+        public virtual DateTime? Datum_iskoriscenja { get; set; }
         public virtual Osoba PripadaOsobi { get; set; }
 
     }

@@ -30,7 +30,15 @@ namespace Pizza.Forme
 
 
                 p.Tip_poklona = cbTip.Text.ToString();
-                p.Datum_iskoriscenja = DtIskoriscenje.Value;
+                if (!cbNije.Checked)
+                {
+                    p.Datum_iskoriscenja = DtIskoriscenje.Value;
+                }
+                else
+                {
+                    p.Datum_iskoriscenja = null;
+                }
+
                 p.Kvalifikacioni_bodovi = (int)UpDownBodovi.Value;
                 p.Datum_dodele = dtDodela.Value;
                 Pizza.Entiteti.Osoba o = s.Load<Pizza.Entiteti.Osoba>((int)UpDownId.Value);

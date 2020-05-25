@@ -465,44 +465,20 @@ namespace Pizza
 
         private void btnObrisiRadiU_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ISession s = DataLayer.GetSession();
-
-
-
-                Pizza.Entiteti.RadiU r = s.Load<Pizza.Entiteti.RadiU>(23);
-
-                s.Delete(r);
-
-                s.Flush();
-                s.Close();
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
+            BrisanjeRadiUForm radi = new BrisanjeRadiUForm();
+            radi.Show();
         }
 
         private void btnObrisiGovori_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ISession s = DataLayer.GetSession();
+            BrisanjeGovoriForm govori = new BrisanjeGovoriForm();
+            govori.Show();
+        }
 
-
-
-                Pizza.Entiteti.Govori g = s.Load<Pizza.Entiteti.Govori>(22);
-
-                s.Delete(g);
-
-                s.Flush();
-                s.Close();
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
+        private void btnAzurirajPoklon_Click(object sender, EventArgs e)
+        {
+            AzurirajPoklonForm poklon = new AzurirajPoklonForm();
+            poklon.Show();
         }
     }
 }

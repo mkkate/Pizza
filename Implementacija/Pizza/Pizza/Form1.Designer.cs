@@ -74,8 +74,11 @@
             this.btnAzurirajPorudzbinu = new System.Windows.Forms.Button();
             this.btnDodavanjePorudzbine = new System.Windows.Forms.Button();
             this.groupBoxBrojTelefona = new System.Windows.Forms.GroupBox();
-            this.btnDodavanjeBrojaTelefona = new System.Windows.Forms.Button();
             this.btnObrisiBrojTelefona = new System.Windows.Forms.Button();
+            this.btnDodavanjeBrojaTelefona = new System.Windows.Forms.Button();
+            this.gbGovori = new System.Windows.Forms.GroupBox();
+            this.gbRadiU = new System.Windows.Forms.GroupBox();
+            this.btnAzurirajPoklon = new System.Windows.Forms.Button();
             this.groupBoxVozila.SuspendLayout();
             this.groupBoxSmene.SuspendLayout();
             this.groupBoxNasledjivanja.SuspendLayout();
@@ -87,6 +90,8 @@
             this.groupBoxOsobe.SuspendLayout();
             this.groupBoxPorudzbina.SuspendLayout();
             this.groupBoxBrojTelefona.SuspendLayout();
+            this.gbGovori.SuspendLayout();
+            this.gbRadiU.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUcitavanjeVozila
@@ -290,19 +295,20 @@
             // 
             // gbPoklon
             // 
+            this.gbPoklon.Controls.Add(this.btnAzurirajPoklon);
             this.gbPoklon.Controls.Add(this.btnObrisiPoklon);
             this.gbPoklon.Controls.Add(this.btnDodajPoklon);
             this.gbPoklon.Controls.Add(this.btnUcitajPoklon);
-            this.gbPoklon.Location = new System.Drawing.Point(251, 418);
+            this.gbPoklon.Location = new System.Drawing.Point(647, 358);
             this.gbPoklon.Name = "gbPoklon";
-            this.gbPoklon.Size = new System.Drawing.Size(185, 171);
+            this.gbPoklon.Size = new System.Drawing.Size(185, 186);
             this.gbPoklon.TabIndex = 10;
             this.gbPoklon.TabStop = false;
             this.gbPoklon.Text = "Dobijeni poklon";
             // 
             // btnObrisiPoklon
             // 
-            this.btnObrisiPoklon.Location = new System.Drawing.Point(23, 130);
+            this.btnObrisiPoklon.Location = new System.Drawing.Point(23, 103);
             this.btnObrisiPoklon.Name = "btnObrisiPoklon";
             this.btnObrisiPoklon.Size = new System.Drawing.Size(141, 23);
             this.btnObrisiPoklon.TabIndex = 2;
@@ -312,7 +318,7 @@
             // 
             // btnDodajPoklon
             // 
-            this.btnDodajPoklon.Location = new System.Drawing.Point(23, 81);
+            this.btnDodajPoklon.Location = new System.Drawing.Point(23, 59);
             this.btnDodajPoklon.Name = "btnDodajPoklon";
             this.btnDodajPoklon.Size = new System.Drawing.Size(141, 23);
             this.btnDodajPoklon.TabIndex = 1;
@@ -322,7 +328,7 @@
             // 
             // btnUcitajPoklon
             // 
-            this.btnUcitajPoklon.Location = new System.Drawing.Point(23, 40);
+            this.btnUcitajPoklon.Location = new System.Drawing.Point(23, 19);
             this.btnUcitajPoklon.Name = "btnUcitajPoklon";
             this.btnUcitajPoklon.Size = new System.Drawing.Size(141, 23);
             this.btnUcitajPoklon.TabIndex = 0;
@@ -377,16 +383,16 @@
             this.gbKategorija.Controls.Add(this.btnObrisiKategoriju);
             this.gbKategorija.Controls.Add(this.btnDodavanjeKategorije);
             this.gbKategorija.Controls.Add(this.btnUcitajKategoriju);
-            this.gbKategorija.Location = new System.Drawing.Point(30, 418);
+            this.gbKategorija.Location = new System.Drawing.Point(246, 440);
             this.gbKategorija.Name = "gbKategorija";
-            this.gbKategorija.Size = new System.Drawing.Size(190, 171);
+            this.gbKategorija.Size = new System.Drawing.Size(190, 159);
             this.gbKategorija.TabIndex = 12;
             this.gbKategorija.TabStop = false;
             this.gbKategorija.Text = "Kategorija";
             // 
             // btnObrisiKategoriju
             // 
-            this.btnObrisiKategoriju.Location = new System.Drawing.Point(21, 130);
+            this.btnObrisiKategoriju.Location = new System.Drawing.Point(21, 126);
             this.btnObrisiKategoriju.Name = "btnObrisiKategoriju";
             this.btnObrisiKategoriju.Size = new System.Drawing.Size(143, 23);
             this.btnObrisiKategoriju.TabIndex = 2;
@@ -416,7 +422,7 @@
             // 
             // btnUcitajGovori
             // 
-            this.btnUcitajGovori.Location = new System.Drawing.Point(475, 231);
+            this.btnUcitajGovori.Location = new System.Drawing.Point(18, 19);
             this.btnUcitajGovori.Name = "btnUcitajGovori";
             this.btnUcitajGovori.Size = new System.Drawing.Size(114, 23);
             this.btnUcitajGovori.TabIndex = 13;
@@ -426,7 +432,7 @@
             // 
             // UcitajRadiU
             // 
-            this.UcitajRadiU.Location = new System.Drawing.Point(475, 280);
+            this.UcitajRadiU.Location = new System.Drawing.Point(21, 21);
             this.UcitajRadiU.Name = "UcitajRadiU";
             this.UcitajRadiU.Size = new System.Drawing.Size(114, 21);
             this.UcitajRadiU.TabIndex = 14;
@@ -436,9 +442,9 @@
             // 
             // btnDodajGovori
             // 
-            this.btnDodajGovori.Location = new System.Drawing.Point(603, 231);
+            this.btnDodajGovori.Location = new System.Drawing.Point(18, 58);
             this.btnDodajGovori.Name = "btnDodajGovori";
-            this.btnDodajGovori.Size = new System.Drawing.Size(110, 23);
+            this.btnDodajGovori.Size = new System.Drawing.Size(114, 23);
             this.btnDodajGovori.TabIndex = 15;
             this.btnDodajGovori.Text = "Dodaj vezu govori";
             this.btnDodajGovori.UseVisualStyleBackColor = true;
@@ -446,9 +452,9 @@
             // 
             // btnDodajRadiU
             // 
-            this.btnDodajRadiU.Location = new System.Drawing.Point(603, 280);
+            this.btnDodajRadiU.Location = new System.Drawing.Point(21, 59);
             this.btnDodajRadiU.Name = "btnDodajRadiU";
-            this.btnDodajRadiU.Size = new System.Drawing.Size(110, 21);
+            this.btnDodajRadiU.Size = new System.Drawing.Size(114, 21);
             this.btnDodajRadiU.TabIndex = 16;
             this.btnDodajRadiU.Text = "Dodaj vezu radi u";
             this.btnDodajRadiU.UseVisualStyleBackColor = true;
@@ -456,9 +462,9 @@
             // 
             // btnObrisiGovori
             // 
-            this.btnObrisiGovori.Location = new System.Drawing.Point(732, 232);
+            this.btnObrisiGovori.Location = new System.Drawing.Point(18, 97);
             this.btnObrisiGovori.Name = "btnObrisiGovori";
-            this.btnObrisiGovori.Size = new System.Drawing.Size(105, 22);
+            this.btnObrisiGovori.Size = new System.Drawing.Size(114, 22);
             this.btnObrisiGovori.TabIndex = 17;
             this.btnObrisiGovori.Text = "Obrisi vezu govori";
             this.btnObrisiGovori.UseVisualStyleBackColor = true;
@@ -466,9 +472,9 @@
             // 
             // btnObrisiRadiU
             // 
-            this.btnObrisiRadiU.Location = new System.Drawing.Point(733, 280);
+            this.btnObrisiRadiU.Location = new System.Drawing.Point(21, 100);
             this.btnObrisiRadiU.Name = "btnObrisiRadiU";
-            this.btnObrisiRadiU.Size = new System.Drawing.Size(104, 21);
+            this.btnObrisiRadiU.Size = new System.Drawing.Size(114, 21);
             this.btnObrisiRadiU.TabIndex = 18;
             this.btnObrisiRadiU.Text = "Obrisi vezu radi u";
             this.btnObrisiRadiU.UseVisualStyleBackColor = true;
@@ -531,7 +537,7 @@
             this.groupBoxPorudzbina.Controls.Add(this.btnObrisiPorudzbinu);
             this.groupBoxPorudzbina.Controls.Add(this.btnAzurirajPorudzbinu);
             this.groupBoxPorudzbina.Controls.Add(this.btnDodavanjePorudzbine);
-            this.groupBoxPorudzbina.Location = new System.Drawing.Point(236, 338);
+            this.groupBoxPorudzbina.Location = new System.Drawing.Point(28, 406);
             this.groupBoxPorudzbina.Name = "groupBoxPorudzbina";
             this.groupBoxPorudzbina.Size = new System.Drawing.Size(200, 136);
             this.groupBoxPorudzbina.TabIndex = 11;
@@ -562,22 +568,12 @@
             // 
             this.groupBoxBrojTelefona.Controls.Add(this.btnObrisiBrojTelefona);
             this.groupBoxBrojTelefona.Controls.Add(this.btnDodavanjeBrojaTelefona);
-            this.groupBoxBrojTelefona.Location = new System.Drawing.Point(28, 410);
+            this.groupBoxBrojTelefona.Location = new System.Drawing.Point(245, 321);
             this.groupBoxBrojTelefona.Name = "groupBoxBrojTelefona";
-            this.groupBoxBrojTelefona.Size = new System.Drawing.Size(191, 119);
+            this.groupBoxBrojTelefona.Size = new System.Drawing.Size(191, 113);
             this.groupBoxBrojTelefona.TabIndex = 12;
             this.groupBoxBrojTelefona.TabStop = false;
             this.groupBoxBrojTelefona.Text = "Broj telefona";
-            // 
-            // btnDodavanjeBrojaTelefona
-            // 
-            this.btnDodavanjeBrojaTelefona.Location = new System.Drawing.Point(23, 28);
-            this.btnDodavanjeBrojaTelefona.Name = "btnDodavanjeBrojaTelefona";
-            this.btnDodavanjeBrojaTelefona.Size = new System.Drawing.Size(143, 23);
-            this.btnDodavanjeBrojaTelefona.TabIndex = 0;
-            this.btnDodavanjeBrojaTelefona.Text = "Dodavanje broja telefona";
-            this.btnDodavanjeBrojaTelefona.UseVisualStyleBackColor = true;
-            this.btnDodavanjeBrojaTelefona.Click += new System.EventHandler(this.btnDodavanjeBrojaTelefona_Click);
             // 
             // btnObrisiBrojTelefona
             // 
@@ -589,21 +585,60 @@
             this.btnObrisiBrojTelefona.UseVisualStyleBackColor = true;
             this.btnObrisiBrojTelefona.Click += new System.EventHandler(this.btnObrisiBrojTelefona_Click);
             // 
+            // btnDodavanjeBrojaTelefona
+            // 
+            this.btnDodavanjeBrojaTelefona.Location = new System.Drawing.Point(23, 28);
+            this.btnDodavanjeBrojaTelefona.Name = "btnDodavanjeBrojaTelefona";
+            this.btnDodavanjeBrojaTelefona.Size = new System.Drawing.Size(143, 23);
+            this.btnDodavanjeBrojaTelefona.TabIndex = 0;
+            this.btnDodavanjeBrojaTelefona.Text = "Dodavanje broja telefona";
+            this.btnDodavanjeBrojaTelefona.UseVisualStyleBackColor = true;
+            this.btnDodavanjeBrojaTelefona.Click += new System.EventHandler(this.btnDodavanjeBrojaTelefona_Click);
+            // 
+            // gbGovori
+            // 
+            this.gbGovori.Controls.Add(this.btnUcitajGovori);
+            this.gbGovori.Controls.Add(this.btnDodajGovori);
+            this.gbGovori.Controls.Add(this.btnObrisiGovori);
+            this.gbGovori.Location = new System.Drawing.Point(647, 26);
+            this.gbGovori.Name = "gbGovori";
+            this.gbGovori.Size = new System.Drawing.Size(155, 136);
+            this.gbGovori.TabIndex = 19;
+            this.gbGovori.TabStop = false;
+            this.gbGovori.Text = "Govori";
+            // 
+            // gbRadiU
+            // 
+            this.gbRadiU.Controls.Add(this.UcitajRadiU);
+            this.gbRadiU.Controls.Add(this.btnDodajRadiU);
+            this.gbRadiU.Controls.Add(this.btnObrisiRadiU);
+            this.gbRadiU.Location = new System.Drawing.Point(647, 194);
+            this.gbRadiU.Name = "gbRadiU";
+            this.gbRadiU.Size = new System.Drawing.Size(153, 140);
+            this.gbRadiU.TabIndex = 20;
+            this.gbRadiU.TabStop = false;
+            this.gbRadiU.Text = "Radi u";
+            // 
+            // btnAzurirajPoklon
+            // 
+            this.btnAzurirajPoklon.Location = new System.Drawing.Point(23, 148);
+            this.btnAzurirajPoklon.Name = "btnAzurirajPoklon";
+            this.btnAzurirajPoklon.Size = new System.Drawing.Size(141, 23);
+            this.btnAzurirajPoklon.TabIndex = 3;
+            this.btnAzurirajPoklon.Text = "Azuriraj poklon";
+            this.btnAzurirajPoklon.UseVisualStyleBackColor = true;
+            this.btnAzurirajPoklon.Click += new System.EventHandler(this.btnAzurirajPoklon_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 606);
-            this.Controls.Add(this.btnObrisiRadiU);
-            this.Controls.Add(this.btnObrisiGovori);
-            this.Controls.Add(this.btnDodajRadiU);
-            this.Controls.Add(this.btnDodajGovori);
-            this.Controls.Add(this.UcitajRadiU);
-            this.Controls.Add(this.btnUcitajGovori);
+            this.ClientSize = new System.Drawing.Size(929, 607);
+            this.Controls.Add(this.gbRadiU);
+            this.Controls.Add(this.gbGovori);
             this.Controls.Add(this.gbKategorija);
             this.Controls.Add(this.gbEmail);
             this.Controls.Add(this.gbPoklon);
-            this.ClientSize = new System.Drawing.Size(770, 536);
             this.Controls.Add(this.groupBoxBrojTelefona);
             this.Controls.Add(this.groupBoxPorudzbina);
             this.Controls.Add(this.groupBoxOsobe);
@@ -619,12 +654,14 @@
             this.groupBoxNasledjivanja.ResumeLayout(false);
             this.gbPica.ResumeLayout(false);
             this.gbStraniJezik.ResumeLayout(false);
-            this.groupBoxOsobe.ResumeLayout(false);
-            this.groupBoxPorudzbina.ResumeLayout(false);
-            this.groupBoxBrojTelefona.ResumeLayout(false);
             this.gbPoklon.ResumeLayout(false);
             this.gbEmail.ResumeLayout(false);
             this.gbKategorija.ResumeLayout(false);
+            this.groupBoxOsobe.ResumeLayout(false);
+            this.groupBoxPorudzbina.ResumeLayout(false);
+            this.groupBoxBrojTelefona.ResumeLayout(false);
+            this.gbGovori.ResumeLayout(false);
+            this.gbRadiU.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -679,6 +716,9 @@
         private System.Windows.Forms.GroupBox groupBoxBrojTelefona;
         private System.Windows.Forms.Button btnObrisiBrojTelefona;
         private System.Windows.Forms.Button btnDodavanjeBrojaTelefona;
+        private System.Windows.Forms.GroupBox gbGovori;
+        private System.Windows.Forms.GroupBox gbRadiU;
+        private System.Windows.Forms.Button btnAzurirajPoklon;
     }
 }
 

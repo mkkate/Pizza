@@ -39,6 +39,7 @@
             this.UpDownId = new System.Windows.Forms.NumericUpDown();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.cbTip = new System.Windows.Forms.ComboBox();
+            this.cbNije = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownBodovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownId)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             // lblBodovi
             // 
             this.lblBodovi.AutoSize = true;
-            this.lblBodovi.Location = new System.Drawing.Point(58, 144);
+            this.lblBodovi.Location = new System.Drawing.Point(58, 176);
             this.lblBodovi.Name = "lblBodovi";
             this.lblBodovi.Size = new System.Drawing.Size(104, 13);
             this.lblBodovi.TabIndex = 3;
@@ -73,7 +74,7 @@
             // lblDodela
             // 
             this.lblDodela.AutoSize = true;
-            this.lblDodela.Location = new System.Drawing.Point(58, 200);
+            this.lblDodela.Location = new System.Drawing.Point(58, 231);
             this.lblDodela.Name = "lblDodela";
             this.lblDodela.Size = new System.Drawing.Size(76, 13);
             this.lblDodela.TabIndex = 4;
@@ -82,7 +83,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(58, 254);
+            this.lblId.Location = new System.Drawing.Point(58, 273);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(53, 13);
             this.lblId.TabIndex = 5;
@@ -90,7 +91,7 @@
             // 
             // UpDownBodovi
             // 
-            this.UpDownBodovi.Location = new System.Drawing.Point(202, 137);
+            this.UpDownBodovi.Location = new System.Drawing.Point(202, 169);
             this.UpDownBodovi.Name = "UpDownBodovi";
             this.UpDownBodovi.Size = new System.Drawing.Size(120, 20);
             this.UpDownBodovi.TabIndex = 6;
@@ -104,21 +105,21 @@
             // 
             // dtDodela
             // 
-            this.dtDodela.Location = new System.Drawing.Point(202, 193);
+            this.dtDodela.Location = new System.Drawing.Point(202, 224);
             this.dtDodela.Name = "dtDodela";
             this.dtDodela.Size = new System.Drawing.Size(200, 20);
             this.dtDodela.TabIndex = 8;
             // 
             // UpDownId
             // 
-            this.UpDownId.Location = new System.Drawing.Point(202, 247);
+            this.UpDownId.Location = new System.Drawing.Point(202, 266);
             this.UpDownId.Name = "UpDownId";
             this.UpDownId.Size = new System.Drawing.Size(120, 20);
             this.UpDownId.TabIndex = 9;
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(358, 308);
+            this.btnDodaj.Location = new System.Drawing.Point(359, 326);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(114, 23);
             this.btnDodaj.TabIndex = 12;
@@ -137,11 +138,22 @@
             this.cbTip.TabIndex = 13;
             this.cbTip.Text = "Odaberi tip";
             // 
+            // cbNije
+            // 
+            this.cbNije.AutoSize = true;
+            this.cbNije.Location = new System.Drawing.Point(202, 121);
+            this.cbNije.Name = "cbNije";
+            this.cbNije.Size = new System.Drawing.Size(171, 17);
+            this.cbNije.TabIndex = 14;
+            this.cbNije.Text = "Poklon jos uvek nije iskoriscen";
+            this.cbNije.UseVisualStyleBackColor = true;
+            // 
             // DobijeniPoklonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 343);
+            this.ClientSize = new System.Drawing.Size(529, 373);
+            this.Controls.Add(this.cbNije);
             this.Controls.Add(this.cbTip);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.UpDownId);
@@ -175,5 +187,6 @@
         private System.Windows.Forms.NumericUpDown UpDownId;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.ComboBox cbTip;
+        private System.Windows.Forms.CheckBox cbNije;
     }
 }
