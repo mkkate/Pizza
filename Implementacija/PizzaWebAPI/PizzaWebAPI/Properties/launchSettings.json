@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "Pizza",
+      "launchUrl": "Vozilo/PreuzmiVozila",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
