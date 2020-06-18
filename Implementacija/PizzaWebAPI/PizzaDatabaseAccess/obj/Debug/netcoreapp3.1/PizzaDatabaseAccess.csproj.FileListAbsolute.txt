@@ -1,0 +1,9 @@
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.csprojAssemblyReference.cache
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.AssemblyInfoInputs.cache
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.AssemblyInfo.cs
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.csproj.CoreCompileInputs.cache
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\bin\Debug\netcoreapp3.1\PizzaDatabaseAccess.deps.json
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\bin\Debug\netcoreapp3.1\PizzaDatabaseAccess.dll
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\bin\Debug\netcoreapp3.1\PizzaDatabaseAccess.pdb
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.dll
+F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.pdb
