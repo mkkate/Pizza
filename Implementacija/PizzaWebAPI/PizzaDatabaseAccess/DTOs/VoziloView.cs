@@ -1,4 +1,4 @@
-﻿using Pizza.Entiteti;
+﻿using PizzaDatabaseAccess.Entiteti;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,11 +18,12 @@ namespace PizzaDatabaseAccess.DTOs
         //broj porudzbina koje dostavlja to vozilo
         public int BrojPorudzbina { get; set; }
 
-        //broj osoba koje voze to vozilo
-        public int BrojOsoba { get; set; }
+        public IList<OsobaView> Osobe { get; set; }
 
         public VoziloView()
-        { }
+        {
+            Osobe = new List<OsobaView>();
+        }
 
         public VoziloView(Vozilo v)
         {
@@ -30,7 +31,7 @@ namespace PizzaDatabaseAccess.DTOs
             Naziv_tipa = v.Naziv_tipa;
             Proizvodjac = v.Proizvodjac;
             BrojPorudzbina = v.Porudzbine.Count;
-            BrojOsoba = v.Osobe.Count;
+            Osobe = new List<OsobaView>();
         }
     }
 
@@ -41,9 +42,9 @@ namespace PizzaDatabaseAccess.DTOs
             Tip_vozila = "AUTOMOBIL";
         }
 
-        public VoziloAutomobilView(Vozilo v) : base(v)
+        public VoziloAutomobilView(VoziloAutomobil v) : base(v)
         {
-            this.Velicina_rama = null;
+            Tip_vozila = "AUTOMOBIL";
             this.Registarski_broj = v.Registarski_broj;
             this.Br_saobracajne_dozvole = v.Br_saobracajne_dozvole;
         }
@@ -56,11 +57,10 @@ namespace PizzaDatabaseAccess.DTOs
             Tip_vozila = "BICIKL";
         }
 
-        public VoziloBiciklView(Vozilo v) : base(v)
+        public VoziloBiciklView(VoziloBicikl v) : base(v)
         {
+            Tip_vozila = "BICIKL";
             this.Velicina_rama = v.Velicina_rama;
-            this.Registarski_broj = null;
-            this.Br_saobracajne_dozvole = null;
         }
     }
 
@@ -71,9 +71,9 @@ namespace PizzaDatabaseAccess.DTOs
             Tip_vozila = "SKUTER";
         }
 
-        public VoziloSkuterView(Vozilo v) : base(v)
+        public VoziloSkuterView(VoziloSkuter v) : base(v)
         {
-            this.Velicina_rama = null;
+            Tip_vozila = "SKUTER";
             this.Registarski_broj = v.Registarski_broj;
             this.Br_saobracajne_dozvole = v.Br_saobracajne_dozvole;
         }

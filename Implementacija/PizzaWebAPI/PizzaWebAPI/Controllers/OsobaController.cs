@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PizzaDatabaseAccess;
+using PizzaDatabaseAccess.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +11,17 @@ namespace PizzaWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class SmenaController : ControllerBase
+    public class OsobaController : ControllerBase
     {
-        #region Smena
+        #region Osoba
         [HttpGet]
-        [Route("PreuzmiSmene")]
+        [Route("PreuzmiOsobe")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetSmene()
+        public IActionResult GetOsobe()
         {
             try
             {
-                return new JsonResult(DataProvider.VratiSveSmene());
+                return new JsonResult(DataProvider.VratiSveOsobe());
             }
             catch (Exception exc)
             {
@@ -29,29 +30,46 @@ namespace PizzaWebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("PreuzmiSmenu/{smenaID}")]
+        [Route("PreuzmiOsobu/{osobaID}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetSmena(int smenaID)
+        public IActionResult GetOsobu(int osobaID)
         {
             try
             {
-                return new JsonResult(DataProvider.VratiSmenu(smenaID));
+                return new JsonResult(DataProvider.VratiOsobu(osobaID));
             }
             catch (Exception exc)
             {
                 return BadRequest(exc.ToString());
+            }
+        }
+
+        [HttpPost]
+        [Route("DodajOsobu")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult AddOsobu([FromBody] OsobaView o)
+        {
+            try
+            {
+                DataProvider.DodajOsobu(o);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
             }
         }
 
         [HttpDelete]
-        [Route("ObrisiSmenu/{smenaID}")]
+        [Route("ObrisiOsobu/{osobaID}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult DeleteSmena(int smenaID)
+        public IActionResult DeleteOsobu(int osobaID)
         {
             try
             {
-                DataProvider.ObrisiSmenu(smenaID);
+                DataProvider.ObrisiOsobu(osobaID);
                 return Ok();
             }
             catch (Exception exc)

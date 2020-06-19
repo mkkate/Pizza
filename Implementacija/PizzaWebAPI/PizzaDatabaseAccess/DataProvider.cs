@@ -1,6 +1,6 @@
 ﻿using NHibernate;
-using Pizza;
-using Pizza.Entiteti;
+using PizzaDatabaseAccess;
+using PizzaDatabaseAccess.Entiteti;
 using PizzaDatabaseAccess.DTOs;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace PizzaDatabaseAccess
                                              .Asc.List<Vozilo>();
                 List<VoziloView> vozilaView = new List<VoziloView>();
 
-                foreach(Vozilo v in listaVozila)
+                foreach (Vozilo v in listaVozila)
                 {
                     VoziloView vozilo = new VoziloView(v);
                     vozilaView.Add(vozilo);
@@ -31,7 +31,7 @@ namespace PizzaDatabaseAccess
 
                 return vozilaView;
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 Console.WriteLine(exc.Message);
                 throw;
@@ -44,7 +44,7 @@ namespace PizzaDatabaseAccess
                 ISession sesija = DataLayer.GetSession();
                 Vozilo v = sesija.Get<Vozilo>(voziloID);
 
-                if(v.GetType() == typeof(VoziloAutomobil))
+                if (v.GetType() == typeof(VoziloAutomobil))
                 {
                     VoziloAutomobil va = v as VoziloAutomobil;
                     VoziloAutomobilView auto = new VoziloAutomobilView(va);
@@ -75,7 +75,7 @@ namespace PizzaDatabaseAccess
 
                 return vozilo;
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 Console.WriteLine(exc.Message);
                 throw;
@@ -267,6 +267,425 @@ namespace PizzaDatabaseAccess
             }
         }
 
+        #endregion
+
+        #region Osoba
+        public static List<OsobaView> VratiSveOsobe()
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                IList<Osoba> listaOsoba = sesija.QueryOver<Osoba>()
+                                             .OrderBy(x => x.Id_osoba)
+                                             .Asc.List<Osoba>();
+                List<OsobaView> osobeView = new List<OsobaView>();
+
+                foreach (Osoba o in listaOsoba)
+                {
+                    OsobaView osoba = new OsobaView(o);
+                    osoba.Porudzbine = VratiOsobinePorudzbine(o);
+                    osoba.BrojeviTelefona = VratiOsobineBrojeveTelefona(o);
+                    osobeView.Add(osoba);
+                }
+
+                sesija.Close();
+
+                return osobeView;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static OsobaView VratiOsobu(int osobaID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+
+                Osoba osoba = sesija.Get<Osoba>(osobaID);
+                OsobaView osobaView = new OsobaView(osoba);
+
+                osobaView.BrojeviTelefona = VratiOsobineBrojeveTelefona(osoba);
+                osobaView.Porudzbine = VratiOsobinePorudzbine(osoba);
+
+                sesija.Close();
+
+                return osobaView;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static void ObrisiOsobu(int osobaID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Osoba o = sesija.Get<Osoba>(osobaID);
+
+                sesija.Delete(o);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+
+        public static void DodajOsobu(OsobaView ov)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Osoba osoba = new Osoba();
+
+                osoba.Broj = ov.Broj;
+                osoba.Br_bodova = ov.Br_bodova;
+                osoba.Datum_prve_porudzbine = ov.Datum_prve_porudzbine;
+                osoba.Datum_rodjenja = ov.Datum_rodjenja;
+                osoba.Drzava = ov.Drzava;
+                //osoba.DuziVozilo = ov.DuziVozilo;
+                osoba.FBonus_program = ov.FBonus_program;
+                osoba.FDostavljac = ov.FDostavljac;
+                osoba.FKupac = ov.FKupac;
+                osoba.FPrimalac_porudzbine = ov.FPrimalac_porudzbine;
+                osoba.FZaposleni = ov.FZaposleni;
+                osoba.Grad = ov.Grad;
+                osoba.Ime = ov.Ime;
+                osoba.Jmbg = ov.Jmbg;
+                osoba.Prezime = ov.Prezime;
+
+                sesija.Save(osoba);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        // PROVERI !!!
+        public static void DodajVoziloOsobi(OsobaView o, int voziloID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                //Osoba osoba = new Osoba();
+                // osoba.Id_osoba = o.OsobaId;
+
+                VoziloView v = sesija.Get<VoziloView>(voziloID);
+                o.DuziVozilo = v;
+                v.Osobe.Add(o);
+
+                sesija.Update(v);
+                sesija.Flush();
+
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+
+        public static IList<PorudzbinaView> VratiOsobinePorudzbine(Osoba o)
+        {
+            IList<PorudzbinaView> listaPorudzbina = new List<PorudzbinaView>();
+            foreach (Porudzbina p in o.Porudzbine)
+            {
+                PorudzbinaView pv = new PorudzbinaView(p);
+                pv.PripadaOsobi = null;
+                listaPorudzbina.Add(pv);
+            }
+            return listaPorudzbina;
+        }
+
+        public static IList<BrTelefonaView> VratiOsobineBrojeveTelefona(Osoba o)
+        {
+            IList<BrTelefonaView> listaBrTel = new List<BrTelefonaView>();
+            foreach (BrTelefona brtel in o.BrojeviTelefona)
+            {
+                BrTelefonaView brtelv = new BrTelefonaView(brtel);
+                brtelv.PripadaOsobi = null;
+                listaBrTel.Add(brtelv);
+            }
+            return listaBrTel;
+        }
+        #endregion
+
+        #region Porudzbina
+        public static List<PorudzbinaView> VratiSvePorudzbine()
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                IList<Porudzbina> listaPorudzbina = sesija.QueryOver<Porudzbina>()
+                                             .OrderBy(x => x.Id_porudzbina)
+                                             .Asc.List<Porudzbina>();
+                List<PorudzbinaView> porudzbineView = new List<PorudzbinaView>();
+
+                foreach (Porudzbina p in listaPorudzbina)
+                {
+                    PorudzbinaView porudzbina = new PorudzbinaView(p);
+                    porudzbina.SadrziPice = VratiPorudzbininePice(p);
+                    porudzbineView.Add(porudzbina);
+                }
+
+                sesija.Close();
+
+                return porudzbineView;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static PorudzbinaView VratiPorudzbinu(int porudzbinaID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+
+                Porudzbina porudzbina = sesija.Get<Porudzbina>(porudzbinaID);
+                PorudzbinaView porudzbinaView = new PorudzbinaView(porudzbina);
+
+                porudzbinaView.SadrziPice = VratiPorudzbininePice(porudzbina);
+
+                sesija.Close();
+
+                return porudzbinaView;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static void ObrisiPorudzbinu(int porudzbinaID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Porudzbina porudzbina = sesija.Get<Porudzbina>(porudzbinaID);
+
+                sesija.Delete(porudzbina);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+
+        public static void DodajPorudzbinu(PorudzbinaView pv)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Porudzbina porudzbina = new Porudzbina();
+
+                porudzbina.Cena = pv.Cena;
+                porudzbina.Datum_vreme_isporuke = pv.Datum_vreme_isporuke;
+                porudzbina.Datum_vreme_kreiranja = pv.Datum_vreme_kreiranja;
+                porudzbina.Nacin_placanja = pv.Nacin_placanja;
+                porudzbina.Status = pv.Status;
+                //porudzbina.DostavljanoVozilom = new Vozilo(pv.DostavljanoVozilom);
+                //porudzbina.PripadaOsobi = new Osoba(pv.PripadaOsobi);
+                //porudzbina.SadrziPice = pv.SadrziPice;
+
+                sesija.Save(porudzbina);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        // PROVERI !!!
+        public static IList<SadrziView> VratiPorudzbininePice(Porudzbina p)
+        {
+            IList<SadrziView> listaPica = new List<SadrziView>();
+            foreach (Sadrzi s in p.SadrziPice)
+            {
+                SadrziView sv = new SadrziView(s);
+                sv.IdPorudzbina = null;
+                listaPica.Add(sv);
+            }
+            return listaPica;
+        }
+        #endregion
+
+        #region BrTelefona
+        public static List<BrTelefonaView> VratiSveBrojeveTelefona()
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                IList<BrTelefona> listaBrTelefona = sesija.QueryOver<BrTelefona>()
+                                             .OrderBy(x => x.Id_surogat_br_telefona)
+                                             .Asc.List<BrTelefona>();
+                List<BrTelefonaView> brtelView = new List<BrTelefonaView>();
+
+                sesija.Close();
+
+                return brtelView;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static BrTelefonaView VratiBrojTelefona(int brtelID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+
+                BrTelefona brtel = sesija.Get<BrTelefona>(brtelID);
+                BrTelefonaView brtelView = new BrTelefonaView(brtel);
+
+                sesija.Close();
+
+                return brtelView;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static void ObrisiBrojTelefona(int brtelID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                BrTelefona brtel = sesija.Get<BrTelefona>(brtelID);
+
+                sesija.Delete(brtel);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static void DodajBrojTelefona(BrTelefonaView brtelv)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                BrTelefona brtel = new BrTelefona();
+
+                brtel.Broj_telefona = brtelv.BrojTelefona;
+                //brtel.PripadaOsobi = new Osoba(pv.PripadaOsobi);
+
+                sesija.Save(brtel);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        #endregion
+
+        #region Sadrzi
+        public static List<SadrziView> VratiSveSadrzaje()
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                IList<Sadrzi> listaSadrzi = sesija.QueryOver<Sadrzi>()
+                                             .OrderBy(x => x.Id_surogat_sadrzi)
+                                             .Asc.List<Sadrzi>();
+                List<SadrziView> sadrziView = new List<SadrziView>();
+
+                sesija.Close();
+
+                return sadrziView;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static SadrziView VratiSadrzaj(int sadrziID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+
+                Sadrzi sadrzi = sesija.Get<Sadrzi>(sadrziID);
+                SadrziView sadrziView = new SadrziView(sadrzi);
+
+                sesija.Close();
+
+                return sadrziView;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static void ObrisiSadrzaj(int sadrziID)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Sadrzi sadrzi = sesija.Get<Sadrzi>(sadrziID);
+
+                sesija.Delete(sadrzi);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static void DodajSadrzaj(SadrziView sadrziv)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Sadrzi sadrzi = new Sadrzi();
+
+                sadrzi.Pojedinacna_cena = sadrziv.PojedinacnaCena;
+                sadrzi.Sastojci = sadrziv.Sastojci;
+                //sadrzi.Id_porudzbina = new Porudzbina(sadrziv.IdPorudzbina);
+                //sadrzi.Id_pizza = new Pizza(sadrziv.IdPizza);
+
+                sesija.Save(sadrzi);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
         #endregion
     }
 }

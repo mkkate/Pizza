@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pizza.Entiteti;
+using PizzaDatabaseAccess.Entiteti;
 using FluentNHibernate.Mapping;
 
-namespace Pizza.Mapiranja
+namespace PizzaDatabaseAccess.Mapiranja
 {
     class PicaMapiranja : ClassMap<Pica>
     {
