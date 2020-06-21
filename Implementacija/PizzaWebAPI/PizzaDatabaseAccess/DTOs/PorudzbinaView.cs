@@ -13,12 +13,9 @@ namespace PizzaDatabaseAccess.DTOs
         public string Status { get; set; }
         public DateTime? Datum_vreme_isporuke { get; set; }
         public DateTime Datum_vreme_kreiranja { get; set; }
-        //many-to-one Porudzbina-Osoba
         public OsobaView PripadaOsobi { get; set; }
-        //many-to-one Porudzbina-Vozilo
         public VoziloView DostavljanoVozilom { get; set; }
-        //one-to-many Porudzbina-Sadrzi (Pizza)
-        public IList<SadrziView> SadrziPice { get; set; }
+        public virtual IList<SadrziView> SadrziPice { get; set; }
 
         public PorudzbinaView()
         {

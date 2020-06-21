@@ -45,14 +45,14 @@ namespace PizzaWebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajOsobu")]
+        [Route("DodajOsobu/{voziloID}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult AddOsobu([FromBody] OsobaView o)
+        public IActionResult AddOsobu([FromBody] OsobaView o, int voziloID)
         {
             try
             {
-                DataProvider.DodajOsobu(o);
+                DataProvider.DodajOsobu(o, voziloID);
                 return Ok();
             }
             catch (Exception ex)

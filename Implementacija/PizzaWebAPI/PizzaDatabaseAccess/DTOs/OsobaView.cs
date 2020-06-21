@@ -26,9 +26,9 @@ namespace PizzaDatabaseAccess.DTOs
         //many-to-one Osoba-Vozilo
         public VoziloView DuziVozilo { get; set; }
         //one-to-many Osoba-Vozilo
-        public IList<PorudzbinaView> Porudzbine { get; set; }
+        public virtual IList<PorudzbinaView> Porudzbine { get; set; }
         //one-to-many Osoba-BrTelefona
-        public IList<BrTelefonaView> BrojeviTelefona { get; set; }
+        public virtual IList<BrTelefonaView> BrojeviTelefona { get; set; }
         /*public IList<DobijeniPoklonView> DobijeniPokloni { get; set; }
         public IList<KategorijaView> Kategorije { get; set; }
         public IList<EmailView> Emailovi { get; set; }
@@ -53,7 +53,8 @@ namespace PizzaDatabaseAccess.DTOs
             this.Datum_prve_porudzbine = osoba.Datum_prve_porudzbine;
             this.Datum_rodjenja = osoba.Datum_rodjenja;
             this.Drzava = osoba.Drzava;
-            this.DuziVozilo = new VoziloView(osoba.DuziVozilo);
+            if(osoba.DuziVozilo != null)
+                this.DuziVozilo = new VoziloView(osoba.DuziVozilo);
             this.FBonus_program = osoba.FBonus_program;
             this.FDostavljac = osoba.FDostavljac;
             this.FKupac = osoba.FKupac;
@@ -64,6 +65,7 @@ namespace PizzaDatabaseAccess.DTOs
             this.Ime = osoba.Ime;
             this.Jmbg = osoba.Jmbg;
             this.Prezime = osoba.Prezime;
+            this.Ulica = osoba.Ulica;
             Porudzbine = new List<PorudzbinaView>();
             BrojeviTelefona = new List<BrTelefonaView>();
             /*DobijeniPokloni = new List<DobijeniPoklonView>();

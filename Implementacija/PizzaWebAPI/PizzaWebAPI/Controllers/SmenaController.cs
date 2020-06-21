@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PizzaDatabaseAccess;
+using PizzaDatabaseAccess.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,5 +62,61 @@ namespace PizzaWebAPI.Controllers
         }
         #endregion
 
+        #region Smena1
+        [HttpPost]
+        [Route("DodajSmenu1")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult AddSmena1([FromBody] Smena1View s1)
+        {
+            try
+            {
+                DataProvider.DodajSmenu1(s1);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+        #endregion
+
+        #region Smena1
+        [HttpPost]
+        [Route("DodajSmenu2")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult AddSmena2([FromBody] Smena2View s2)
+        {
+            try
+            {
+                DataProvider.DodajSmenu2(s2);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+        #endregion
+
+        #region Smena3
+        [HttpPost]
+        [Route("DodajSmenu3")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult AddSmena3([FromBody] Smena3View s3)
+        {
+            try
+            {
+                DataProvider.DodajSmenu3(s3);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+        #endregion
     }
 }

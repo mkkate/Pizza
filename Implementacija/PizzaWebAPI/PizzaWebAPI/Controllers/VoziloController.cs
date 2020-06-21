@@ -103,7 +103,7 @@ namespace PizzaWebAPI.Controllers
 
         #region VoziloSkuter
         [HttpPost]
-        [Route("DodajVoziloBicikl")]
+        [Route("DodajVoziloSkuter")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult AddVoziloSkuter([FromBody] VoziloSkuterView vs)

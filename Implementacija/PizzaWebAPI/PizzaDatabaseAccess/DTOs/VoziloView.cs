@@ -18,7 +18,7 @@ namespace PizzaDatabaseAccess.DTOs
         //broj porudzbina koje dostavlja to vozilo
         public int BrojPorudzbina { get; set; }
 
-        public IList<OsobaView> Osobe { get; set; }
+        public virtual IList<OsobaView> Osobe { get; set; }
 
         public VoziloView()
         {

@@ -9,7 +9,7 @@ namespace PizzaDatabaseAccess.DTOs
     {
         public int BrTelefonaId { get; set; }
         public string BrojTelefona { get; set; }
-        //many-to-one BrTelefona-Osoba
+        
         public OsobaView PripadaOsobi { get; set; }
 
         public BrTelefonaView() 

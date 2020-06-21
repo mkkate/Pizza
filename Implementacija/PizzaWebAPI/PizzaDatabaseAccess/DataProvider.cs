@@ -23,8 +23,30 @@ namespace PizzaDatabaseAccess
 
                 foreach (Vozilo v in listaVozila)
                 {
-                    VoziloView vozilo = new VoziloView(v);
-                    vozilaView.Add(vozilo);
+                    if (v.GetType() == typeof(VoziloAutomobil))
+                    {
+                        VoziloAutomobil va = v as VoziloAutomobil;
+                        VoziloAutomobilView auto = new VoziloAutomobilView(va);
+                        auto.Osobe = VratiVoziloveOsobe(va);
+
+                        vozilaView.Add(auto);
+                    }
+                    else if (v.GetType() == typeof(VoziloSkuter))
+                    {
+                        VoziloSkuter vs = v as VoziloSkuter;
+                        VoziloSkuterView skuter = new VoziloSkuterView(vs);
+                        skuter.Osobe = VratiVoziloveOsobe(vs);
+
+                        vozilaView.Add(skuter);
+                    }
+                    else if (v.GetType() == typeof(VoziloBicikl))
+                    {
+                        VoziloBicikl vb = v as VoziloBicikl;
+                        VoziloBiciklView bicikl = new VoziloBiciklView(vb);
+                        bicikl.Osobe = VratiVoziloveOsobe(vb);
+
+                        vozilaView.Add(bicikl);
+                    }
                 }
 
                 sesija.Close();
@@ -48,6 +70,7 @@ namespace PizzaDatabaseAccess
                 {
                     VoziloAutomobil va = v as VoziloAutomobil;
                     VoziloAutomobilView auto = new VoziloAutomobilView(va);
+                    auto.Osobe = VratiVoziloveOsobe(v);
 
                     sesija.Close();
                     return auto;
@@ -56,6 +79,7 @@ namespace PizzaDatabaseAccess
                 {
                     VoziloSkuter vs = v as VoziloSkuter;
                     VoziloSkuterView skuter = new VoziloSkuterView(vs);
+                    skuter.Osobe = VratiVoziloveOsobe(v);
 
                     sesija.Close();
                     return skuter;
@@ -64,6 +88,8 @@ namespace PizzaDatabaseAccess
                 {
                     VoziloBicikl vb = v as VoziloBicikl;
                     VoziloBiciklView bicikl = new VoziloBiciklView(vb);
+
+                    bicikl.Osobe = VratiVoziloveOsobe(v);
 
                     sesija.Close();
                     return bicikl;
@@ -74,6 +100,25 @@ namespace PizzaDatabaseAccess
                 sesija.Close();
 
                 return vozilo;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        public static IList<OsobaView> VratiVoziloveOsobe(Vozilo v)
+        {
+            try
+            {
+                IList<OsobaView> listaOsoba = new List<OsobaView>();
+                foreach (Osoba o in v.Osobe)
+                {
+                    OsobaView ov = new OsobaView(o);
+                    ov.DuziVozilo = null;
+                    listaOsoba.Add(ov);
+                }
+                return listaOsoba;
             }
             catch (Exception exc)
             {
@@ -191,8 +236,24 @@ namespace PizzaDatabaseAccess
 
                 foreach (Smena s in listaSmena)
                 {
-                    SmenaView smena = new SmenaView(s);
-                    smeneView.Add(smena);
+                    if (s.GetType() == typeof(Smena1))
+                    {
+                        Smena1 s1 = s as Smena1;
+                        Smena1View smena1 = new Smena1View(s1);
+                        smeneView.Add(smena1);
+                    }
+                    else if (s.GetType() == typeof(Smena2))
+                    {
+                        Smena2 s2 = s as Smena2;
+                        Smena2View smena2 = new Smena2View(s2);
+                        smeneView.Add(smena2);
+                    }
+                    else if (s.GetType() == typeof(Smena3))
+                    {
+                        Smena3 s3 = s as Smena3;
+                        Smena3View smena3 = new Smena3View(s3);
+                        smeneView.Add(smena3);
+                    }
                 }
 
                 sesija.Close();
@@ -266,7 +327,72 @@ namespace PizzaDatabaseAccess
                 throw;
             }
         }
+        #region Smena1
+        public static void DodajSmenu1(Smena1View s1)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Smena1 smena1 = new Smena1();
 
+                smena1.Datum_od = s1.Datum_od;
+                smena1.Datum_do = s1.Datum_do;
+
+                sesija.Save(smena1);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        #endregion
+        #region Smena2
+        public static void DodajSmenu2(Smena2View s2)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Smena2 smena2 = new Smena2();
+
+                smena2.Datum_od = s2.Datum_od;
+                smena2.Datum_do = s2.Datum_do;
+
+                sesija.Save(smena2);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        #endregion
+        #region Smena3
+        public static void DodajSmenu3(Smena3View s3)
+        {
+            try
+            {
+                ISession sesija = DataLayer.GetSession();
+                Smena3 smena3 = new Smena3();
+
+                smena3.Datum_od = s3.Datum_od;
+                smena3.Datum_do = s3.Datum_do;
+
+                sesija.Save(smena3);
+                sesija.Flush();
+                sesija.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+        #endregion
         #endregion
 
         #region Osoba
@@ -337,8 +463,7 @@ namespace PizzaDatabaseAccess
                 throw;
             }
         }
-
-        public static void DodajOsobu(OsobaView ov)
+        public static void DodajOsobu(OsobaView ov, int voziloID)
         {
             try
             {
@@ -350,7 +475,8 @@ namespace PizzaDatabaseAccess
                 osoba.Datum_prve_porudzbine = ov.Datum_prve_porudzbine;
                 osoba.Datum_rodjenja = ov.Datum_rodjenja;
                 osoba.Drzava = ov.Drzava;
-                //osoba.DuziVozilo = ov.DuziVozilo;
+                if (voziloID != 0)
+                    osoba.DuziVozilo = sesija.Get<Vozilo>(voziloID);
                 osoba.FBonus_program = ov.FBonus_program;
                 osoba.FDostavljac = ov.FDostavljac;
                 osoba.FKupac = ov.FKupac;
@@ -360,6 +486,7 @@ namespace PizzaDatabaseAccess
                 osoba.Ime = ov.Ime;
                 osoba.Jmbg = ov.Jmbg;
                 osoba.Prezime = ov.Prezime;
+                osoba.Ulica = ov.Ulica;
 
                 sesija.Save(osoba);
                 sesija.Flush();
@@ -372,13 +499,13 @@ namespace PizzaDatabaseAccess
             }
         }
         // PROVERI !!!
-        public static void DodajVoziloOsobi(OsobaView o, int voziloID)
+        /*public static void DodajVoziloOsobi(OsobaView o, int voziloID)
         {
             try
             {
                 ISession sesija = DataLayer.GetSession();
                 //Osoba osoba = new Osoba();
-                // osoba.Id_osoba = o.OsobaId;
+                //osoba.Id_osoba = o.OsobaId;
 
                 VoziloView v = sesija.Get<VoziloView>(voziloID);
                 o.DuziVozilo = v;
@@ -394,7 +521,7 @@ namespace PizzaDatabaseAccess
                 Console.WriteLine(exc.Message);
                 throw;
             }
-        }
+        }*/
 
         public static IList<PorudzbinaView> VratiOsobinePorudzbine(Osoba o)
         {
@@ -402,7 +529,7 @@ namespace PizzaDatabaseAccess
             foreach (Porudzbina p in o.Porudzbine)
             {
                 PorudzbinaView pv = new PorudzbinaView(p);
-                pv.PripadaOsobi = null;
+                pv.PripadaOsobi = null; //nepotrebno je da nam prikazuje osobu kojoj pripada
                 listaPorudzbina.Add(pv);
             }
             return listaPorudzbina;
@@ -414,7 +541,7 @@ namespace PizzaDatabaseAccess
             foreach (BrTelefona brtel in o.BrojeviTelefona)
             {
                 BrTelefonaView brtelv = new BrTelefonaView(brtel);
-                brtelv.PripadaOsobi = null;
+                brtelv.PripadaOsobi = null; //nepotrebno je da nam prikazuje osobu kojoj pripada
                 listaBrTel.Add(brtelv);
             }
             return listaBrTel;
@@ -488,7 +615,7 @@ namespace PizzaDatabaseAccess
             }
         }
 
-        public static void DodajPorudzbinu(PorudzbinaView pv)
+        public static void DodajPorudzbinu(PorudzbinaView pv, int osobaID, int voziloID)
         {
             try
             {
@@ -500,8 +627,8 @@ namespace PizzaDatabaseAccess
                 porudzbina.Datum_vreme_kreiranja = pv.Datum_vreme_kreiranja;
                 porudzbina.Nacin_placanja = pv.Nacin_placanja;
                 porudzbina.Status = pv.Status;
-                //porudzbina.DostavljanoVozilom = new Vozilo(pv.DostavljanoVozilom);
-                //porudzbina.PripadaOsobi = new Osoba(pv.PripadaOsobi);
+                porudzbina.DostavljanoVozilom = sesija.Get<Vozilo>(voziloID);
+                porudzbina.PripadaOsobi = sesija.Get<Osoba>(osobaID);
                 //porudzbina.SadrziPice = pv.SadrziPice;
 
                 sesija.Save(porudzbina);
@@ -521,7 +648,6 @@ namespace PizzaDatabaseAccess
             foreach (Sadrzi s in p.SadrziPice)
             {
                 SadrziView sv = new SadrziView(s);
-                sv.IdPorudzbina = null;
                 listaPica.Add(sv);
             }
             return listaPica;
@@ -538,6 +664,12 @@ namespace PizzaDatabaseAccess
                                              .OrderBy(x => x.Id_surogat_br_telefona)
                                              .Asc.List<BrTelefona>();
                 List<BrTelefonaView> brtelView = new List<BrTelefonaView>();
+
+                foreach (BrTelefona brtel in listaBrTelefona)
+                {
+                    BrTelefonaView brtelv = new BrTelefonaView(brtel);
+                    brtelView.Add(brtelv);
+                }
 
                 sesija.Close();
 
@@ -585,17 +717,19 @@ namespace PizzaDatabaseAccess
                 throw;
             }
         }
-        public static void DodajBrojTelefona(BrTelefonaView brtelv)
+        public static void DodajBrojTelefona(BrTelefonaView brtelv, int osobaID)
         {
             try
             {
                 ISession sesija = DataLayer.GetSession();
                 BrTelefona brtel = new BrTelefona();
-
                 brtel.Broj_telefona = brtelv.BrojTelefona;
-                //brtel.PripadaOsobi = new Osoba(pv.PripadaOsobi);
 
-                sesija.Save(brtel);
+                Osoba o = sesija.Get<Osoba>(osobaID);
+                brtel.PripadaOsobi = o;
+                o.BrojeviTelefona.Add(brtel);
+
+                sesija.Update(o);
                 sesija.Flush();
                 sesija.Close();
             }
@@ -617,6 +751,12 @@ namespace PizzaDatabaseAccess
                                              .OrderBy(x => x.Id_surogat_sadrzi)
                                              .Asc.List<Sadrzi>();
                 List<SadrziView> sadrziView = new List<SadrziView>();
+
+                foreach (Sadrzi s in listaSadrzi)
+                {
+                    SadrziView sv = new SadrziView(s);
+                    sadrziView.Add(sv);
+                }
 
                 sesija.Close();
 
