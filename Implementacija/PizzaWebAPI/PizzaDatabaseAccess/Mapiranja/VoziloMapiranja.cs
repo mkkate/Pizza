@@ -1,12 +1,12 @@
 ﻿using FluentNHibernate.Mapping;
-using Pizza.Entiteti;
+using PizzaDatabaseAccess.Entiteti;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pizza.Mapiranja
+namespace PizzaDatabaseAccess.Mapiranja
 {
     public class VoziloMapiranja : ClassMap<Vozilo>
     {

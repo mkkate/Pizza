@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using NHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
-using Pizza.Mapiranja;
+using PizzaDatabaseAccess.Mapiranja;
 
-namespace Pizza
+namespace PizzaDatabaseAccess
 {
     class DataLayer
     {

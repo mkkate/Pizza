@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentNHibernate.Mapping;
-using Pizza.Entiteti;
+using PizzaDatabaseAccess.Entiteti;
 
-namespace Pizza.Mapiranja
+namespace PizzaDatabaseAccess.Mapiranja
 {
     public class PorudzbinaMapiranja : ClassMap<Porudzbina>
     {

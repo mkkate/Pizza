@@ -1,28 +1,27 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using PizzaDatabaseAccess;
+using PizzaDatabaseAccess.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http;
-using PizzaDatabaseAccess;
-using PizzaDatabaseAccess.DTOs;
 
 namespace PizzaWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class VoziloController : ControllerBase
+    public class SmenaController : ControllerBase
     {
-        #region Vozilo
+        #region Smena
         [HttpGet]
-        [Route("PreuzmiVozila")]
+        [Route("PreuzmiSmene")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetVozila()
+        public IActionResult GetSmene()
         {
             try
             {
-                return new JsonResult(DataProvider.VratiSvaVozila());
+                return new JsonResult(DataProvider.VratiSveSmene());
             }
             catch (Exception exc)
             {
@@ -31,29 +30,29 @@ namespace PizzaWebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("PreuzmiVozilo/{voziloID}")]
+        [Route("PreuzmiSmenu/{smenaID}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetVozilo(int voziloID)
+        public IActionResult GetSmena(int smenaID)
         {
             try
             {
-                return new JsonResult(DataProvider.VratiVozilo(voziloID));
+                return new JsonResult(DataProvider.VratiSmenu(smenaID));
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 return BadRequest(exc.ToString());
             }
         }
 
         [HttpDelete]
-        [Route("ObrisiVozilo/{voiloID}")]
+        [Route("ObrisiSmenu/{smenaID}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult DeleteVozilo(int voziloID)
+        public IActionResult DeleteSmena(int smenaID)
         {
             try
             {
-                DataProvider.ObrisiVozilo(voziloID);
+                DataProvider.ObrisiSmenu(smenaID);
                 return Ok();
             }
             catch (Exception exc)
@@ -63,16 +62,16 @@ namespace PizzaWebAPI.Controllers
         }
         #endregion
 
-        #region VoziloBicikl
+        #region Smena1
         [HttpPost]
-        [Route("DodajVoziloBicikl")]
+        [Route("DodajSmenu1")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult AddVoziloBicikl([FromBody]VoziloBiciklView vb)
+        public IActionResult AddSmena1([FromBody] Smena1View s1)
         {
             try
             {
-                DataProvider.DodajVoziloBicikl(vb);
+                DataProvider.DodajSmenu1(s1);
                 return Ok();
             }
             catch (Exception ex)
@@ -82,16 +81,16 @@ namespace PizzaWebAPI.Controllers
         }
         #endregion
 
-        #region VoziloAutomobil
+        #region Smena1
         [HttpPost]
-        [Route("DodajVoziloAutomobil")]
+        [Route("DodajSmenu2")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult AddVoziloAutomobil([FromBody] VoziloAutomobilView va)
+        public IActionResult AddSmena2([FromBody] Smena2View s2)
         {
             try
             {
-                DataProvider.DodajVoziloAutomobil(va);
+                DataProvider.DodajSmenu2(s2);
                 return Ok();
             }
             catch (Exception ex)
@@ -101,16 +100,16 @@ namespace PizzaWebAPI.Controllers
         }
         #endregion
 
-        #region VoziloSkuter
+        #region Smena3
         [HttpPost]
-        [Route("DodajVoziloSkuter")]
+        [Route("DodajSmenu3")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult AddVoziloSkuter([FromBody] VoziloSkuterView vs)
+        public IActionResult AddSmena3([FromBody] Smena3View s3)
         {
             try
             {
-                DataProvider.DodajVoziloSkuter(vs);
+                DataProvider.DodajSmenu3(s3);
                 return Ok();
             }
             catch (Exception ex)
