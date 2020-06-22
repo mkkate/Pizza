@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Pizza.Entiteti;
+using PizzaDatabaseAccess.DTOs;
 
 namespace PizzaDatabaseAccess.DTOs
 {

@@ -7,3 +7,12 @@ F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\bin\D
 F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\bin\Debug\netcoreapp3.1\PizzaDatabaseAccess.pdb
 F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.dll
 F:\elfak\Projekti\SBP\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.pdb
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\bin\Debug\netcoreapp3.1\PizzaDatabaseAccess.deps.json
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\bin\Debug\netcoreapp3.1\PizzaDatabaseAccess.dll
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\bin\Debug\netcoreapp3.1\PizzaDatabaseAccess.pdb
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.csprojAssemblyReference.cache
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.AssemblyInfoInputs.cache
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.AssemblyInfo.cs
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.csproj.CoreCompileInputs.cache
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.dll
+F:\sbp safe\pizza\Implementacija\PizzaWebAPI\PizzaDatabaseAccess\obj\Debug\netcoreapp3.1\PizzaDatabaseAccess.pdb

@@ -1,14 +1,9 @@
 ﻿using NHibernate;
 using PizzaDatabaseAccess;
-using PizzaDatabaseAccess.Entiteti;
 using PizzaDatabaseAccess.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NHibernate;
-using Pizza;
-using Pizza.Entiteti;
-using PizzaDatabaseAccess.DTOs;
 
 namespace PizzaDatabaseAccess
 {
@@ -119,7 +114,7 @@ namespace PizzaDatabaseAccess
                 foreach (Osoba o in v.Osobe)
                 {
                     OsobaView ov = new OsobaView(o);
-                    ov.DuziVozilo = null;
+                    //ov.DuziVozilo = null;
                     listaOsoba.Add(ov);
                 }
                 return listaOsoba;
@@ -135,7 +130,7 @@ namespace PizzaDatabaseAccess
             try
             {
                 ISession sesija = DataLayer.GetSession();
-                Vozilo v = sesija.Get<Vozilo>(voziloID);
+                VoziloAutomobil v = sesija.Get<VoziloAutomobil>(voziloID);
 
                 sesija.Delete(v);
                 sesija.Flush();
@@ -415,6 +410,11 @@ namespace PizzaDatabaseAccess
                     OsobaView osoba = new OsobaView(o);
                     osoba.Porudzbine = VratiOsobinePorudzbine(o);
                     osoba.BrojeviTelefona = VratiOsobineBrojeveTelefona(o);
+                    osoba.DobijeniPokloni = VratiOsobinePoklone(o);
+                    osoba.Emailovi = VratiOsobineEmailove(o);
+                    osoba.Kategorije = VratiOsobineKategorije(o);
+                    osoba.ORadiU = VratiGdeOsobaRadi(o);
+                    osoba.OGovori = VratiStaGovoriOsoba(o);
                     osobeView.Add(osoba);
                 }
 
@@ -437,8 +437,14 @@ namespace PizzaDatabaseAccess
                 Osoba osoba = sesija.Get<Osoba>(osobaID);
                 OsobaView osobaView = new OsobaView(osoba);
 
+                osobaView.DuziVozilo = new VoziloView(osoba.DuziVozilo);
                 osobaView.BrojeviTelefona = VratiOsobineBrojeveTelefona(osoba);
                 osobaView.Porudzbine = VratiOsobinePorudzbine(osoba);
+                osobaView.DobijeniPokloni = VratiOsobinePoklone(osoba);
+                osobaView.Emailovi = VratiOsobineEmailove(osoba);
+                osobaView.Kategorije = VratiOsobineKategorije(osoba);
+                osobaView.ORadiU = VratiGdeOsobaRadi(osoba);
+                osobaView.OGovori = VratiStaGovoriOsoba(osoba);
 
                 sesija.Close();
 
@@ -479,8 +485,9 @@ namespace PizzaDatabaseAccess
                 osoba.Datum_prve_porudzbine = ov.Datum_prve_porudzbine;
                 osoba.Datum_rodjenja = ov.Datum_rodjenja;
                 osoba.Drzava = ov.Drzava;
-                if (voziloID != 0)
-                    osoba.DuziVozilo = sesija.Get<Vozilo>(voziloID);
+                //if (voziloID != 0)
+                //osoba.DuziVozilo = sesija.Get<Vozilo>(voziloID);
+                DodajVoziloOsobi(ov, voziloID);
                 osoba.FBonus_program = ov.FBonus_program;
                 osoba.FDostavljac = ov.FDostavljac;
                 osoba.FKupac = ov.FKupac;
@@ -503,17 +510,17 @@ namespace PizzaDatabaseAccess
             }
         }
         // PROVERI !!!
-        /*public static void DodajVoziloOsobi(OsobaView o, int voziloID)
+        public static void DodajVoziloOsobi(OsobaView o, int voziloID)
         {
             try
             {
                 ISession sesija = DataLayer.GetSession();
-                //Osoba osoba = new Osoba();
+                Osoba osoba = new Osoba();
                 //osoba.Id_osoba = o.OsobaId;
 
-                VoziloView v = sesija.Get<VoziloView>(voziloID);
-                o.DuziVozilo = v;
-                v.Osobe.Add(o);
+                Vozilo v = sesija.Get<Vozilo>(voziloID);
+                osoba.DuziVozilo = v;
+                v.Osobe.Add(osoba);
 
                 sesija.Update(v);
                 sesija.Flush();
@@ -525,7 +532,7 @@ namespace PizzaDatabaseAccess
                 Console.WriteLine(exc.Message);
                 throw;
             }
-        }*/
+        }
 
         public static IList<PorudzbinaView> VratiOsobinePorudzbine(Osoba o)
         {
@@ -549,6 +556,66 @@ namespace PizzaDatabaseAccess
                 listaBrTel.Add(brtelv);
             }
             return listaBrTel;
+        }
+
+        public static IList<DobijeniPoklonView> VratiOsobinePoklone(Osoba o)
+        {
+            IList<DobijeniPoklonView> listaDobijenihPoklona = new List<DobijeniPoklonView>();
+            foreach (DobijeniPoklon dp in o.DobijeniPokloni)
+            {
+                DobijeniPoklonView dpv = new DobijeniPoklonView(dp);
+                dpv.PripadaOsobi = null; //nepotrebno je da nam prikazuje osobu kojoj pripada
+                listaDobijenihPoklona.Add(dpv);
+            }
+            return listaDobijenihPoklona;
+        }
+
+        public static IList<EmailView> VratiOsobineEmailove(Osoba o)
+        {
+            IList<EmailView> listaEmailova = new List<EmailView>();
+            foreach (Email e in o.Emailovi)
+            {
+                EmailView ev = new EmailView(e);
+                ev.PripadaOsobi = null; //nepotrebno je da nam prikazuje osobu kojoj pripada
+                listaEmailova.Add(ev);
+            }
+            return listaEmailova;
+        }
+
+        public static IList<KategorijaView> VratiOsobineKategorije(Osoba o)
+        {
+            IList<KategorijaView> listaKategorija = new List<KategorijaView>();
+            foreach (Kategorija k in o.Kategorije)
+            {
+                KategorijaView kv = new KategorijaView(k);
+                kv.PripadaOsobi = null; //nepotrebno je da nam prikazuje osobu kojoj pripada
+                listaKategorija.Add(kv);
+            }
+            return listaKategorija;
+        }
+
+        public static IList<RadiUView> VratiGdeOsobaRadi(Osoba o)
+        {
+            IList<RadiUView> listaRadiU = new List<RadiUView>();
+            foreach (RadiU ru in o.ORadiU)
+            {
+                RadiUView ruv = new RadiUView(ru);
+                ruv.Id_osoba = null; //nepotrebno je da nam prikazuje osobu kojoj pripada
+                listaRadiU.Add(ruv);
+            }
+            return listaRadiU;
+        }
+
+        public static IList<GovoriView> VratiStaGovoriOsoba(Osoba o)
+        {
+            IList<GovoriView> listaGovori = new List<GovoriView>();
+            foreach (Govori g in o.OGovori)
+            {
+                GovoriView gv = new GovoriView(g);
+                gv.Id_osoba = null; //nepotrebno je da nam prikazuje osobu kojoj pripada
+                listaGovori.Add(gv);
+            }
+            return listaGovori;
         }
         #endregion
 
@@ -633,7 +700,7 @@ namespace PizzaDatabaseAccess
                 porudzbina.Status = pv.Status;
                 porudzbina.DostavljanoVozilom = sesija.Get<Vozilo>(voziloID);
                 porudzbina.PripadaOsobi = sesija.Get<Osoba>(osobaID);
-                //porudzbina.SadrziPice = pv.SadrziPice;
+                //porudzbina.SadrziPice = VratiPorudzbininePice(poru);
 
                 sesija.Save(porudzbina);
                 sesija.Flush();
@@ -645,7 +712,7 @@ namespace PizzaDatabaseAccess
                 throw;
             }
         }
-        // PROVERI !!!
+        
         public static IList<SadrziView> VratiPorudzbininePice(Porudzbina p)
         {
             IList<SadrziView> listaPica = new List<SadrziView>();
@@ -817,8 +884,8 @@ namespace PizzaDatabaseAccess
 
                 sadrzi.Pojedinacna_cena = sadrziv.PojedinacnaCena;
                 sadrzi.Sastojci = sadrziv.Sastojci;
-                //sadrzi.Id_porudzbina = new Porudzbina(sadrziv.IdPorudzbina);
-                //sadrzi.Id_pizza = new Pizza(sadrziv.IdPizza);
+                sadrzi.Id_porudzbina = sesija.Get<Porudzbina>(sadrziv.IdPorudzbina);
+                sadrzi.Id_pizza = sesija.Get<Pica>(sadrziv.IdPizza);
 
                 sesija.Save(sadrzi);
                 sesija.Flush();
@@ -831,8 +898,7 @@ namespace PizzaDatabaseAccess
             }
         }
         #endregion
-    public class DataProvider
-    {
+    
         #region Pica
         public static List<PicaView> VratiSvePice()
         {

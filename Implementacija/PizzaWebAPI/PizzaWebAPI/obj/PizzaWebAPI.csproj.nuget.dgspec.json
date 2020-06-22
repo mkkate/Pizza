@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\PizzaWebAPI.csproj": {}
+    "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\PizzaWebAPI.csproj": {}
   },
   "projects": {
-    "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj": {
+    "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj",
+        "projectUniqueName": "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj",
         "projectName": "PizzaDatabaseAccess",
-        "projectPath": "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj",
-        "packagesPath": "C:\\Users\\Ivana Krstic\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\obj\\",
+        "projectPath": "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj",
+        "packagesPath": "C:\\Users\\Katarina\\.nuget\\packages\\",
+        "outputPath": "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivana Krstic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Katarina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,20 +73,20 @@
         }
       }
     },
-    "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\PizzaWebAPI.csproj": {
+    "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\PizzaWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\PizzaWebAPI.csproj",
+        "projectUniqueName": "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\PizzaWebAPI.csproj",
         "projectName": "PizzaWebAPI",
-        "projectPath": "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\PizzaWebAPI.csproj",
-        "packagesPath": "C:\\Users\\Ivana Krstic\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\obj\\",
+        "projectPath": "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\PizzaWebAPI.csproj",
+        "packagesPath": "C:\\Users\\Katarina\\.nuget\\packages\\",
+        "outputPath": "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivana Krstic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Katarina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,8 +99,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj": {
-                "projectPath": "D:\\Projekat SBP\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj"
+              "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj": {
+                "projectPath": "F:\\sbp safe\\pizza\\Implementacija\\PizzaWebAPI\\PizzaDatabaseAccess\\PizzaDatabaseAccess.csproj"
               }
             }
           }

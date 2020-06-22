@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using PizzaDatabaseAccess.Entiteti;
+using PizzaDatabaseAccess.DTOs;
 
 namespace PizzaDatabaseAccess.DTOs
 {
@@ -23,27 +23,24 @@ namespace PizzaDatabaseAccess.DTOs
         public DateTime? Datum_prve_porudzbine { get; set; }
         public char FBonus_program { get; set; }
         public int? Br_bodova { get; set; }
-        //many-to-one Osoba-Vozilo
         public VoziloView DuziVozilo { get; set; }
-        //one-to-many Osoba-Vozilo
         public virtual IList<PorudzbinaView> Porudzbine { get; set; }
-        //one-to-many Osoba-BrTelefona
         public virtual IList<BrTelefonaView> BrojeviTelefona { get; set; }
-        /*public IList<DobijeniPoklonView> DobijeniPokloni { get; set; }
+        public IList<DobijeniPoklonView> DobijeniPokloni { get; set; }
         public IList<KategorijaView> Kategorije { get; set; }
         public IList<EmailView> Emailovi { get; set; }
         public IList<RadiUView> ORadiU { get; set; }
-        public IList<GovoriView> OGovori { get; set; }*/
+        public IList<GovoriView> OGovori { get; set; }
 
         public OsobaView()
         {
             Porudzbine = new List<PorudzbinaView>();
             BrojeviTelefona = new List<BrTelefonaView>();
-            /*DobijeniPokloni = new List<DobijeniPoklonView>();
+            DobijeniPokloni = new List<DobijeniPoklonView>();
             Kategorije = new List<KategorijaView>();
             Emailovi = new List<EmailView>();
             ORadiU = new List<RadiUView>();
-            OGovori = new List<GovoriView>();*/
+            OGovori = new List<GovoriView>();
         }
 
         public OsobaView(Osoba osoba)
@@ -68,11 +65,11 @@ namespace PizzaDatabaseAccess.DTOs
             this.Ulica = osoba.Ulica;
             Porudzbine = new List<PorudzbinaView>();
             BrojeviTelefona = new List<BrTelefonaView>();
-            /*DobijeniPokloni = new List<DobijeniPoklonView>();
+            DobijeniPokloni = new List<DobijeniPoklonView>();
             Kategorije = new List<KategorijaView>();
             Emailovi = new List<EmailView>();
             ORadiU = new List<RadiUView>();
-            OGovori = new List<GovoriView>();*/
+            OGovori = new List<GovoriView>();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentNHibernate.Mapping;
-using PizzaDatabaseAccess.Entiteti;
+using PizzaDatabaseAccess.DTOs;
 
 namespace PizzaDatabaseAccess.Mapiranja
 {

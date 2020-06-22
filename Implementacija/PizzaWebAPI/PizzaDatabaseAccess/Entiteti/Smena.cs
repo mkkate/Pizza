@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaDatabaseAccess.Entiteti
+namespace PizzaDatabaseAccess.DTOs
 {
     public abstract class Smena
     {
@@ -18,7 +18,7 @@ namespace PizzaDatabaseAccess.Entiteti
 
         public virtual IList<RadiU> RadiUS{ get; set; }
 
-        protected Smena() {
+        public Smena() {
             RadiUS = new List<RadiU>();
         }
 

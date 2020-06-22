@@ -1,4 +1,4 @@
-﻿using PizzaDatabaseAccess.Entiteti;
+﻿using PizzaDatabaseAccess.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -13,7 +13,7 @@ namespace PizzaWebAPI.Controllers
     [Route("[controller]")]
     public class SadrziController : ControllerBase
     {
-        #region Porudzbina
+        #region Sadrzi
         [HttpGet]
         [Route("PreuzmiSadrzaje")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
