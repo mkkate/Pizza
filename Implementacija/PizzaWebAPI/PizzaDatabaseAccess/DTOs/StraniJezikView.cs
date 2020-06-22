@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Pizza.Entiteti;
+using PizzaDatabaseAccess.Entiteti;
 
 namespace PizzaDatabaseAccess.DTOs
 {
@@ -10,10 +10,11 @@ namespace PizzaDatabaseAccess.DTOs
         public int Id { get; protected set; }
         public string NazivJezika { get; set; }
 
-        public virtual IList<Govori> GStraniJezik { get; set; }
+        public virtual IList<GovoriView> GStraniJezik { get; set; }
 
         public StraniJezikView()
         {
+            GStraniJezik = new List<GovoriView>();
         }
 
         public StraniJezikView(StraniJezik s)

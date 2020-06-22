@@ -5,6 +5,7 @@ using PizzaDatabaseAccess;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PizzaDatabaseAccess.DTOs;
 
 namespace PizzaWebAPI.Controllers
 {
@@ -42,6 +43,24 @@ namespace PizzaWebAPI.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("DodajPicu")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult AddPica([FromBody] PicaView p)
+        {
+            try
+            {
+                DataProvider.DodajPicu(p);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
         [HttpDelete]
         [Route("ObrisiPicu/{picaID}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -56,6 +75,23 @@ namespace PizzaWebAPI.Controllers
             catch (Exception exc)
             {
                 return BadRequest(exc.ToString());
+            }
+        }
+
+        [HttpPut]
+        [Route("PromeniPicu")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult ChangePica([FromBody] PicaView p)
+        {
+            try
+            {
+                DataProvider.IzmeniPicu(p);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
             }
         }
     }

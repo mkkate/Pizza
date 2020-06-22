@@ -5,10 +5,7 @@ using PizzaDatabaseAccess.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NHibernate;
-using Pizza;
-using Pizza.Entiteti;
-using PizzaDatabaseAccess.DTOs;
+
 
 namespace PizzaDatabaseAccess
 {
@@ -831,8 +828,7 @@ namespace PizzaDatabaseAccess
             }
         }
         #endregion
-    public class DataProvider
-    {
+
         #region Pica
         public static List<PicaView> VratiSvePice()
         {
@@ -880,6 +876,29 @@ namespace PizzaDatabaseAccess
                 throw;
             }
         }
+        public static void DodajPicu(PicaView pica)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Pica p = new Pica
+                {
+                    Naziv = pica.Naziv,
+                    Cena = pica.Cena
+                };
+
+                s.Save(p);
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception)
+            {
+                //handle exceptions
+                throw;
+            }
+        }
+
         public static void ObrisiPicu(int picaID)
         {
             try
@@ -888,6 +907,28 @@ namespace PizzaDatabaseAccess
                 Pica p = s.Get<Pica>(picaID);
 
                 s.Delete(p);
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                throw;
+            }
+        }
+
+        public static void IzmeniPicu(PicaView pica)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Pica p = s.Load<Pica>(pica.Id);
+
+                p.Naziv = pica.Naziv;
+                p.Cena = pica.Cena;
+
+                s.SaveOrUpdate(p);
                 s.Flush();
                 s.Close();
             }
