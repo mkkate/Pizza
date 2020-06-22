@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PizzaDatabaseAccess.Entiteti;
 using PizzaDatabaseAccess.DTOs;
 
 namespace PizzaDatabaseAccess.DTOs

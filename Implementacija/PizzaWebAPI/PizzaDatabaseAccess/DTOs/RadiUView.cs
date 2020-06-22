@@ -1,4 +1,9 @@
-﻿namespace PizzaDatabaseAccess.DTOs
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using PizzaDatabaseAccess.Entiteti;
+
+namespace PizzaDatabaseAccess.DTOs
 {
     public class RadiUView
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PizzaDatabaseAccess.Entiteti;
 using PizzaDatabaseAccess.DTOs;
 
 namespace PizzaDatabaseAccess.DTOs
@@ -12,10 +13,11 @@ namespace PizzaDatabaseAccess.DTOs
         public float Cena { get; set; }
 
         //one-to-many Pica-Sadrzi (Porudzbina)
-        public virtual IList<Sadrzi> SadrziPorudzbine { get; set; }
+        public virtual IList<SadrziView> SadrziPorudzbine { get; set; }
 
         public PicaView()
         {
+            SadrziPorudzbine = new List<SadrziView>();
         }
 
         public PicaView(Pica p)
